@@ -35,7 +35,7 @@
 						<label><i class="fa-solid fa-bars"></i> Guides</label>	
 						<ul>								
 							<!--<li><a href="#stlink">ST-Link</a></li> -->
-							<!-- <li><a href="#fwk">FWK</a></li> -->
+							<li><a href="#fwk">FIELD WEAKENING</a></li>
 							<li><a href="#apps">Apps</a></li>	
 						</ul>
 					</nav>
@@ -369,32 +369,59 @@
 					<!-- FWK Calc -->
 					<article id="fwk">
 						<h2 class="major">Field Weakening</h2>	
-						<span class="image fit"><img src="images/fwk/axial-flux-field-weakening.jpg" alt="" /></span>
-						<p>Field weakening is a method of reducing the magnetic field of the motor to allow it to spin faster</p>	
+						<span class="image fit"><img src="images/fwk/field-weakening.png" alt="" /></span>
+						<p>Field weakening is a technique used in electric motors to increase the speed beyond the normal maximum by deliberately weakening the magnetic field of the motor.<br>
+							I'll explain this using an e-scooter:
+							Imagine your e-scooter has an electric motor that reaches a certain maximum speed when the motor is running at its full power. Normally, the speed is limited by the magnetic field in the motor, which controls the speed. The stronger the magnetic field, the more power (torque) the motor can deliver at low speeds.
+							With field weakening, this magnetic field is reduced. This is done by adjusting the direction of the current in certain coils of the motor, which reduces the magnetic flux. This allows the motor to rotate faster and the e-scooter to travel faster without supplying more energy.<br>
+							However, this has a disadvantage: the weaker magnetic field reduces the available power (torque). This means that although the e-scooter can reach a higher top speed, it has less power to accelerate quickly or tackle steep climbs.
+							Overall, field weakening therefore ensures that you have less power at higher speeds, but can ride faster in certain situations, such as on straight stretches.</p>	
 
-								<section>
-									<h3 class="major">Field Weakening Calculator</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">DPC Value</label>
-												<input type="text" name="dpc-value" id="dpc-value" value="" placeholder="25 A" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Max Speed</label>
-												<input type="text" name="speed-value" id="speed-value" value="" placeholder="41 km/h" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Base Value</label>
-												<input type="text" name="base-value" id="base-value" value="" placeholder="0 A" />
-											</div>
-										</div>
-										<ul class="actions">											
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-	
+						<section>
+							<h3 class="major">Field Weakening Calculator</h3>
+							<form id="fwk-form" onsubmit="return false;">
+								<div class="fields">
+									<div class="field half">
+										<label for="dpc-value">DPC Value</label>
+										<input type="text" name="dpc-value" id="dpc-value" placeholder="25 A" required />
+									</div>
+									<div class="field half">
+										<label for="speed-value">Max Speed without FWK</label>
+										<input type="text" name="speed-value" id="speed-value" placeholder="28 km/h" required />
+									</div>
+									<div class="field half">
+										<label for="initialfieldcurrent-value">Initial Field Current</label>
+										<input type="text" name="initialfieldcurrent-value" id="initialfieldcurrent-value" placeholder="0 A" required />
+									</div>
+									<div class="field half">
+										<label for="expected-speed-value">Maximum Speed Expected</label>
+										<input type="text" name="expected-speed-value" id="expected-speed-value" placeholder="41 km/h" required />
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="button" value="Calculate" onclick="calculateFWK()" /></li>
+									<li><input type="reset" value="Reset" onclick="resetResults()" /></li>
+								</ul>
+							</form>
+							<div class="results" id="results-section">
+								<div  style="display: inline-block">							
+									<div style="text-align: center;">
+										<label style="width: auto; padding-left: 1rem; color:crimson;"><u>Warning and Disclaimer</u>  <br> </label>
+									</div>
+									<label style="width: auto; padding-left: 1rem; color:crimson;">FIELD WEAKENING EXCEEDS THE DESIGN AND INTENDED USE OF THE SCOOTER. WE ACCEPT NO RESPONSIBILITY FOR ANY EVENTUAL DAMAGE TO YOUR HARDWARE.</label>
+									<label	style="width: auto; padding-left: 1rem; color:crimson;">Please exercise Caution. Monitor your Hardware closely an gradually increase the current.</label>
+									<br>
+								</div>
+								<div>
+									<h3 class="major">Calculated Field Weakening Settings:</h3>
+									<label id="result-startspeed">Start Speed: -</label>
+									<label id="result-initialfieldcurrent">Initial Field Current: -</label>
+									<label id="result-varablefieldcurrent">Variable Field Current: -</label>
+									<label id="result-Iq">Maximum Torque Current (Iq): 65</label>
+									<label id="result-Id">Maximum Field Current (Id): 30</label>
+								</div>
+							</div>
+						</section>
 
 					</article>
 
@@ -669,13 +696,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 								</section>
 
 					</article>
+
 					</div>
 
 				<!-- Footer -->
 				<footer id="footer">
-						<p class="copyright">&copy; Le3tspeak</p>
-						<br>
-						<p class="copyright">SHFW Guides &copy; Le3tspeak</p>
+
+						<p class="copyright">SHFW Guide &copy; Le3tspeak</p>
 						<p class="copyright"> <a href="https://scooterhacking.org" target="_blank">SHFW & SHU &copy; ScooterHacking.org</a></p>
 						<br>
 						<p class="copyright"> Disclaimer: The information provided on this website is for educational purposes only. <br>We do not take any responsibility for any damage caused by the use of the information provided.</p>
@@ -693,6 +720,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/profile.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/calculateFWK.js"></script>
 
 	</body>
 </html>

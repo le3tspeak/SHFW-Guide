@@ -1703,6 +1703,14 @@ input, select, textarea {
 			opacity: 0;
 		}
 
+
+/* FWK Calculator */
+
+    .results {
+        margin-top: 20px;
+        display: none; /* Ergebnisse zunächst verstecken */
+    }
+
 /* Custom Scrollbar */
 
 ::-webkit-scrollbar {
