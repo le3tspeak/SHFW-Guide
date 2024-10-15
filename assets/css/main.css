@@ -1675,14 +1675,14 @@ input, select, textarea {
 		transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
 		width: 100%;
 		max-width: 100%;
-		margin-top: 2rem;
+		margin-top: 5rem;
 		text-align: center;
 	}
 
 		#footer .copyright {
 			letter-spacing: 0.2rem;
-			font-size: 0.6rem;
-			opacity: 0.75;
+			font-size: 0.5rem;
+			opacity: 0.6;
 			margin-bottom: 0;
 			text-transform: uppercase;
 		}
