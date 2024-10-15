@@ -1,0 +1,670 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>SHFW Guide</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<div class="logo">				
+						<img src="images/sh.png" alt="Logo"/>
+					</div>
+					<div class="content">
+						<div class="inner">
+							<h1>SHFW Guide</h1>
+							<p>A guide to the Ninebot MAX G2, G30 and Field Weakening</p>
+						</div>
+					</div>
+					<nav>							
+						<label><i class="fa-solid fa-bars"></i> Guides</label>	
+						<ul>								
+							<!--<li><a href="#stlink">ST-Link</a></li> -->
+							<!-- <li><a href="#fwk">FWK</a></li> -->
+							<li><a href="#apps">Apps</a></li>	
+						</ul>
+					</nav>
+					<nav>	
+						<label><i class="fa-solid fa-bars"></i> Models</label>				
+						<ul>
+							<li><a href="#g2">MAX G2</a></li>
+							<li><a href="#g30">MAX G30</a></li>
+						</ul>							
+					</nav>
+					<!-- <li><a href="#elements">Elements</a></li> -->
+				</header>
+
+				<!-- Main -->
+				<div id="main">			
+
+					<!-- Ninebot MAX G2 -->					
+					<article id="g2">
+
+					<!-- Logo  -->
+					<div style="display: flex; justify-content: center; margin-top: -2rem;">
+						<img src="images/G2/MAXG2.png" alt="" style="max-width: 100%; height: auto;"/>
+					</div>
+
+					<!-- Introduction -->
+					<div>
+					<h3 class="major">Introduction</h3>
+					<p>The Ninebot MAX G2 is a popular electric scooter that can be customized and modified using the ScooterHacking Utility app. 
+						The app allows users to adjust the scooter's speed, power, and other settings to enhance its performance.</p>
+					</div>
+
+					<!-- Profile Selection -->
+					<div>
+						<h3 class="major">Select Profile</h3>
+						<dropdown>
+							<select name="category-settings" id="category-settings" onchange="showProfile(this.value)">
+								<option value="default">Profile: Factory Settings</option>
+								<option value="tuned">Profile: 30 Km/h Settings</option>
+							</select>
+						</dropdown>
+						<br>
+						<div id="settings-default-disclaimer" style="display: block">
+							<label style="width: auto; padding-left: 1rem;">Please note that these settings correspond approximately to the factory settings and that there may be deviations from the original settings.</label>
+							<br>
+						</div>
+						<div id="settings-tuned-disclaimer" style="display: none">
+							
+							<label style="width: auto; padding-left: 1rem; color:crimson;">THESE SETTINGS ARE OPTIMIZED FOR PERFORMANCE AND MAY AFFECT BATTERY LIFE AND OVERALL PERFORMANCE OF THE SCOOTER AS WELL AS CAUSE POSSIBLE DAMAGE OR HARDWARE FAILURE.</label>
+							<br>
+						</div>
+					</div>
+
+					<!-- Contents -->
+					<div>
+						<h3 class="major">Contents</h3>
+						<ol>
+							<li><a href="#throttle">Throttle</a></li>
+							<li><a href="#brake">Brake</a></li>
+							<li><a href="#motor-start-speed">Motor start speed</a></li>
+							<li><a href="#field-weakening">Field weakening</a></li>
+							<li><a href="#CruiseControl">Cruise Control</a></li>
+							<li><a href="#Modes">Modes</a></li>
+							<li><a href="#Lights">Lights</a></li>
+							<li><a href="#UserInterface">User Interface</a></li>
+							<li><a href="#GlobalSettings">Global Settings</a></li>
+						</ol>
+					</div>
+
+					<!-- Throttle Settings -->
+					<div>
+						<h3 class="major" id="Throttle">Throttle</h3>
+						<blockquote>Throttle settings are used to adjust the acceleration and speed of the scooter. 
+							You can increase or decrease the throttle to achieve the desired performance level. 
+							Please note that changing the throttle settings may affect the scooter's battery life and overall performance.</blockquote>	
+						<!-- Profile Settings Default / Tuned -->
+						<div>
+							<!-- Profile Settings Default -->
+							<div class="table-wrapper" id="settings-default-throttle" style="display:inline-flexbox">
+								<table>
+									<thead>
+										<tr>
+											<th>MODE</th>
+											<th>SPEED LIMIT</th>
+											<th>THROTTLE MODE</th>
+											<th>QUADRATIC</th>
+											<th>PWM OVERMOD.</th>																				
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>ECO</td>
+											<td>15 km/h</td>
+											<td>DPC 10A</td>
+											<td>1</td>
+											<td>OFF</td>
+										</tr>
+										<tr>
+											<td>Drive</td>
+											<td>22 km/h</td>
+											<td>DPC 20A</td>
+											<td>0.8</td>
+											<td>OFF</td>
+										</tr>
+										<tr>
+											<td>Sports</td>
+											<td>22 km/h</td>
+											<td>DPC 25A</td>
+											<td>0.6</td>
+											<td>ON</td>
+										</tr>
+									</tbody>
+								</table>
+								<label style="width: auto; padding-left: 1rem;">Acceleration Boost 0% - 40%</label>
+								<br>
+							</div>																	
+							<!-- Profile Settings Tuned -->						
+							<div class="table-wrapper" id="settings-tuned-throttle" style="display: none" >
+								<table>
+									<thead>
+										<tr>
+											<th>MODE</th>
+											<th>SPEED LIMIT</th>
+											<th>THROTTLE MODE</th>
+											<th>QUADRATIC</th>
+											<th>PWM OVERMOD.</th>										
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>ECO</td>
+											<td>22 km/h</td>
+											<td>DPC 15A</td>
+											<td>1</td>
+											<td>OFF</td>
+										</tr>
+										<tr>
+											<td>Drive</td>
+											<td>25 km/h</td>
+											<td>DPC 25A</td>
+											<td>0.8</td>
+											<td>OFF</td>
+										</tr>
+										<tr>
+											<td>Sports</td>
+											<td>30 km/h</td>
+											<td>DPC 25A</td>
+											<td>0.6</td>
+											<td>ON</td>
+										</tr>
+									</tbody>
+								</table>
+								<label style="width: auto; padding-left: 1rem;">Acceleration Boost 40% - 100%</label>
+								<br>
+							</div>	
+						</div>
+					</div>
+
+					<!-- Brake Settings -->
+					<div>
+						<h3 class="major" id="brake">Brake</h3>
+						<blockquote>Brake settings are used to adjust the braking power and sensitivity of the scooter. 
+						You can increase or decrease the brake power to achieve the desired stopping distance. 
+						Please note that changing the brake settings may affect the scooter's safety and performance.</blockquote>
+						<label style="width: auto; padding-left: 1rem;">Brake min. speed: 5km/h</label>
+						<label style="width: auto; padding-left: 1rem;">Brake overshoot Current: 55A</label>
+						<label style="width: auto; padding-left: 1rem;">Brake Boost: 20 %</label>
+						<label style="width: auto; padding-left: 1rem;">Autobraking: OFF</label>	
+						<br>
+						<label style="width: auto; padding-left: 1rem;">Set Brake to Advanced an make following inputs:</label>
+						<div class="image-container">
+							<img class="thumbnail" src="images/G2/Brake/G2-Brake1.jpg" alt="Comming Soon" id="myImg1"/>
+							<img class="thumbnail" src="images/G2/Brake/G2-Brake2.jpg" alt="Comming Soon" id="myImg2"/>
+							<img class="thumbnail" src="images/G2/Brake/G2-Brake3.jpg" alt="Comming Soon" id="myImg3"/>
+							<img class="thumbnail" src="images/G2/Brake/G2-Brake4.jpg" alt="Comming Soon" id="myImg4"/>
+						</div>
+						<!-- Das Modal -->
+						<div id="myModal" class="modal" style="display: none;">
+							<img class="modal-content" id="img01" src="">
+							<span class="close">&times;</span>
+							<img class="modal-content" id="img01" src="">
+						</div>
+						<br>
+						<br>
+					</div>
+
+					<!-- Motor Start Speed Settings -->
+					<div>
+						<h3 class="major" id="motor-start-speed">Motor start speed</h3>
+						<blockquote>The motor start speed setting determines the speed at which the Scooter starts to provide power to the Motor.
+						Please note that changing the motor start speed may affect the scooter's battery life and overall performance.</blockquote>	
+						<div id="settings-default-mss" style="display: block">
+							<label style="width: auto; padding-left: 1rem;">Motor Start Speed: 3 km/h</label>
+							<label style="width: auto; padding-left: 1rem;">Enable negative MSP: Off</label>
+							<br>
+						</div>
+						<div id="settings-tuned-mss" style="display: none">
+							<label style="width: auto; padding-left: 1rem;">Motor Start Speed: 0 km/h</label>
+							<label style="width: auto; padding-left: 1rem;">Enable negative MSP: OFF</label>
+							<br>
+						</div>
+					</div>
+
+					<!-- Field weakening Settings -->
+					<div>
+						<h3 class="major" id="field-weakening">Field weakening</h3>
+						<blockquote>You will need to specify a starting speed, an initial current and a variable current.
+						The process begins by settings the starting speed approximately 7-10 km/h below the scoter's maximum speed, along whit a very low inital current.
+						Subsequently, you can adjust the variable current to a value of your choice.
+						Please note that the field should gradually build up as the speed increases, rather than instantly from the starting speed.</blockquote>
+						<div id="settings-default-fwk" style="display: block">
+							<label style="width: auto; padding-left: 1rem;">Enable in ECO Mode: OFF</label>
+							<label style="width: auto; padding-left: 1rem;">Enable in Drive Mode: OFF</label>
+							<label style="width: auto; padding-left: 1rem;">Enable in Sports Mode: OFF</label>
+							<br>
+						</div>
+						<div  id="settings-tuned-fwk" style="display: none">
+							<label style="width: auto; padding-left: 1rem;">Enable in ECO Mode: OFF</label>
+							<label style="width: auto; padding-left: 1rem;">Enable in Drive Mode: OFF</label>
+							<label style="width: auto; padding-left: 1rem;">Enable in Sports Mode: ON</label>
+							<br>
+							<label style="width: auto; padding-left: 1rem;">Starting Speed: 23 km/h</label>
+							<label style="width: auto; padding-left: 1rem;">Initial Current: 3A</label>
+							<label style="width: auto; padding-left: 1rem;">Variable Current: 800 ma/km/h</label>
+							<label style="width: auto; padding-left: 1rem;">Maximum Torque current (Iq): 65A</label>
+							<label style="width: auto; padding-left: 1rem;">Maximum Field Current (Id): 45A</label>
+							<br>
+						</div>
+					</div>
+
+					<!-- Cruise Control -->
+					<div>
+						<h3 class="major" id="CruiseControl">Cruise Control</h3>
+						<blockquote>Cruise control settings are used to adjust the scooter's cruise control feature. 
+						You can enable or disable the cruise control and set the desired Activation type via time, Single Tap or Double Tap for the feature.</blockquote>
+						<div id="settings-default-cc" style="display: block">
+							<label style="width: auto; padding-left: 1rem;">Cruise Control Mode: OFF</label>
+							<br>
+						</div>
+						<div id="settings-tuned-cc" style="display: none">
+							<label style="width: auto; padding-left: 1rem;">Cruise Control: ON</label>
+							<label style="width: auto; padding-left: 1rem;">Activation Type: Time</label>
+							<label style="width: auto; padding-left: 1rem;">Activation Delay: 5 seconds</label>
+							<label style="width: auto; padding-left: 1rem;">Inc/Dec CC speed with trottle : OFF</label>
+							<label style="width: auto; padding-left: 1rem;">Use throttle pos. in speed: OFF</label>
+							<label style="width: auto; padding-left: 1rem;">Speed-based CC in DPS Mode: OFF</label>
+							<br>
+							<label style="width: auto; padding-left: 1rem;">Beep type when engaging: Long</label>
+							<label style="width: auto; padding-left: 1rem;">Beep type when disengaging: None</label>	
+							<br>
+						</div>
+					</div>
+
+					<!-- Modes-->
+					<div>
+						<h3 class="major" id="Modes">Modes</h3>
+						<blockquote>Select the mode in which the Scooter will be when entering the Profile</blockquote>
+						<div id="settings-default-modes" style="display: flex; align-items: center; flex-wrap: wrap;">
+							<div>
+								<label style="width: auto; padding-left: 1rem;">Set mode when enter Prof.: Last</label>
+								<label style="width: auto; padding-left: 1rem;">Disable Modes (S mode Only): OFF</label>
+								<br>
+							</div>
+						</div>
+					</div>
+
+					<!-- Lights-->
+					<div>
+						<h3 class="major" id="Lights">Lights</h3>
+						<blockquote>Light settings are used to adjust the Mode of the scooter's lights.</blockquote>
+						<label style="width: auto; padding-left: 1rem;">Brake light mode: CAR</label>
+						<label style="width: auto; padding-left: 1rem;">Brake light flash speed: 255</label>
+						<br>
+					</div>
+
+					<!-- User Interface-->
+					<div>
+						<h3 class="major" id="UserInterface">User Interface</h3>
+						<blockquote>Customize the User Interface of your Scooter too fit your needs</blockquote>
+						<div id="settings-default-UI" style="display: flex; align-items: center; flex-wrap: wrap;">
+							<div>
+								<label style="width: auto; padding-left: 1rem;">Main dash data: Speed (km/h)</label>
+								<label style="width: auto; padding-left: 1rem;">Idle dash data: Off</label>
+								<label style="width: auto; padding-left: 1rem;">Alternating dash data: Off</label>
+								<label style="width: auto; padding-left: 1rem;">Battery Bar Data: Off</label>
+								<label style="width: auto; padding-left: 1rem;">Beep Type when entering Prof.: None</label>
+								<label style="width: auto; padding-left: 1rem;">No Reboot/SHutdown beep: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Swap button functions: OFF</label>
+							</div>
+						</div>
+						<br>
+					</div>
+
+					<!-- Global Settings-->
+					<div>
+						<h3 class="major" id="GlobalSettings">Global Settings</h3>
+						<blockquote>Global settings are profile-independent and only need to be set once. Unnamed settings remain as default, only the named settings need to be adjusted..</blockquote>
+						<div style="display: block">
+							<label style="width: auto; padding-left: 1rem;"><u>System Settings</u></label>
+							<label style="width: auto; padding-left: 1rem;">Taillight Brightness : 15%</label>
+							<br>
+							<label style="width: auto; padding-left: 1rem;"><u>Motor Settings</u></label>
+							<label style="width: auto; padding-left: 1rem;">Wheel Size: 9.7 INCH</label>
+							<br>
+						</div>
+					</div>
+
+					</article>	
+
+					<!-- Ninebot MAX G30 -->
+					<article id="g30">
+						<h2 class="major">Ninebot MAX G30</h2>
+						<span class="image main"><img src="images/comingsoon.png" alt="Comming Soon"/></span>
+					</article>
+
+					<!-- FWK Calc -->
+					<article id="fwk">
+						<h2 class="major">Field Weakening</h2>	
+						<span class="image fit"><img src="images/fwk/axial-flux-field-weakening.jpg" alt="" /></span>
+						<p>Field weakening is a method of reducing the magnetic field of the motor to allow it to spin faster</p>	
+
+								<section>
+									<h3 class="major">Field Weakening Calculator</h3>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="demo-name">DPC Value</label>
+												<input type="text" name="dpc-value" id="dpc-value" value="" placeholder="25 A" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Max Speed</label>
+												<input type="text" name="speed-value" id="speed-value" value="" placeholder="41 km/h" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Base Value</label>
+												<input type="text" name="base-value" id="base-value" value="" placeholder="0 A" />
+											</div>
+										</div>
+										<ul class="actions">											
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+	
+
+					</article>
+
+					<!-- Apps -->
+					<article id="apps">	
+
+								<!-- ScooterHacking Utility -->
+								<h3 class="major">ScooterHacking Utility</h3>
+								<span class="image left">	
+									<a href="https://utility.cfw.sh/" target="_blank"><img src="images/apps/shu.png" alt="SHU APP"/></a><br><br>
+								</span>
+								<p>The Scooterhacking Utility is a mobile app that allows users to customize and modify e-scooters. It offers features like firmware updates, speed adjustments, and error diagnostics for various scooter models.</p>
+								<p>OS: <i class="fa-brands fa-android"></i> Android<br>Creator: <a href="https://utility.cfw.sh/">ScooterHacking.org</a></p>
+
+								<!-- ReFlasher -->
+								<h3 class="major">ReFlasher</h3>
+								<span class="image left">	
+									<a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t" target="_blank"><img src="images/apps/reflasher.png" alt="ReFlasher" /></a><br><br>
+								</span>
+								<p>ScooterHacking ReFlasher is a Windows software that facilitates the recovery or downgrade of your Xiaomi/Ninebot ESC/BLE through SWD using an ST-Link programmer.</p>
+								<p>OS: <i class="fa-brands fa-windows"></i> Windows </i><br>Creator: <a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t">ScooterHacking.org</a></p>
+								<p>Download: <a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t" target="_blank">Version 1.4.2</a></p>	
+								
+								<!-- Scootbatt -->
+								<h3 class="major">Scootbatt</h3>
+								<span class="image left">	
+									<a href="https://play.google.com/store/apps/details?id=com.basse.scootbatt" target="_blank"><img src="images/apps/scootbatt.png" alt="Scootbatt"/></a><br><br>
+								</span>
+								<p>The Scooterhacking Utility is a mobile app that allows users to customize and modify e-scooters. It offers features like firmware updates, speed adjustments, and error diagnostics for various scooter models.</p>
+								<p>OS: <i class="fa-brands fa-android"></i> Android<br>Creator: <a href="https://play.google.com/store/apps/details?id=com.basse.scootbatt">Ba$$e</a></p>
+
+					</article>
+
+					<!-- Elements -->
+					<article id="elements">
+								<h2 class="major">Elements</h2>
+
+								<section>
+									<h3 class="major">Text</h3>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<h6>Heading Level 6</h6>
+									<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h4>Preformatted</h4>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+								<section>
+									<h3 class="major">Lists</h3>
+
+									<h4>Unordered</h4>
+									<ul>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Alternate</h4>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Ordered</h4>
+									<ol>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis viverra.</li>
+										<li>Felis enim feugiat.</li>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis lorem.</li>
+										<li>Felis enim et feugiat.</li>
+									</ol>
+									<h4>Icons</h4>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
+
+									<h4>Actions</h4>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Table</h3>
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+								<section>
+									<h3 class="major">Buttons</h3>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Primary</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button primary disabled">Disabled</span></li>
+										<li><span class="button disabled">Disabled</span></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Form</h3>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="demo-name">Name</label>
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Email</label>
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+											</div>
+											<div class="field">
+												<label for="demo-category">Category</label>
+												<select name="demo-category" id="demo-category">
+													<option value="">-</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="field">
+												<label for="demo-message">Message</label>
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+
+					</article>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+						<p class="copyright">&copy; Le3tspeak</p>
+				</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/profile.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
