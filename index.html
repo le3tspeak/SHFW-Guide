@@ -377,12 +377,48 @@
 					<article id="fwk">
 						<h2 class="major">Field Weakening</h2>	
 						<span class="image fit"><img src="images/fwk/field-weakening.png" alt="" /></span>
-						<p>Field weakening is a technique used in electric motors to increase the speed beyond the normal maximum by deliberately weakening the magnetic field of the motor.<br><br>
-							I'll explain this using an e-Scooter:<br><br>
-							Imagine your e-scooter has an electric motor that reaches a certain maximum speed when the motor is running at its full power. Normally, the speed is limited by the magnetic field in the motor, which controls the speed. The stronger the magnetic field, the more power (torque) the motor can deliver at low speeds.<br><br>
-							With field weakening, this magnetic field is reduced. This is done by adjusting the direction of the current in certain coils of the motor, which reduces the magnetic flux. This allows the motor to rotate faster and the e-scooter to travel faster without supplying more energy.<br>
-							However, this has a disadvantage: the weaker magnetic field reduces the available power (torque). This means that although the e-scooter can reach a higher top speed, it has less power to accelerate quickly or tackle steep climbs.<br><br>
-							Overall, field weakening therefore ensures that you have less power at higher speeds, but can ride faster in certain situations, such as on straight stretches.</p>	
+						<div>
+							<h3 class="major">What is Field Weakening?</h3>
+							<label>The picture shows the relationship between the motor speed and the values for torque and power in an electric motor, such as the one used in an e-scooter. Let's explain the picture based on your original question about field weakening.</label>
+							<br>
+							<ol>
+								<li>
+									<label>Constant Torque Region:</label>
+									<ul>
+										<li>In this range, the motor runs at a constant torque (blue line), which remains the same regardless of the speed.</li>
+										<li>The green line shows the power, which increases linearly with increasing engine speed. This means that the motor delivers maximum power at low speeds. This is the range in which your e-scooter can accelerate strongly because the torque remains high.</li>
+										<li>The speed of the motor increases in this range as long as the voltage of the motor generates the full magnetic force.</li>
+									</ul>									
+								</li>
+								<li>
+									<label>Constant Power Region:</label>
+									<ul>
+										<li>As soon as the motor speed reaches the natural maximum (in this case due to the voltage limitation), the motor is in the constant power range.</li>
+										<li>Here, the power remains constant (green line), but the torque begins to decrease (blue line).</li>
+										<li>In this zone, the e-scooter can no longer accelerate as quickly, as the available torque decreases. However, the power remains high, which helps you to maintain speed.</li>
+									</ul>									
+								</li>
+								<li>
+									<label>Field-Weakening Zone:</label>
+									<ul>
+										<li>As soon as the motor enters this range, the magnetic field is actively weakened. This means that the motor is driven beyond its normal speed limit.</li>
+										<li>In this zone, the torque drops sharply (blue line). The e-scooter therefore has less power for accelerating or climbing slopes.</li>
+										<li>The power (green line) initially remains constant, but then also decreases as the speed increases further.</li>
+									</ul>
+								</li>
+								<li>
+									<label>To summarize:</label>
+									<ul>
+										<li>At low and medium speed (left in the diagram), the e-scooter can accelerate strongly because the torque is constant.</li>
+										<br>
+										<li>However, if you want to reach a higher speed, the e-scooter enters the field weakening zone. Here the motor speed is increased further, but the acceleration decreases as the torque decreases. This enables higher top speeds on flat stretches, but with less power to tackle inclines, for example.</li>
+									</ul>
+								</li>
+							</ol>							
+						</div>
+
+						<!-- Field Weakening Calculator -->
+						<blockquote style="color: red; font-weight: bold; font-size: larger;">The Field Weakening Calculator is still in the test phase and more detailed instructions will follow!</blockquote>
 
 						<section>
 							<h3 class="major">Field Weakening Calculator</h3>
