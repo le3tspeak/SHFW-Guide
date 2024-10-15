@@ -399,3 +399,13 @@
 					});
 
 })(jQuery);
+
+// Funktion, die das Kontextmenü deaktiviert
+function disableRightClick(event) {
+    event.preventDefault();    
+}
+
+// Hinzufügen des Ereignis-Listeners, sobald das Dokument geladen ist
+    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('contextmenu', disableRightClick);
+ });
