@@ -1702,3 +1702,18 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #292929;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d54a5;
+  border-radius: 10px;
+}
