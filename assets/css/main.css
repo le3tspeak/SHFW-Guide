@@ -1789,7 +1789,7 @@ input, select, textarea {
 
 	    .app-container .app-details {
 	        flex: 0 1 100%; /* Text nimmt die volle Breite ein */
-	        text-align: center;
+	        text-align: left;
 	    }
 	}
 
