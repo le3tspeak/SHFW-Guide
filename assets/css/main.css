@@ -1711,6 +1711,34 @@ input, select, textarea {
         display: none; /* Ergebnisse zunächst verstecken */
     }
 
+
+/* Error Page */	
+
+	.error-title {
+		width: auto;
+		padding-left: 0rem;
+		font-weight: 600;
+		display: block;
+		justify-content: center;
+	}
+	
+	.error-description {
+		width: auto;
+		padding-left: 1rem;
+		font-weight: 400;
+		display: block;
+		justify-content: center;
+	}
+	
+	.error-details {
+		width: auto;
+		padding-left: 1rem;
+		font-weight: 400;
+		display: block;
+		justify-content: center;
+		margin-top: 0.5rem; /* Optional for spacing */
+	}
+
 /* Custom Scrollbar */
 
 ::-webkit-scrollbar {
