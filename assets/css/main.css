@@ -1737,6 +1737,7 @@ input, select, textarea {
 		display: block;
 		justify-content: center;
 		margin-top: 0.5rem; /* Optional for spacing */
+		color:rgba(255, 255, 255, 0.7)
 	}
 
 /* Custom Scrollbar */
