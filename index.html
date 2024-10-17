@@ -750,36 +750,36 @@
 
 						<section>
 							<h3 class="major">Feldschwächungs-Rechner</h3>
-							<form id="fwk-form" onsubmit="return false;">
+							<form id="fwk-form_de" onsubmit="return false;">
 								<div class="fields">
 									<div class="field half">
-										<label for="dpc-value">DPC Value in A</label>
-										<input type="text" name="dpc-value" id="dpc-value" placeholder="25 A" required />
+										<label for="dpc-value_de">DPC Value in A</label>
+										<input type="text" name="dpc-value_de" id="dpc-value_de" placeholder="25 A" required />
 									</div>
 									<!-- Iq (Torque component) -->
 									<div class="field half">										        
-        								<label for="torqueAmps">Torque amps (I<sub>q</sub>) in A:</label>
-        								<input type="text" id="torqueAmps" placeholder="65 A" required>
+        								<label for="torqueAmps_de">Torque amps (I<sub>q</sub>) in A:</label>
+        								<input type="text" id="torqueAmps_de" placeholder="65 A" required>
 									</div>
 									<div class="field half">
-										<label for="speed-value">Maximale Geschwindigkeit ohne FWK</label>
-										<input type="text" name="speed-value" id="speed-value" placeholder="28 km/h" required />
+										<label for="speed-value_de">Maximale Geschwindigkeit ohne FWK</label>
+										<input type="text" name="speed-value_de" id="speed-value_de" placeholder="28 km/h" required />
 									</div>
 									<div class="field half">
 										<label for="expected-speed-value">Erwartete maximale Geschwindigkeit</label>
-										<input type="text" name="expected-speed-value" id="expected-speed-value" placeholder="41 km/h" required />
+										<input type="text" name="expected-speed-value_de" id="expected-speed-value_de" placeholder="41 km/h" required />
 									</div>
 									<div class="field half">
-										<label for="initialfieldcurrent-value">Initial Field Current</label>
-										<input type="text" name="initialfieldcurrent-value" id="initialfieldcurrent-value" placeholder="0 A" required />
+										<label for="initialfieldcurrent-value_de">Initial Field Current</label>
+										<input type="text" name="initialfieldcurrent-value_de" id="initialfieldcurrent-value_de" placeholder="0 A" required />
 									</div>
 								</div>
 								<ul class="actions">
-									<li><input type="button" value="Calculate" onclick="calculateFWK()" /></li>
+									<li><input type="button" value="Calculate" onclick="calculateFWK_de()" /></li>
 									<li><input type="reset" value="Reset" onclick="resetResults()" /></li>
 								</ul>
 							</form>
-							<div class="results" id="results-section">
+							<div class="results" id="results-section_de">
 								<div  style="display: inline-block">							
 									<div style="text-align: center;">
 										<label style="width: auto; padding-left: 1rem; color:crimson;"><u>Warnung und Haftungsausschluss</u>  <br> </label>
@@ -790,14 +790,14 @@
 								</div>
 								<div>
 									<h3 class="major">Berechnete Feldschwächungseinstellungen:</h3>
-									<label id="result-startspeed">Start Speed: -</label>
-									<label id="result-initialfieldcurrent">Initial Field Current: -</label>
-									<label id="result-varablefieldcurrent">Variable Field Current: -</label>
-									<label id="result-Iq">Maximum Torque Current (I<sub>q</sub>): -</label>
-									<label id="result-Id">Maximum Field Current (I<sub>d</sub>): -</label>
-									<label id="result-It">Total Peak Current Draw (I<sub>total</sub>): -</label>									
+									<label id="result-startspeed_de">Start Speed: -</label>
+									<label id="result-initialfieldcurrent_de">Initial Field Current: -</label>
+									<label id="result-varablefieldcurrent_de">Variable Field Current: -</label>
+									<label id="result-Iq_de">Maximum Torque Current (I<sub>q</sub>): -</label>
+									<label id="result-Id_de">Maximum Field Current (I<sub>d</sub>): -</label>
+									<label id="result-It_de">Total Peak Current Draw (I<sub>total</sub>): -</label>									
 								</div>
-								<div class="results-warning" id="warning-section">
+								<div class="results-warning" id="warning-section_de">
 									<label style="width: auto; color:crimson;">Warnung: Der maximale Feldstrom überschreitet die standardmäßige Phasengrenze von 30 A.</label>
 								</div>	
 							</div>
