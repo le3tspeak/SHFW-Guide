@@ -376,6 +376,88 @@
 
 					<label style="width: auto; padding-left: 1rem; justify-content: center;">the guide will be published shortly - check it out again later</label>
 					</div>
+					</article>
+
+					<!-- ST-Link -->
+					<article id="stlink">
+
+						<!-- Introduction -->
+						<div>
+							<h3 class="major">Introduction</h3>
+							<p>ScooterHacking ReFlasher is a Windows software that allows you to restore or downgrade your Xiaomi/Ninebot ESC/BLE via SWD using an ST-Link programmer.</p>
+						</div>					
+
+						<!-- Requirements -->
+						<div>
+							<h3 class="major">Requirements</h3>
+							<ul>
+								<li>Windows computer</li>
+								<li>ST-Link programmer</li>
+								<li>ReFlasher software</li>
+								<li>USB cable</li>
+								<li>Target device (e.g., Xiaomi/Ninebot scooter)</li>
+							</ul>
+						</div>
+
+						<!-- Supported Models -->
+						<div>
+							<h3 class="major">Supported Models</h3>
+							<ul>
+								<li>Ninebot EsX - DRV/BLE</li>
+								<li>Ninebot E - DRV/BLE</li>
+								<li>Ninebot F20 / F30 / F40 - DRV/BLE</li>
+								<li>Ninebot D18 / D28 / D38 - DRV</li>
+								<li>Ninebot MAX G30 - DRV/BLE</li>
+								<li>Ninebot MAX G2 - DRV</li>
+							</ul>
+						</div>	
+
+						<!-- Instructions -->
+						<div>
+							<h3 class="major">Instructions</h3>
+							<ol>
+								<li>Download the latest version of the ReFlasher software from the <a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t" target="_blank">ScooterHacking Cloud</a>.</li>
+								<li>Extract the downloaded ZIP file to a folder on your computer.</li>
+								<li>Open the ReFlasher software on your computer.</li>
+							</ol>							
+						</div>
+
+						<!-- How to -->
+						<div>
+							<h3 class="major">How to Use ReFlasher</h3>
+							<ol>
+								<li>Open ReFlasher and connect the device you want to flash to the ST-Link. You can find the pinouts for different boards under the “Diagrams” menu at the top of the ReFlasher app. Soldering is suggested, but if you are careful, you can hold the jumper wires on the debug pads.</li><br>
+								<li>After connecting the target board to the ST-Link, plug the ST-Link into your computer and choose your scooter model, either BLE or DRV, then enter any necessary details. Information like the serial number, mileage, or scooter name can be set freely and doesn't need to match your previous vehicle settings.</li><br>
+								<li>Refer to the “AT32 / GD32?” section below for additional information.</li><br>
+								<li>Press “Launch recovery” and allow ReFlasher to complete the process. If an error occurs, you can activate the console in the Settings menu for more detailed feedback.</li><br>
+								<li>Ensure ReFlasher shows “All done.” Reassemble your board in the scooter enough to confirm the recovery was successful.</li><br>
+								<li>After the process is complete, disconnect the ST-Link and restart your scooter.</li>
+							</ol>
+						</div>
+
+						<!-- AT32 / GD32 -->
+						<div>
+							<h3 class="major">AT32 / GD32</h3>
+							<p>When using ReFlasher, you may encounter the question of whether your scooter uses an AT32 or GD32 chip. The answer depends on the model and firmware version of your scooter. Here are some general guidelines to help you determine which chip your scooter uses:</p>
+							<ul>
+								<li>AT32: Older models, such as the Ninebot MAX G30, typically use the AT32 chip.</li>
+								<li>GD32: Newer models, such as the Ninebot MAX G30LP, often use the GD32 chip.</li>
+							</ul>
+							<p>If you are unsure which chip your scooter has, you can check the firmware version or consult the manufacturer's documentation for more information.</p>						
+						</div>
+
+						<!-- Note -->
+						<div>
+							<h3 class="major">Note</h3>
+							<p>Before using ReFlasher, please ensure that you have read and understood the following requirements:</p>							
+							<p>The WinUSB driver must be installed for your ST-Link to work with this software as it uses OpenOCD. Download the Zadig utility from the official link, then in "Options", select "List all devices", and install WinUSB. You can download Zadig from <a href="https://zadig.akeo.ie/" target="_blank">here</a>.</p>
+							<p>NET Core v3.1 must be installed for ReFlasher to run. You can get the x64 installer from <a href="https://dotnet.microsoft.com/download/dotnet/3.1" target="_blank">here</a> or from Microsoft.</p>
+						</div>	
+
+						<!-- Disclaimer -->
+						<div>
+							<label style="width: auto; padding-left: 1rem;">Disclaimer: The information provided on this website is for educational purposes only. We do not take any responsibility for any damage caused by the use of the information provided.</label>
+						</div>
 
 					</article>
 
