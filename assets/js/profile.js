@@ -1,5 +1,4 @@
 let currentProfile = 'default'; // Initiales Profil
-let currentMode = 'eco'; // Initialer Modus
 
 // Show profile by change event on profile page
 function showProfile(profile) {

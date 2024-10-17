@@ -34,34 +34,79 @@
 					</div>
 					<div class="content">
 						<div class="inner">
-							<h1>SHFW Guide</h1>
-							<p>A guide to the Ninebot MAX G2, G30 and Field Weakening</p>
+							<div>
+								<h1>SHFW Guide</h1>
+								<div id="EN-Header" style="display: block">
+
+									<p>A guide to the Ninebot MAX G2, G30 and Field Weakening</p>
+								</div>
+								<div id="DE-Header" style="display: none">									
+									<p>Eine Anleitung zum Ninebot MAX G2, G30 und Field Weakening</p>
+								</div>
+							</div>
+
 						</div>
 					</div>
 					<!-- Guides Navi -->
-					<nav>							
-						<label><i class="fa-solid fa-book-open"></i> Guides</label>	
-						<ul>								
-							<li><a href="#stlink">ST-Link</a></li>
-							<li><a href="#fwk">FIELD WEAKENING</a></li>
-							<li><a href="#apps">Apps</a></li>	
-						</ul>
+					<nav>
+						<div id="EN-Guides" style="display: block">						
+							<label><i class="fa-solid fa-book-open"></i> Guides</label>	
+							<ul>								
+								<li><a href="#stlink">ST-Link</a></li>
+								<li><a href="#fwk">FIELD WEAKENING</a></li>
+								<li><a href="#apps">Apps</a></li>	
+							</ul>
+						</div>
+						<div id="DE-Guides" style="display: none">						
+							<label><i class="fa-solid fa-book-open"></i> Anleitungen</label>	
+						</div>
 					</nav>
 					<!-- Models Navi-->
-					<nav>	
-						<label><i class="fa-solid fa-bars"></i> Models</label>				
-						<ul>
-							<li><a href="#g2">MAX G2</a></li>
-							<li><a href="#g30">MAX G30</a></li>
-						</ul>							
+					<nav>
+						<!-- Models EN -->
+						<div id="EN-Models" style="display: block">
+							<label><i class="fa-solid fa-bars"></i> Models</label>				
+							<ul>
+								<li><a href="#g2">MAX G2</a></li>
+								<li><a href="#g30">MAX G30</a></li>
+							</ul>
+						</div>
+						<!-- Models DE -->
+						<div id="DE-Models" style="display: none">
+							<label><i class="fa-solid fa-bars"></i> Modele</label>
+						</div>							
 					</nav>
 					<!-- FAQ Navi-->
-					<nav>	
-						<label><i class="fa-regular fa-circle-question"></i> FAQ</label>				
-						<ul>
-							<li><a href="#error-codes">Error Codes</a></li>							
-						</ul>							
+					<nav>
+						<!-- FAQ EN -->
+						<div id="EN-FAQ" style="display: block">
+							<label><i class="fa-regular fa-circle-question"></i> FAQ</label>				
+							<ul>
+								<li><a href="#error-codes">Error Codes</a></li>							
+							</ul>
+						</div>
+						<!-- FAQ DE -->
+						<div id="DE-FAQ" style="display: none">
+							<label><i class="fa-regular fa-circle-question"></i> FAQ</label>				
+						</div>							
 					</nav>
+					<!-- Language Navi-->
+					<nav>
+						<div id="EN-Language-Select" style="display: block">
+							<label><i class="fa-solid fa-language"></i> Language</label>	
+						</div>
+						<div id="DE-Language-Select" style="display: none">
+							<label><i class="fa-solid fa-language"></i> Sprache</label>	
+						</div>
+						<!-- Language Selection whit a Dropdown -->	
+						<dropdown>
+							<select name="language" id="language" onchange="switchLanguage(this.value)">
+								<option value="EN">English</option>
+								<option value="DE">Deutsch</option>
+							</select>
+						</dropdown>
+					</nav>
+
 				</header>
 
 				<!-- Main -->
@@ -974,11 +1019,16 @@
 
 				<!-- Footer -->
 				<footer id="footer">
-
-						<p class="copyright">SHFW Guide &copy; Le3tspeak</p>
-						<p class="copyright"> <a href="https://scooterhacking.org" target="_blank">SHFW & SHU &copy; ScooterHacking.org</a></p>
-						<br>
+					<p class="copyright">SHFW Guide &copy; Le3tspeak</p>
+					<p class="copyright"> <a href="https://scooterhacking.org" target="_blank">SHFW & SHU &copy; ScooterHacking.org</a></p>
+					<br>
+					<div id="EN-Footer" style="display: block">
 						<p class="copyright"> Disclaimer: The information provided on this website is for educational purposes only. <br>We do not take any responsibility for any damage caused by the use of the information provided.</p>
+					</div>
+					<div id="DE-Footer" style="display: none">
+						<p class="copyright">Haftungsausschluss: Die auf dieser Website bereitgestellten Informationen dienen ausschließlich zu Bildungszwecken.<br> Wir übernehmen keine Verantwortung für Schäden, die durch die Nutzung der bereitgestellten Informationen entstehen.</p>
+					</div>
+					
 				</footer>
 
 			</div>
@@ -994,6 +1044,7 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/calculateFWK.js"></script>
+			<script src="assets/js/language.js"></script>
 
 	</body>
 </html>
