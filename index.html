@@ -60,6 +60,7 @@
 						<div id="DE-Guides" style="display: none">						
 							<label><i class="fa-solid fa-book-open"></i> Anleitungen</label>	
 							<ul>
+								<li><a href="#fwk_de">FELDSCHWÄCHUNG</a></li>
 								<li><a href="#apps_de">Apps</a></li>
 							</ul>
 						</div>
@@ -613,6 +614,108 @@
 								</div>
 								<div class="results-warning" id="warning-section">
 									<label style="width: auto; color:crimson;">Warning: Maximum Field Current exceeds the default 30A phase limit.</label>
+								</div>	
+							</div>
+						</section>
+
+					</article>
+					<article id="fwk_de">
+						<h2 class="major">Feldschwächung</h2>	
+						<span class="image fit"><img src="images/fwk/field-weakening.png" alt="" /></span>
+						<div>
+							<h3 class="major">Was bedeutet Feldschwächung?</h3>
+							<label style="font-weight: 400;">Die Abbildung zeigt die Beziehung zwischen der Motordrehzahl und den Werten für Drehmoment und Leistung in einem Elektromotor, wie er in einem E-Scooter verwendet wird. Lassen Sie uns das Bild anhand Ihrer ursprünglichen Frage zur Feldschwächung erklären.</label>
+							<br>
+							<ol>
+								<li>
+									<label>Konstanter Drehmomentbereich:</label>
+									<ul>
+										<li>In diesem Bereich läuft der Motor mit einem konstanten Drehmoment (blaue Linie), das unabhängig von der Drehzahl gleich bleibt.</li>
+										<li>Die grüne Linie zeigt die Leistung, die mit zunehmender Motordrehzahl linear ansteigt. Das bedeutet, dass der Motor bei niedrigen Drehzahlen die maximale Leistung liefert. Das ist der Bereich, in dem Ihr E-Scooter stark beschleunigen kann, weil das Drehmoment hoch bleibt.</li>
+										<li>Die Drehzahl des Motors steigt in diesem Bereich, solange die Spannung des Motors die volle Magnetkraft erzeugt.</li>
+									</ul>									
+								</li>
+								<li>
+									<label>Konstante Leistungsregion:</label>
+									<ul>
+										<li>Sobald die Motordrehzahl das natürliche Maximum erreicht (in diesem Fall aufgrund der Spannungsbegrenzung), befindet sich der Motor im Bereich konstanter Leistung.</li>
+										<li>Hier bleibt die Leistung konstant (grüne Linie), aber das Drehmoment beginnt zu sinken (blaue Linie).</li>
+										<li>In diesem Bereich kann der E-Scooter nicht mehr so schnell beschleunigen, da das verfügbare Drehmoment abnimmt. Die Leistung bleibt jedoch hoch, was Ihnen hilft, die Geschwindigkeit zu halten.</li>
+									</ul>									
+								</li>
+								<li>
+									<label>Feldschwächungszone:</label>
+									<ul>
+										<li>Sobald der Motor diesen Bereich erreicht, wird das Magnetfeld aktiv geschwächt. Das bedeutet, dass der Motor über seine normale Drehzahlgrenze hinaus betrieben wird.</li>
+										<li>In diesem Bereich fällt das Drehmoment stark ab (blaue Linie). Der E-Scooter hat also weniger Kraft zum Beschleunigen oder für Steigungen.</li>
+										<li>Die Leistung (grüne Linie) bleibt zunächst konstant, nimmt dann aber mit zunehmender Geschwindigkeit ebenfalls ab.</li>
+									</ul>
+								</li>
+								<li>
+									<label>Zusammenfassend kann gesagt werden:</label>
+									<ul>
+										<li>Bei niedriger und mittlerer Geschwindigkeit (links im Diagramm) kann der E-Scooter stark beschleunigen, da das Drehmoment konstant ist.</li>
+										<br>
+										<li>Wenn Sie jedoch eine höhere Geschwindigkeit erreichen wollen, gelangt der E-Scooter in die Feldschwächungszone. Hier wird die Motordrehzahl weiter erhöht, aber die Beschleunigung nimmt ab, da das Drehmoment sinkt. Dies ermöglicht höhere Spitzengeschwindigkeiten auf flachen Strecken, aber weniger Leistung, um zum Beispiel Steigungen zu bewältigen.</li>
+									</ul>
+								</li>
+							</ol>							
+						</div>
+
+						<!-- Field Weakening Calculator -->
+						<blockquote style="color: crimson; font-weight: bold; font-size: larger;">Die hier berechneten Werte sind theoretische Schätzungen auf der Grundlage von Eingabeparametern. Die tatsächlichen Ergebnisse können aufgrund von Systemeffizienz, Umweltfaktoren und Komponententoleranzen abweichen. Verwenden Sie diese Werte für Planungszwecke und beziehen Sie sich für praktische Anwendungen auf die Hardware-Spezifikationen.</blockquote>
+
+						<section>
+							<h3 class="major">Feldschwächungs-Rechner</h3>
+							<form id="fwk-form" onsubmit="return false;">
+								<div class="fields">
+									<div class="field half">
+										<label for="dpc-value">DPC Value in A</label>
+										<input type="text" name="dpc-value" id="dpc-value" placeholder="25 A" required />
+									</div>
+									<!-- Iq (Torque component) -->
+									<div class="field half">										        
+        								<label for="torqueAmps">Torque amps (I<sub>q</sub>) in A:</label>
+        								<input type="text" id="torqueAmps" placeholder="65 A" required>
+									</div>
+									<div class="field half">
+										<label for="speed-value">Maximale Geschwindigkeit ohne FWK</label>
+										<input type="text" name="speed-value" id="speed-value" placeholder="28 km/h" required />
+									</div>
+									<div class="field half">
+										<label for="expected-speed-value">Erwartete maximale Geschwindigkeit</label>
+										<input type="text" name="expected-speed-value" id="expected-speed-value" placeholder="41 km/h" required />
+									</div>
+									<div class="field half">
+										<label for="initialfieldcurrent-value">Initial Field Current</label>
+										<input type="text" name="initialfieldcurrent-value" id="initialfieldcurrent-value" placeholder="0 A" required />
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="button" value="Calculate" onclick="calculateFWK()" /></li>
+									<li><input type="reset" value="Reset" onclick="resetResults()" /></li>
+								</ul>
+							</form>
+							<div class="results" id="results-section">
+								<div  style="display: inline-block">							
+									<div style="text-align: center;">
+										<label style="width: auto; padding-left: 1rem; color:crimson;"><u>Warnung und Haftungsausschluss</u>  <br> </label>
+									</div>
+									<label style="width: auto; padding-left: 1rem; color:crimson;">DIE FELDSCHWÄCHUNG ÜBERSTEIGT DIE KONSTRUKTION UND DEN BESTIMMUNGSGEMÄSSEN GEBRAUCH DES SCOOTERS. WIR ÜBERNEHMEN KEINE VERANTWORTUNG FÜR EVENTUELLE SCHÄDEN AN IHRER HARDWARE.</label>
+									<label	style="width: auto; padding-left: 1rem; color:crimson;">Seien Sie bitte vorsichtig. Überwachen Sie Ihre Hardware genau und erhöhen Sie die Stromstärke allmählich.</label>
+									<br>
+								</div>
+								<div>
+									<h3 class="major">Berechnete Feldschwächungseinstellungen:</h3>
+									<label id="result-startspeed">Start Speed: -</label>
+									<label id="result-initialfieldcurrent">Initial Field Current: -</label>
+									<label id="result-varablefieldcurrent">Variable Field Current: -</label>
+									<label id="result-Iq">Maximum Torque Current (I<sub>q</sub>): -</label>
+									<label id="result-Id">Maximum Field Current (I<sub>d</sub>): -</label>
+									<label id="result-It">Total Peak Current Draw (I<sub>total</sub>): -</label>									
+								</div>
+								<div class="results-warning" id="warning-section">
+									<label style="width: auto; color:crimson;">Warnung: Der maximale Feldstrom überschreitet die standardmäßige Phasengrenze von 30 A.</label>
 								</div>	
 							</div>
 						</section>
