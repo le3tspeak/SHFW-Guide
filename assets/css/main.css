@@ -1711,6 +1711,11 @@ input, select, textarea {
         display: none; /* Ergebnisse zunächst verstecken */
     }
 
+	.results-warning {
+        margin-top: 20px;
+        display: none; /* Ergebnisse zunächst verstecken */
+    }
+
 
 /* Error Page */	
 

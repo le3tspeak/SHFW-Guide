@@ -509,27 +509,32 @@
 						</div>
 
 						<!-- Field Weakening Calculator -->
-						<blockquote style="color: red; font-weight: bold; font-size: larger;">The Field Weakening Calculator is still in the test phase and more detailed instructions will follow!</blockquote>
+						<blockquote style="color: crimson; font-weight: bold; font-size: larger;">The values calculated here are theoretical estimates based on input parameters. Actual results may differ due to system efficiency, environmental factors, and component tolerances. Use these values for planning purposes and refer to hardware specifications for practical applications.</blockquote>
 
 						<section>
 							<h3 class="major">Field Weakening Calculator</h3>
 							<form id="fwk-form" onsubmit="return false;">
 								<div class="fields">
 									<div class="field half">
-										<label for="dpc-value">DPC Value</label>
+										<label for="dpc-value">DPC Value in A</label>
 										<input type="text" name="dpc-value" id="dpc-value" placeholder="25 A" required />
+									</div>
+									<!-- Iq (Torque component) -->
+									<div class="field half">										        
+        								<label for="torqueAmps">Torque amps (I<sub>q</sub>) in A:</label>
+        								<input type="text" id="torqueAmps" placeholder="65 A" required>
 									</div>
 									<div class="field half">
 										<label for="speed-value">Max Speed without FWK</label>
 										<input type="text" name="speed-value" id="speed-value" placeholder="28 km/h" required />
 									</div>
 									<div class="field half">
-										<label for="initialfieldcurrent-value">Initial Field Current</label>
-										<input type="text" name="initialfieldcurrent-value" id="initialfieldcurrent-value" placeholder="0 A" required />
-									</div>
-									<div class="field half">
 										<label for="expected-speed-value">Maximum Speed Expected</label>
 										<input type="text" name="expected-speed-value" id="expected-speed-value" placeholder="41 km/h" required />
+									</div>
+									<div class="field half">
+										<label for="initialfieldcurrent-value">Initial Field Current</label>
+										<input type="text" name="initialfieldcurrent-value" id="initialfieldcurrent-value" placeholder="0 A" required />
 									</div>
 								</div>
 								<ul class="actions">
@@ -551,9 +556,13 @@
 									<label id="result-startspeed">Start Speed: -</label>
 									<label id="result-initialfieldcurrent">Initial Field Current: -</label>
 									<label id="result-varablefieldcurrent">Variable Field Current: -</label>
-									<label id="result-Iq">Maximum Torque Current (Iq): 65</label>
-									<label id="result-Id">Maximum Field Current (Id): 30</label>
+									<label id="result-Iq">Maximum Torque Current (I<sub>q</sub>): -</label>
+									<label id="result-Id">Maximum Field Current (I<sub>d</sub>): -</label>
+									<label id="result-It">Total Peak Current Draw (I<sub>total</sub>): -</label>									
 								</div>
+								<div class="results-warning" id="warning-section">
+									<label style="width: auto; color:crimson;">Warning: Maximum Field Current exceeds the default 30A phase limit.</label>
+								</div>	
 							</div>
 						</section>
 

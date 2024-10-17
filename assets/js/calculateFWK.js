@@ -4,9 +4,10 @@ function calculateFWK() {
     var speedValue = parseFloat(document.getElementById('speed-value').value);
     var initialFieldCurrentValue = parseFloat(document.getElementById('initialfieldcurrent-value').value);
     var expectedSpeedValue = parseFloat(document.getElementById('expected-speed-value').value);
+    var torqueAmps = parseFloat(document.getElementById('torqueAmps').value); // Iq (Torque component)
     
     // Validierung der Eingaben
-    if (isNaN(dpcValue) || isNaN(speedValue) || isNaN(initialFieldCurrentValue) || isNaN(expectedSpeedValue)) {
+    if (isNaN(dpcValue) || isNaN(speedValue) || isNaN(initialFieldCurrentValue) || isNaN(expectedSpeedValue) || isNaN(torqueAmps)) {
         alert("Bitte alle Felder korrekt ausfüllen.");
         return;
     }
@@ -16,24 +17,43 @@ function calculateFWK() {
         return;
     }
 
+    // Warnung zurücksetzen und verstecken bei erneuter Berechnung
+    document.getElementById('warning-section').style.display = 'none';
+
     // Berechnungen:
-    var startSpeed = speedValue - 7; // Beispielhafte Startgeschwindigkeit
+    var startSpeed = speedValue - 7; 
     var speedDifference = expectedSpeedValue - startSpeed;
-    var variableFieldCurrent = (dpcValue / speedDifference) * 1000; // Beispielhafte Berechnung
+    var variableFieldCurrent = (dpcValue / speedDifference) * 1000; 
+    var totalFluxAmps = initialFieldCurrentValue + ((variableFieldCurrent * speedDifference) /1000); // Multiply variable flux per km/h above activation speed
+    var ITotal = Math.sqrt(Math.pow(torqueAmps, 2) + Math.pow(totalFluxAmps, 2)).toFixed(2);
 
     // Begrenzung der Variable Field Current auf maximal 2500 mA/km/h
     var roundedVariableFieldCurrent = Math.min(2500, Math.floor(variableFieldCurrent / 100) * 100);
-
+    // Runde auf Ganzzahlen
+    var roundedtotalFluxAmps = Math.round(totalFluxAmps);
+    // Runde auf 1 Dezimalstelle
+    var roundedITotal = Math.round(ITotal * 10) / 10;
+29
     // Ergebnisse in die HTML-Elemente schreiben
     document.getElementById('result-startspeed').textContent = "Start Speed: " + startSpeed + " km/h";
     document.getElementById('result-initialfieldcurrent').textContent = "Initial Field Current: " + initialFieldCurrentValue + " A";
-    document.getElementById('result-varablefieldcurrent').textContent = "Variable Field Current: " + roundedVariableFieldCurrent + " mA/km/h";
+    document.getElementById('result-varablefieldcurrent').textContent = "Variable Field Current: " + roundedVariableFieldCurrent + " mA/km/h";0
+    document.getElementById('result-Iq').textContent = "Maximum Torque Current (Iq): " + torqueAmps + " A";
+    document.getElementById('result-Id').textContent = "Maximum Field Current (Id): " + roundedtotalFluxAmps + " A";3
+    document.getElementById('result-It').textContent = "Total Peak Current Draw (I): " + roundedITotal + " A";
 
     // Ergebnisse anzeigen
     document.getElementById('results-section').style.display = 'block';
+    // Warnung anzeigen wenn ITotal >= 30A
+    if (roundedtotalFluxAmps > 30) {
+        document.getElementById('warning-section').style.display = 'block';
+        document.getElementById('warning').textContent = "Warning: Maximum Field Current exceeds the default 30A phase limit.";
+    }
 }
 
 function resetResults() {
     // Ergebnisse verstecken
     document.getElementById('results-section').style.display = 'none';
+    // Warnung verstecken
+    document.getElementById('warning-section').style.display = 'none';
 }
