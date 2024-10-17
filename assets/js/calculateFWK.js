@@ -37,10 +37,10 @@ function calculateFWK() {
     // Ergebnisse in die HTML-Elemente schreiben
     document.getElementById('result-startspeed').textContent = "Start Speed: " + startSpeed + " km/h";
     document.getElementById('result-initialfieldcurrent').textContent = "Initial Field Current: " + initialFieldCurrentValue + " A";
-    document.getElementById('result-varablefieldcurrent').textContent = "Variable Field Current: " + roundedVariableFieldCurrent + " mA/km/h";0
-    document.getElementById('result-Iq').textContent = "Maximum Torque Current (Iq): " + torqueAmps + " A";
-    document.getElementById('result-Id').textContent = "Maximum Field Current (Id): " + roundedtotalFluxAmps + " A";3
-    document.getElementById('result-It').textContent = "Total Peak Current Draw (I): " + roundedITotal + " A";
+    document.getElementById('result-varablefieldcurrent').innerHTML = "Variable Field Current: " + roundedVariableFieldCurrent + " mA / km/h";
+    document.getElementById('result-Iq').innerHTML = "Maximum Torque Current (I<sub>q</sub>): " + torqueAmps + " A";
+    document.getElementById('result-Id').innerHTML = "Maximum Field Current (I<sub>d</sub>): " + roundedtotalFluxAmps + " A";
+    document.getElementById('result-It').innerHTML = "Total Peak Current Draw (I<sub>T</sub>): " + roundedITotal + " A";
 
     // Ergebnisse anzeigen
     document.getElementById('results-section').style.display = 'block';
