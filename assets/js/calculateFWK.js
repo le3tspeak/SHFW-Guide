@@ -110,3 +110,10 @@ function resetResults() {
     // Warnung verstecken
     document.getElementById('warning-section').style.display = 'none';
 }
+
+function resetResults_de() {
+    // Ergebnisse verstecken
+    document.getElementById('results-section_de').style.display = 'none';
+    // Warnung verstecken
+    document.getElementById('warning-section_de').style.display = 'none';
+}
