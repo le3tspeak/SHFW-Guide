@@ -61,6 +61,7 @@
 						<div id="DE-Guides" style="display: none">						
 							<label><i class="fa-solid fa-book-open"></i> Anleitungen</label>	
 							<ul>
+								<li><a href="#stlink_de">ST-Link</a></li>
 								<li><a href="#fwk_de">FELDSCHWÄCHUNG</a></li>
 								<li><a href="#apps_de">Apps</a></li>
 							</ul>
@@ -513,6 +514,87 @@
 						<!-- Disclaimer -->
 						<div>
 							<label style="width: auto; padding-left: 1rem;">Disclaimer: The information provided on this website is for educational purposes only. We do not take any responsibility for any damage caused by the use of the information provided.</label>
+						</div>
+
+					</article>
+					<article id="stlink_de">
+
+						<!-- Introduction -->
+						<div>
+							<h3 class="major">Einführung</h3>
+							<p>ScooterHacking ReFlasher ist eine Windows-Software, mit der Sie Ihren Xiaomi/Ninebot ESC/BLE über SWD mit einem ST-Link-Programmierer wiederherstellen oder downgraden können.</p>
+						</div>					
+
+						<!-- Requirements -->
+						<div>
+							<h3 class="major">Voraussetzungen</h3>
+							<ul>
+								<li>Windows Rechner</li>
+								<li>ST-Link Programmierer</li>
+								<li>ReFlasher Software</li>
+								<li>USB-Kabel</li>
+								<li>Zielgerät (z. B. Xiaomi/Ninebot-Roller)</li>
+							</ul>
+						</div>
+
+						<!-- Supported Models -->
+						<div>
+							<h3 class="major">Unterstützte Modelle</h3>
+							<ul>
+								<li>Ninebot EsX - DRV/BLE</li>
+								<li>Ninebot E - DRV/BLE</li>
+								<li>Ninebot F20 / F30 / F40 - DRV/BLE</li>
+								<li>Ninebot D18 / D28 / D38 - DRV</li>
+								<li>Ninebot MAX G30 - DRV/BLE</li>
+								<li>Ninebot MAX G2 - DRV</li>
+							</ul>
+						</div>	
+
+						<!-- Instructions -->
+						<div>
+							<h3 class="major">Hinweise</h3>
+							<ol>
+								<li>Laden Sie die neueste Version der ReFlasher-Software von der <a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t" target="_blank">ScooterHacking Cloud</a>.</li>
+								<li>Entpacken Sie die heruntergeladene ZIP-Datei in einen Ordner auf Ihrem Computer.</li>
+								<li>Öffnen Sie die ReFlasher-Software auf Ihrem Computer.</li>
+							</ol>							
+						</div>
+
+						<!-- How to -->
+						<div>
+							<h3 class="major">Wie man ReFlasher verwendet</h3>
+							<ol>
+								<li>Öffnen Sie ReFlasher und verbinden Sie das Gerät, das Sie flashen möchten, mit dem ST-Link. Sie können die Pinbelegung für verschiedene Boards unter dem Menü „Diagramme“ oben in der ReFlasher-App finden. Es wird empfohlen, zu löten, aber wenn Sie vorsichtig sind, können Sie die Überbrückungsdrähte an die Debug-Pads halten.</li><br>
+								<li>Nachdem Sie die Zielplatine mit dem ST-Link verbunden haben, schließen Sie den ST-Link an Ihren Computer an und wählen Sie Ihr Rollermodell, entweder BLE oder DRV, und geben Sie dann alle erforderlichen Details ein. Informationen wie die Seriennummer, der Kilometerstand oder der Name des Rollers können frei eingestellt werden und müssen nicht mit Ihren vorherigen Fahrzeugeinstellungen übereinstimmen.</li><br>
+								<li>Weitere Informationen finden Sie im Abschnitt „AT32 / GD32“ weiter unten.</li><br>
+								<li>Drücken Sie auf „ Launch recovery“ und lassen Sie ReFlasher den Vorgang abschließen. Wenn ein Fehler auftritt, können Sie die Konsole im Menü „Einstellungen“ aktivieren, um eine detailliertere Rückmeldung zu erhalten.</li><br>
+								<li>Stellen Sie sicher, dass der ReFlasher „All done“ anzeigt. Bauen Sie Ihr Board wieder in den Scooter ein, um zu bestätigen, dass die Wiederherstellung erfolgreich war.</li><br>
+								<li>Nachdem der Vorgang abgeschlossen ist, starten Sie Ihr Elektromobil neu.</li>
+							</ol>
+						</div>
+
+						<!-- AT32 / GD32 -->
+						<div>
+							<h3 class="major">AT32 / GD32</h3>
+							<p>Bei der Verwendung von ReFlasher kann die Frage auftauchen, ob Ihr Scooter einen AT32- oder GD32-Chip verwendet. Die Antwort hängt von dem Modell und der Firmware-Version Ihres Rollers ab. Hier sind einige allgemeine Richtlinien, die Ihnen helfen zu bestimmen, welchen Chip Ihr Roller verwendet:</p>
+							<ul>
+								<li>AT32: Ältere Modelle, wie z. B. der Ninebot MAX G30, verwenden in der Regel den AT32-Chip.</li>
+								<li>GD32: Neuere Modelle, wie der Ninebot MAX G30LP, verwenden häufig den GD32-Chip.</li>
+							</ul>
+							<p>Wenn Sie sich nicht sicher sind, welchen Chip Ihr Scooter hat, können Sie die Firmware-Version überprüfen oder die Dokumentation des Herstellers für weitere Informationen konsultieren.</p>						
+						</div>
+
+						<!-- Note -->
+						<div>
+							<h3 class="major">Anmerkung</h3>
+							<p>Bevor Sie ReFlasher verwenden, stellen Sie bitte sicher, dass Sie die folgenden Anforderungen gelesen und verstanden haben:</p>							
+							<p>Der WinUSB-Treiber muss installiert sein, damit Ihr ST-Link mit dieser Software funktioniert, da er OpenOCD verwendet. Sie müssen das Zadig-Dienstprogramm über den offiziellen Link herunterladen, dann unter „Optionen“ „Alle Geräte auflisten“ auswählen und WinUSB installieren. Sie können das Programm Zadig von <a href=„https://zadig.akeo.ie/“ target=„_blank“>hier</a> herunterladen.</p>
+							<p>NET Core v3.1 must be installiert sein, damit ReFlasher läuft. Sie können den x64-Installer von <a href=„https://dotnet.microsoft.com/download/dotnet/3.1“ target=„_blank“>hier</a> oder von Microsoft erhalten.</p>
+						</div>	
+
+						<!-- Disclaimer -->
+						<div>
+							<label style="width: auto; padding-left: 1rem;">Haftungsausschluss: Die auf dieser Website bereitgestellten Informationen dienen ausschließlich zu Bildungszwecken. Wir übernehmen keine Verantwortung für Schäden, die durch die Nutzung der bereitgestellten Informationen entstehen.</label>
 						</div>
 
 					</article>
