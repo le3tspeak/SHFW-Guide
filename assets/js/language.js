@@ -34,6 +34,8 @@ function switchLanguage(language) {
     document.getElementById('DE-ST-Link-AT32-GD32').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-ST-Link-Note').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-ST-Link-Note').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-ST-Link-Video').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-ST-Link-Video').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-ST-Link-Disclaimer').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-ST-Link-Disclaimer').style.display = (language === 'DE') ? 'block' : 'none';
 
