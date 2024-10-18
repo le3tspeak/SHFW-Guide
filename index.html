@@ -91,7 +91,8 @@
 						<div id="EN-FAQ" style="display: block">
 							<label><i class="fa-regular fa-circle-question"></i> FAQ</label>				
 							<ul>
-								<li><a href="#error-codes">Error Codes</a></li>							
+								<li><a href="#error-codes">Error Codes</a></li>	
+								<li><a href="#motor-models">Motor Models</a></li>					
 							</ul>
 						</div>
 						<!-- FAQ DE -->
@@ -99,8 +100,9 @@
 							<label><i class="fa-regular fa-circle-question"></i> FAQ</label>
 							<ul>
 								<li><a href="#error-codes">Fehlercodes</a></li>
+								<li><a href="#motor-models">Motor Modelle</a></li>
 							</ul>			
-						</div>							
+						</div>	
 					</nav>
 					<!-- Language Navi-->
 					<nav>
@@ -1210,13 +1212,13 @@
 						<!-- Error Codes List Segway Max -->
 						 <div>
 							<div id="EN-ERROR-DESC" style="display: block">
-								<h3 class="major">Error Codes List Segway Max</h3>		
+								<h2 class="major">Error Codes List Segway Max</h2>		
 								<br>					
 								<label class="error-title">For each error code we will list:</label>
 								<label class="error-description">- What the Error code means<br>- A summary of the issue and what to try to fix the error</label>
 							</div>
 							<div id="DE-ERROR-DESC" style="display: none">
-								<h3 class="major">Fehlercodes Liste Segway Max</h3>		
+								<h2 class="major">Fehlercodes Liste Segway Max</h2>		
 								<br>					
 								<label class="error-title">Für jeden Fehlercode werden wir auflisten:</label>
 								<label class="error-description">- Was der Fehlercode bedeutet<br>- Eine Zusammenfassung des Problems und was zu versuchen ist, um den Fehler zu beheben</label>
@@ -1813,7 +1815,123 @@
 							<label style="font-size: smaller; font-weight: 100;">As of October 16, 2024</label>
 						</div>
 					</article>
+
+					<!-- Motor Models -->
+					 <article id="motor-models">
+						<div>
+							<div id="EN-MOTOR-MODELS-Head" style="display: block">
+								<h2 class="major">Motor Models</h2>
+								<p>There are a few different motor models that are used in the G series scooters.<br> The motors are all brushless and have a few different power ratings.</p>
+							</div>
+							<div id="DE-MOTOR-MODELS-Head" style="display: none">
+								<h2 class="major">Motor Modele</h2>
+								<p>Es gibt ein paar verschiedene Motormodelle, die in den Scootern der G-Serie verwendet werden.<br> Die Motoren sind alle bürstenlos und haben ein paar verschiedene Leistungsstufen.</p>
+							</div>	
+						</div>						
+						<div class="table-wrapper" style="display:inline-flexbox">							
+							<table>
+								<thead>
+									<tr>
+										<th>SCOOTER</th>
+										<th>SERIAL</th>
+										<th>Gen</th>
+										<th>Kv</th>	
+										<th>RPM @36V</th>	
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>SNSC2.0/2.1</td>
+										<td>5ZXXXXXXX</td>
+										<td>1</td>
+										<td>16.62</td>
+										<td>598</td>
+									</tr>
+									<tr>
+										<td>SNSC2.2/2.3</td>
+										<td>6MXXXXXXX</td>
+										<td>1</td>
+										<td>16.62</td>
+										<td>598</td>
+									</tr>
+									<tr>
+										<td>G30</td>
+										<td>6ZXXXXXXX</td>
+										<td>1</td>
+										<td>16.62</td>
+										<td>598</td>
+									</tr>
+									<tr>
+										<td>G30</td>
+										<td>9XXXXXXXX</td>
+										<td>2</td>
+										<td>18.9</td>
+										<td>680</td>
+									</tr>
+									<tr>
+										<td>G30</td>
+										<td>ANC26350</td>
+										<td>3/4</td>
+										<td>N/A</td>
+										<td>N/A</td>
+									</tr>
+									<tr>
+										<td>G30D</td>
+										<td>PADH</td>
+										<td>3/4</td>
+										<td>N/A</td>
+										<td>N/A</td>
+									<tr>
+										<td>G30P</td>
+										<td>PCAH</td>
+										<td>3/4</td>
+										<td>N/A</td>
+										<td>N/A</td>
+									</tr>
+									<tr>
+										<td>G30E</td>
+										<td>PAAH</td>
+										<td>3/4</td>
+										<td>N/A</td>
+										<td>N/A</td>
+									</tr>
+									<tr>
+										<td>G2</td>
+										<td>UNAH</td>
+										<td></td>
+										<td>20.25</td>
+										<td>729</td>
+									</tr>
+									<tr>
+										<td>G2D</td>
+										<td>UNAH</td>
+										<td></td>
+										<td>16.8</td>
+										<td>604</td>
+									</tr>
+									<tr>
+										<td>G2D - 2024</td>
+										<td>UNBJ</td>
+										<td></td>
+										<td>15.9</td>
+										<td>572</td>
+									</tr>
+								</tbody>
+							</table>	
+						</div>	
+						<br>
+						<div id="EN-MOTOR-MODELS-Kv" style="display: block">
+							<label>What does kV mean for a motor?</label>
+							<p>The power of a motor is usually expressed in “kv” or “revolutions” or both. The kv of a motor refers to its speed per volt of current. This means that a motor with 3000 kv at 8.4 V rotates at 25200 revolutions per minute (3000 x 8.4 = 25200).</p>
+						</div>
+						<div id="DE-MOTOR-MODELS-Kv" style="display: none">
+							<label>Was bedeutet kV beim Motor?</label>
+							<p>Die Leistung eines Motors wird normalerweise in "kv" oder "Umdrehungen" oder beidem angegeben. Die kv eines Motors beziehen sich auf seine Drehzahl pro Volt Strom. Das bedeutet, dass sich ein Motor mit 3000 kv bei 8,4 V mit 25200 Umdrehungen pro Minute dreht (3000 x 8,4 = 25200).</p>
+						</div>						
+					 </article>
+
 				</div>
+				
 
 				<!-- Footer -->
 				<footer id="footer">

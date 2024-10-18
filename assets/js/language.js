@@ -132,5 +132,11 @@ function switchLanguage(language) {
     document.getElementById('DE-ERROR-Contents').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-ERROR-List').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-ERROR-List').style.display = (language === 'DE') ? 'block' : 'none';
+
+    // Motor Models
+    document.getElementById('EN-MOTOR-MODELS-Head').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-MOTOR-MODELS-Head').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-MOTOR-MODELS-Kv').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-MOTOR-MODELS-Kv').style.display = (language === 'DE') ? 'block' : 'none';
 }
     
