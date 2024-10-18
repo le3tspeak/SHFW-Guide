@@ -60,6 +60,8 @@ function switchLanguage(language) {
     // G2
     document.getElementById('EN-G2-Introduction').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-G2-Introduction').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G2-ProfileSelection').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G2-ProfileSelection').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-G2-ProfileSelection-Disclaimer').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-G2-ProfileSelection-Disclaimer').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-G2-ProfileSelection-Disclaimer-2').style.display = (language === 'EN') ? 'block' : 'none';
@@ -92,6 +94,8 @@ function switchLanguage(language) {
     // G30
     document.getElementById('EN-G30-Introduction').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-G30-Introduction').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-ProfileSelection').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-ProfileSelection').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-G30-ProfileSelection-Disclaimer').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-G30-ProfileSelection-Disclaimer').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-G30-ProfileSelection-Disclaimer-2').style.display = (language === 'EN') ? 'block' : 'none';
