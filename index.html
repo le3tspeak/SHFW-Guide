@@ -22,7 +22,6 @@
 		<meta name="apple-mobile-web-app-title" content="SHFW Guide" />
 		<link rel="manifest" href="/images/favicon/site.webmanifest" />
 	</head>
-
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -338,19 +337,45 @@
 								</li>
 							</ol>							
 						</div>
-						<!-- Field Weakening Calculator -->
-						<div id="EN-FWK-Calc-Note" style="display: block">
-							<blockquote style="color: crimson; font-weight: bold; font-size: larger;">The values calculated here are theoretical estimates based on input parameters. Actual results may differ due to system efficiency, environmental factors, and component tolerances. Use these values for planning purposes and refer to hardware specifications for practical applications.</blockquote>
-						</div>
-						<div id="DE-FWK-Calc-Note" style="display: none">
-							<blockquote style="color: crimson; font-weight: bold; font-size: larger;">Die hier berechneten Werte sind theoretische Schätzungen auf der Grundlage von Eingabeparametern. Die tatsächlichen Ergebnisse können aufgrund von Systemeffizienz, Umweltfaktoren und Komponententoleranzen abweichen. Verwenden Sie diese Werte für Planungszwecke und beziehen Sie sich für praktische Anwendungen auf die Hardware-Spezifikationen.</blockquote>
-						</div>						
+						<!-- Field Weakening Calculator -->					
 						<section>
+
+							
 							<div id="EN-FWK-Calc-Head" style="display: block">
 								<h3 class="major">Field Weakening Calculator</h3>
+								<div id="EN-FWK-Calc-Note" style="display: block">
+									<blockquote style="color: crimson; font-weight: bold; font-size: larger;">The values calculated here are theoretical estimates based on input parameters. Actual results may differ due to system efficiency, environmental factors, and component tolerances. Use these values for planning purposes and refer to hardware specifications for practical applications.</blockquote>
+								</div>
+								<details>
+									<summary style="cursor: pointer;"><span class="label label-light">How do I use the field weakening calculator?</span></summary>
+									<div>
+										<br>
+										<label class="label label-light">DPC VALUE: The value that we have entered for Throttle.</label><br>  
+										<label class="label label-light">TORQUE AMPS: A value between 55A and 65A is used here and increasing this will reduce the efficiency and improve the acceleration.</label><br>
+										<label class="label label-light">MAX SPEED WITHOUT FWK: This is where you enter the km/h reached without field weakening.</label><br>
+										<label class="label label-light">MAXIMUM SPEED EXPECTED: This is the value we are trying to achieve. With the G2 39-45km/h on the G30 40-48km/h are realistic without changes to the hardware but depending on the battery, driver weight and some more.</label><br>
+										<label class="label label-light">INITIAL FIELD CURRENT: Here we enter the value we have determined when driving where we need for the initial field weakening. For the G2 in the range of 2-5A for the G30 4-6A as a rough guide.</label><br>
+									</div>
+								</details>								  
+								<br>
 							</div>
 							<div id="DE-FWK-Calc-Head" style="display: none">								
 								<h3 class="major">Feldschwächungsrechner</h3>
+								<div id="DE-FWK-Calc-Note" style="display: none">
+									<blockquote style="color: crimson; font-weight: bold; font-size: larger;">Die hier berechneten Werte sind theoretische Schätzungen auf der Grundlage von Eingabeparametern. Die tatsächlichen Ergebnisse können aufgrund von Systemeffizienz, Umweltfaktoren und Komponententoleranzen abweichen. Verwenden Sie diese Werte für Planungszwecke und beziehen Sie sich für praktische Anwendungen auf die Hardware-Spezifikationen.</blockquote>
+								</div>	
+								<details>
+									<summary style="cursor: pointer;"><span class="label label-light">Wie verwende ich den Feldschwächungsrechner?</span></summary>
+									<div>
+										<br>
+										<label class="label label-light">DPC VALUE: Der Wert, den wir für Throttle eingegeben haben.</label><br>  
+									  	<label class="label label-light">TORQUE AMPS: Hier wird ein Wert zwischen 55A und 65A verwendet, wobei eine Erhöhung dieses Wertes den Wirkungsgrad verringert und die Beschleunigung verbessert.</label><br>
+									  	<label class="label label-light">MAX SPEED WITHOUT FWK: Hier geben Sie die ohne Feldabschwächung erreichte Geschwindigkeit ein.</label><br>
+									  	<label class="label label-light">MAXIMUM SPEED EXPECTED: Das ist der Wert, den wir zu erreichen versuchen. Mit dem G2 sind 39-45km/h auf dem G30 sind 40-48km/h realistisch, ohne Änderungen an der Hardware, aber abhängig von der Batterie, dem Fahrergewicht und einigem mehr.</label><br>
+									  	<label class="label label-light">INITIAL FIELD CURRENT: Hier geben wir den Wert ein, den wir beim Fahren ermittelt haben und den wir für die anfängliche Feldschwächung benötigen. Für den G2 im Bereich von 2-5A für den G30 4-6A als grober Richtwert.</label><br>
+									</div>
+								</details>								  
+								<br>
 							</div>							
 							<form id="fwk-form" onsubmit="return false;">
 								<div class="fields">
@@ -361,15 +386,15 @@
 									<!-- Iq (Torque component) -->
 									<div class="field half">										        
         								<label for="torqueAmps">Torque amps (I<sub>q</sub>) in A:</label>
-        								<input type="text" id="torqueAmps" placeholder="65 A" required>
+        								<input type="text" id="torqueAmps" placeholder="55 A" required>
 									</div>
 									<div class="field half">
 										<label for="speed-value">Max Speed without FWK</label>
-										<input type="text" name="speed-value" id="speed-value" placeholder="28 km/h" required />
+										<input type="text" name="speed-value" id="speed-value" placeholder="29 km/h" required />
 									</div>
 									<div class="field half">
 										<label for="expected-speed-value">Maximum Speed Expected</label>
-										<input type="text" name="expected-speed-value" id="expected-speed-value" placeholder="41 km/h" required />
+										<input type="text" name="expected-speed-value" id="expected-speed-value" placeholder="40 km/h" required />
 									</div>
 									<div class="field half">
 										<label for="initialfieldcurrent-value">Initial Field Current</label>
