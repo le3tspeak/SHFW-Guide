@@ -64,6 +64,8 @@ function switchLanguage(language) {
     document.getElementById('DE-G2-ProfileSelection-Disclaimer').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-G2-ProfileSelection-Disclaimer-2').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-G2-ProfileSelection-Disclaimer-2').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G2-Contents').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G2-Contents').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-G2-Throttle').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-G2-Throttle').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-G2-Brake').style.display = (language === 'EN') ? 'block' : 'none';
@@ -88,6 +90,40 @@ function switchLanguage(language) {
     document.getElementById('DE-G2-Disclaimer').style.display = (language === 'DE') ? 'block' : 'none';
 
     // G30
+    document.getElementById('EN-G30-Introduction').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-Introduction').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-ProfileSelection-Disclaimer').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-ProfileSelection-Disclaimer').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-ProfileSelection-Disclaimer-2').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-ProfileSelection-Disclaimer-2').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-Contents').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-Contents').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-Throttle').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-Throttle').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-Throttle-2').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-Throttle-2').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-Throttle-3').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-Throttle-3').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-Brake').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-Brake').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-Brake-2').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-Brake-2').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-Motor').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-Motor').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-FWK').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-FWK').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-CC').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-CC').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-Mode').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-Mode').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-Lights').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-Lights').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-UI').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-UI').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-GS').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-GS').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G30-Disclaimer').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G30-Disclaimer').style.display = (language === 'DE') ? 'block' : 'none';
 
     // Error Codes
     document.getElementById('EN-ERROR-DESC').style.display = (language === 'EN') ? 'block' : 'none';

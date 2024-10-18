@@ -1,18 +1,32 @@
 let currentProfile = 'default'; // Initiales Profil
 
 // Show profile by change event on profile page
-function showProfile(profile) {
+function showProfile_G2(profile) {
     currentProfile = profile; // Speichert das aktuelle Profil
-    document.getElementById('settings-default-disclaimer').style.display = (profile === 'default') ? 'block' : 'none';
-    document.getElementById('settings-tuned-disclaimer').style.display = (profile === 'tuned') ? 'block' : 'none';
-    document.getElementById('settings-default-throttle').style.display = (profile === 'default') ? 'block' : 'none';
-    document.getElementById('settings-tuned-throttle').style.display = (profile === 'tuned') ? 'block' : 'none';
-    document.getElementById('settings-default-mss').style.display = (profile === 'default') ? 'block' : 'none';
-    document.getElementById('settings-tuned-mss').style.display = (profile === 'tuned') ? 'block' : 'none';
-    document.getElementById('settings-default-fwk').style.display = (profile === 'default') ? 'block' : 'none';
-    document.getElementById('settings-tuned-fwk').style.display = (profile === 'tuned') ? 'block' : 'none';
-    document.getElementById('settings-default-cc').style.display = (profile === 'default') ? 'block' : 'none';
-    document.getElementById('settings-tuned-cc').style.display = (profile === 'tuned') ? 'block' : 'none';
+    document.getElementById('settings-default-disclaimer_G2').style.display = (profile === 'default') ? 'block' : 'none';
+    document.getElementById('settings-tuned-disclaimer_G2').style.display = (profile === 'tuned') ? 'block' : 'none';
+    document.getElementById('settings-default-throttle_G2').style.display = (profile === 'default') ? 'block' : 'none';
+    document.getElementById('settings-tuned-throttle_G2').style.display = (profile === 'tuned') ? 'block' : 'none';
+    document.getElementById('settings-default-mss_G2').style.display = (profile === 'default') ? 'block' : 'none';
+    document.getElementById('settings-tuned-mss_G2').style.display = (profile === 'tuned') ? 'block' : 'none';
+    document.getElementById('settings-default-fwk_G2').style.display = (profile === 'default') ? 'block' : 'none';
+    document.getElementById('settings-tuned-fwk_G2').style.display = (profile === 'tuned') ? 'block' : 'none';
+    document.getElementById('settings-default-cc_G2').style.display = (profile === 'default') ? 'block' : 'none';
+    document.getElementById('settings-tuned-cc_G2').style.display = (profile === 'tuned') ? 'block' : 'none';
+}
+
+function showProfile_G30(profile) {
+    currentProfile = profile; // Speichert das aktuelle Profil
+    document.getElementById('settings-default-disclaimer_G30').style.display = (profile === 'default') ? 'block' : 'none';
+    document.getElementById('settings-tuned-disclaimer_G30').style.display = (profile === 'tuned') ? 'block' : 'none';
+    document.getElementById('settings-default-throttle_G30').style.display = (profile === 'default') ? 'block' : 'none';
+    document.getElementById('settings-tuned-throttle_G30').style.display = (profile === 'tuned') ? 'block' : 'none';
+    document.getElementById('settings-default-mss_G30').style.display = (profile === 'default') ? 'block' : 'none';
+    document.getElementById('settings-tuned-mss_G30').style.display = (profile === 'tuned') ? 'block' : 'none';
+    document.getElementById('settings-default-fwk_G30').style.display = (profile === 'default') ? 'block' : 'none';
+    document.getElementById('settings-tuned-fwk_G30').style.display = (profile === 'tuned') ? 'block' : 'none';
+    document.getElementById('settings-default-cc_G30').style.display = (profile === 'default') ? 'block' : 'none';
+    document.getElementById('settings-tuned-cc_G30').style.display = (profile === 'tuned') ? 'block' : 'none';
 }
 
 // Retrieve the elements
