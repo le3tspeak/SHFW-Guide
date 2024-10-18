@@ -61,9 +61,9 @@
 						<div id="DE-Guides" style="display: none">						
 							<label><i class="fa-solid fa-book-open"></i> Anleitungen</label>	
 							<ul>
-								<li><a href="#stlink_de">ST-Link</a></li>
-								<li><a href="#fwk_de">FELDSCHWÄCHUNG</a></li>
-								<li><a href="#apps_de">Apps</a></li>
+								<li><a href="#stlink">ST-Link</a></li>
+								<li><a href="#fwk">FELDSCHWÄCHUNG</a></li>
+								<li><a href="#apps">Apps</a></li>
 							</ul>
 						</div>
 					</nav>
@@ -80,6 +80,10 @@
 						<!-- Models DE -->
 						<div id="DE-Models" style="display: none">
 							<label><i class="fa-solid fa-bars"></i> Modele</label>
+							<ul>
+								<li><a href="#g2">MAX G2</a></li>
+								<li><a href="#g30">MAX G30</a></li>
+							</ul>
 						</div>							
 					</nav>
 					<!-- FAQ Navi-->
@@ -95,7 +99,7 @@
 						<div id="DE-FAQ" style="display: none">
 							<label><i class="fa-regular fa-circle-question"></i> FAQ</label>
 							<ul>
-								<li><a href="#error-codes_de">Fehlercodes</a></li>
+								<li><a href="#error-codes">Fehlercodes</a></li>
 							</ul>			
 						</div>							
 					</nav>
@@ -120,332 +124,19 @@
 
 				<!-- Main -->
 				<div id="main">
-					<!-- Ninebot MAX G2 -->					
-					<article id="g2">
-
-						<!-- Logo  -->
-						<div style="display: flex; justify-content: center; margin-top: -2rem;">
-						<img src="images/G2/MAXG2.png" alt="" style="max-width: 100%; height: auto;"/>
-						</div>
-
-						<!-- Introduction -->
-						<div>
-					<h3 class="major">Introduction</h3>
-					<p>The Ninebot MAX G2 is a popular electric scooter that can be customized and modified using the ScooterHacking Utility app. 
-						The app allows users to adjust the scooter's speed, power, and other settings to enhance its performance.</p>
-						</div>
-
-						<!-- Profile Selection -->
-						<div>
-						<h3 class="major">Select Profile</h3>
-						<dropdown>
-							<select name="category-settings" id="category-settings" onchange="showProfile(this.value)">
-								<option value="default">Profile: Factory Settings</option>
-								<option value="tuned">Profile: 30 Km/h Settings</option>
-							</select>
-						</dropdown>
-						<br>
-						<div id="settings-default-disclaimer" style="display: block">
-							<label style="width: auto; padding-left: 1rem;">Please note that these settings correspond approximately to the factory settings and that there may be deviations from the original settings.</label>
-							<br>
-						</div>
-						<div id="settings-tuned-disclaimer" style="display: none">							
-							<label style="width: auto; padding-left: 1rem;">Why only 30Km/h?</label>
-							<label style="width: auto; padding-left: 1rem; font-weight: 400;">Because we want to impart basic knowledge and help new users.<br>If you have familiarized yourself with SHFW & SHU and have acquired some knowledge here, you should be able to reach more than 30km/h yourself.</label>
-							<label style="width: auto; padding-left: 1rem; color:crimson;">THESE SETTINGS ARE OPTIMIZED FOR PERFORMANCE AND MAY AFFECT BATTERY LIFE AND OVERALL SCOOTER PERFORMANCE.<br>AND MAY CAUSE POSSIBLE DAMAGE OR HARDWARE FAILURE.</label>
-							<br>
-						</div>
-						</div>
-
-						<!-- Contents -->
-						<div>
-						<h3 class="major">Contents</h3>
-						<ol>
-							<li><a href="#throttle">Throttle</a></li>
-							<li><a href="#brake">Brake</a></li>
-							<li><a href="#motor-start-speed">Motor start speed</a></li>
-							<li><a href="#field-weakening">Field weakening</a></li>
-							<li><a href="#CruiseControl">Cruise Control</a></li>
-							<li><a href="#Modes">Modes</a></li>
-							<li><a href="#Lights">Lights</a></li>
-							<li><a href="#UserInterface">User Interface</a></li>
-							<li><a href="#GlobalSettings">Global Settings</a></li>
-						</ol>
-						</div>
-
-						<!-- Throttle Settings -->
-						<div>
-						<h3 class="major" id="Throttle">Throttle</h3>
-						<blockquote>Throttle settings are used to adjust the acceleration and speed of the scooter. 
-							You can increase or decrease the throttle to achieve the desired performance level. 
-							Please note that changing the throttle settings may affect the scooter's battery life and overall performance.</blockquote>	
-						<!-- Profile Settings Default / Tuned -->
-						<div>
-							<!-- Profile Settings Default -->
-							<div class="table-wrapper" id="settings-default-throttle" style="display:inline-flexbox">
-								<table>
-									<thead>
-										<tr>
-											<th>MODE</th>
-											<th>SPEED LIMIT</th>
-											<th>THROTTLE MODE</th>
-											<th>QUADRATIC</th>
-											<th>PWM OVERMOD.</th>																				
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>ECO</td>
-											<td>15 km/h</td>
-											<td>DPC 10A</td>
-											<td>1</td>
-											<td>OFF</td>
-										</tr>
-										<tr>
-											<td>Drive</td>
-											<td>22 km/h</td>
-											<td>DPC 20A</td>
-											<td>0.8</td>
-											<td>OFF</td>
-										</tr>
-										<tr>
-											<td>Sports</td>
-											<td>22 km/h</td>
-											<td>DPC 28A</td>
-											<td>0.6</td>
-											<td>ON</td>
-										</tr>
-									</tbody>
-								</table>
-								<label style="width: auto; padding-left: 1rem;">Acceleration Boost 0% - 40%</label>
-								<br>
-							</div>																	
-							<!-- Profile Settings Tuned -->						
-							<div class="table-wrapper" id="settings-tuned-throttle" style="display: none" >
-								<table>
-									<thead>
-										<tr>
-											<th>MODE</th>
-											<th>SPEED LIMIT</th>
-											<th>THROTTLE MODE</th>
-											<th>QUADRATIC</th>
-											<th>PWM OVERMOD.</th>										
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>ECO</td>
-											<td>22 km/h</td>
-											<td>DPC 15A</td>
-											<td>1</td>
-											<td>OFF</td>
-										</tr>
-										<tr>
-											<td>Drive</td>
-											<td>25 km/h</td>
-											<td>DPC 25A</td>
-											<td>0.8</td>
-											<td>ON</td>
-										</tr>
-										<tr>
-											<td>Sports</td>
-											<td>30 km/h</td>
-											<td>DPC 27A</td>
-											<td>0.6</td>
-											<td>ON</td>
-										</tr>
-									</tbody>
-								</table>
-								<label style="width: auto; padding-left: 1rem;">Acceleration Boost 40% - 100%</label>
-								<br>
-							</div>	
-						</div>
-						</div>
-
-						<!-- Brake Settings -->
-						<div>
-						<h3 class="major" id="brake">Brake</h3>
-						<blockquote>Brake settings are used to adjust the braking power and sensitivity of the scooter. 
-						You can increase or decrease the brake power to achieve the desired stopping distance. 
-						Please note that changing the brake settings may affect the scooter's safety and performance.</blockquote>
-						<label style="width: auto; padding-left: 1rem;">Brake min. speed: 5km/h</label>
-						<label style="width: auto; padding-left: 1rem;">Brake overshoot Current: 55A</label>
-						<label style="width: auto; padding-left: 1rem;">Brake Boost: 0%</label>
-						<label style="width: auto; padding-left: 1rem;">Autobraking: OFF</label>	
-						<br>
-						<label style="width: auto; padding-left: 1rem;">Set Brake to Advanced an make following inputs:</label>
-						<div class="image-container">
-							<img class="thumbnail" src="images/G2/Brake/G2-Brake1.jpg" alt="Comming Soon" id="myImg1"/>
-							<img class="thumbnail" src="images/G2/Brake/G2-Brake2.jpg" alt="Comming Soon" id="myImg2"/>
-							<img class="thumbnail" src="images/G2/Brake/G2-Brake3.jpg" alt="Comming Soon" id="myImg3"/>
-							<img class="thumbnail" src="images/G2/Brake/G2-Brake4.jpg" alt="Comming Soon" id="myImg4"/>
-						</div>
-						<!-- Das Modal -->
-						<div id="myModal" class="modal" style="display: none;">
-							<img class="modal-content" id="img01" src="">
-							<span class="close">&times;</span>
-							<img class="modal-content" id="img01" src="">
-						</div>
-						<br>
-						<br>
-						</div>
-
-						<!-- Motor Start Speed Settings -->
-						<div>
-						<h3 class="major" id="motor-start-speed">Motor start speed</h3>
-						<blockquote>The motor start speed setting determines the speed at which the Scooter starts to provide power to the Motor.
-						Please note that changing the motor start speed may affect the scooter's battery life and overall performance.</blockquote>	
-						<div id="settings-default-mss" style="display: block">
-							<label style="width: auto; padding-left: 1rem;">Motor Start Speed: 3 km/h</label>
-							<label style="width: auto; padding-left: 1rem;">Enable negative MSP: Off</label>
-							<br>
-						</div>
-						<div id="settings-tuned-mss" style="display: none">
-							<label style="width: auto; padding-left: 1rem;">Motor Start Speed: 0 km/h</label>
-							<label style="width: auto; padding-left: 1rem;">Enable negative MSP: OFF</label>
-							<br>
-						</div>
-						</div>
-
-						<!-- Field weakening Settings -->
-						<div>
-						<h3 class="major" id="field-weakening">Field weakening</h3>
-						<blockquote>You will need to specify a starting speed, an initial current and a variable current.
-						The process begins by settings the starting speed approximately 7-10 km/h below the scoter's maximum speed, along whit a very low inital current.
-						Subsequently, you can adjust the variable current to a value of your choice.
-						Please note that the field should gradually build up as the speed increases, rather than instantly from the starting speed.</blockquote>
-						<div id="settings-default-fwk" style="display: block">
-							<label style="width: auto; padding-left: 1rem;">Enable in ECO Mode: OFF</label>
-							<label style="width: auto; padding-left: 1rem;">Enable in Drive Mode: OFF</label>
-							<label style="width: auto; padding-left: 1rem;">Enable in Sports Mode: OFF</label>
-							<br>
-						</div>
-						<div  id="settings-tuned-fwk" style="display: none">
-							<label style="width: auto; padding-left: 1rem;">Enable in ECO Mode: OFF</label>
-							<label style="width: auto; padding-left: 1rem;">Enable in Drive Mode: OFF</label>
-							<label style="width: auto; padding-left: 1rem;">Enable in Sports Mode: ON</label>
-							<br>
-							<label style="width: auto; padding-left: 1rem;">Starting Speed: 23 km/h</label>
-							<label style="width: auto; padding-left: 1rem;">Initial Current: 3A</label>
-							<label style="width: auto; padding-left: 1rem;">Variable Current: 800 ma/km/h</label>
-							<label style="width: auto; padding-left: 1rem;">Maximum Torque current (Iq): 65A</label>
-							<label style="width: auto; padding-left: 1rem;">Maximum Field Current (Id): 30A</label>
-							<br>
-						</div>
-						</div>
-
-						<!-- Cruise Control -->
-						<div>
-						<h3 class="major" id="CruiseControl">Cruise Control</h3>
-						<blockquote>Cruise control settings are used to adjust the scooter's cruise control feature. 
-						You can enable or disable the cruise control and set the desired Activation type via time, Single Tap or Double Tap for the feature.</blockquote>
-						<div id="settings-default-cc" style="display: block">
-							<label style="width: auto; padding-left: 1rem;">Cruise Control Mode: OFF</label>
-							<br>
-						</div>
-						<div id="settings-tuned-cc" style="display: none">
-							<label style="width: auto; padding-left: 1rem;">Cruise Control: ON</label>
-							<label style="width: auto; padding-left: 1rem;">Activation Type: Time</label>
-							<label style="width: auto; padding-left: 1rem;">Activation Delay: 5 seconds</label>
-							<label style="width: auto; padding-left: 1rem;">Inc/Dec CC speed with trottle : OFF</label>
-							<label style="width: auto; padding-left: 1rem;">Use throttle pos. in speed: OFF</label>
-							<label style="width: auto; padding-left: 1rem;">Speed-based CC in DPS Mode: OFF</label>
-							<br>
-							<label style="width: auto; padding-left: 1rem;">Beep type when engaging: Long</label>
-							<label style="width: auto; padding-left: 1rem;">Beep type when disengaging: None</label>	
-							<br>
-						</div>
-						</div>
-
-						<!-- Modes-->
-						<div>
-						<h3 class="major" id="Modes">Modes</h3>
-						<blockquote>Select the mode in which the Scooter will be when entering the Profile</blockquote>
-						<div id="settings-default-modes" style="display: flex; align-items: center; flex-wrap: wrap;">
-							<div>
-								<label style="width: auto; padding-left: 1rem;">Set mode when enter Prof.: Last</label>
-								<label style="width: auto; padding-left: 1rem;">Disable Modes (S mode Only): OFF</label>
-								<br>
-							</div>
-						</div>
-						</div>
-
-						<!-- Lights-->
-						<div>
-						<h3 class="major" id="Lights">Lights</h3>
-						<blockquote>Light settings are used to adjust the Mode of the scooter's lights.</blockquote>
-						<label style="width: auto; padding-left: 1rem;">Brake light mode: CAR</label>
-						<label style="width: auto; padding-left: 1rem;">Brake light flash speed: 255</label>
-						<br>
-						</div>
-
-						<!-- User Interface-->
-						<div>
-						<h3 class="major" id="UserInterface">User Interface</h3>
-						<blockquote>Customize the User Interface of your Scooter too fit your needs</blockquote>
-						<div id="settings-default-UI" style="display: flex; align-items: center; flex-wrap: wrap;">
-							<div>
-								<label style="width: auto; padding-left: 1rem;">Main dash data: Speed (km/h)</label>
-								<label style="width: auto; padding-left: 1rem;">Idle dash data: Off</label>
-								<label style="width: auto; padding-left: 1rem;">Alternating dash data: Off</label>
-								<label style="width: auto; padding-left: 1rem;">Battery Bar Data: Off</label>
-								<label style="width: auto; padding-left: 1rem;">Beep Type when entering Prof.: None</label>
-								<label style="width: auto; padding-left: 1rem;">No Reboot/SHutdown beep: OFF</label>
-								<label style="width: auto; padding-left: 1rem;">Swap button functions: OFF</label>
-							</div>
-						</div>
-						<br>
-						</div>
-
-						<!-- Global Settings-->
-						<div>
-						<h3 class="major" id="GlobalSettings">Global Settings</h3>
-						<blockquote>Global settings are profile-independent and only need to be set once. Unnamed settings remain as default, only the named settings need to be adjusted..</blockquote>
-						<div style="display: block">
-							<label style="width: auto; padding-left: 1rem;"><u>System Settings</u></label>
-							<label style="width: auto; padding-left: 1rem;">Taillight Brightness : 15%</label>
-							<br>
-							<label style="width: auto; padding-left: 1rem;"><u>Motor Settings</u></label>
-							<label style="width: auto; padding-left: 1rem;">Wheel Size: 9.7 INCH</label>
-							<br>
-						</div>
-						</div>
-
-						<!-- Disclaimer -->
-						<div>
-						<p class="copyright"> Disclaimer: The information provided on this website is for educational purposes only. <br>We do not take any responsibility for any damage caused by the use of the information provided.</p>
-						</div>
-
-					</article>	
-
-					<!-- Ninebot MAX G30 -->
-					<article id="g30">
-
-					<!-- Logo  -->
-					<div style="display: flex; justify-content: center; margin-top: -2rem;">
-						<img src="images/G30/MAXG30.png" alt="" style="max-width: 100%; height: auto;"/>
-					</div>
-				
-					<!-- Introduction -->
-					<div>
-						<h3 class="major">Introduction</h3>
-
-						
-						<label style="width: auto; padding-left: 1rem; justify-content: center;">the guide will be published shortly - check it out again later</label>
-					</div>
-					</article>
-
 					<!-- ST-Link -->
 					<article id="stlink">
-
 						<!-- Introduction -->
-						<div>
+						<div id="EN-ST-Link-Introduction" style="display: block">
 							<h3 class="major">Introduction</h3>
 							<p>ScooterHacking ReFlasher is a Windows software that allows you to restore or downgrade your Xiaomi/Ninebot ESC/BLE via SWD using an ST-Link programmer.</p>
-						</div>					
-
+						</div>
+						<div id="DE-ST-Link-Introduction" style="display: none">
+							<h3 class="major">Einführung</h3>
+							<p>ScooterHacking ReFlasher ist eine Windows-Software, mit der Sie Ihren Xiaomi/Ninebot ESC/BLE über SWD mit einem ST-Link-Programmierer wiederherstellen oder downgraden können.</p>
+						</div>
 						<!-- Requirements -->
-						<div>
+						<div id="EN-ST-Link-Requirements" style="display: block">
 							<h3 class="major">Requirements</h3>
 							<ul>
 								<li>Windows computer</li>
@@ -455,7 +146,16 @@
 								<li>Target device (e.g., Xiaomi/Ninebot scooter)</li>
 							</ul>
 						</div>
-
+						<div id="DE-ST-Link-Requirements" style="display: none">
+							<h3 class="major">Voraussetzungen</h3>
+							<ul>
+								<li>Windows Rechner</li>
+								<li>ST-Link Programmierer</li>
+								<li>ReFlasher Software</li>
+								<li>USB-Kabel</li>
+								<li>Zielgerät (z. B. Xiaomi/Ninebot-Roller)</li>
+							</ul>
+						</div>
 						<!-- Supported Models -->
 						<div>
 							<h3 class="major">Supported Models</h3>
@@ -468,9 +168,8 @@
 								<li>Ninebot MAX G2 - DRV</li>
 							</ul>
 						</div>	
-
 						<!-- Instructions -->
-						<div>
+						<div id="EN-ST-Link-Instructions" style="display: block">
 							<h3 class="major">Instructions</h3>
 							<ol>
 								<li>Download the latest version of the ReFlasher software from the <a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t" target="_blank">ScooterHacking Cloud</a>.</li>
@@ -478,9 +177,16 @@
 								<li>Open the ReFlasher software on your computer.</li>
 							</ol>							
 						</div>
-
+						<div id="DE-ST-Link-Instructions" style="display: none">
+							<h3 class="major">Hinweise</h3>
+							<ol>
+								<li>Laden Sie die neueste Version der ReFlasher-Software von der <a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t" target="_blank">ScooterHacking Cloud</a>.</li>
+								<li>Entpacken Sie die heruntergeladene ZIP-Datei in einen Ordner auf Ihrem Computer.</li>
+								<li>Öffnen Sie die ReFlasher-Software auf Ihrem Computer.</li>
+							</ol>
+						</div>
 						<!-- How to -->
-						<div>
+						<div id="EN-ST-Link-HowTo" style="display: block">
 							<h3 class="major">How to Use ReFlasher</h3>
 							<ol>
 								<li>Open ReFlasher and connect the device you want to flash to the ST-Link. You can find the pinouts for different boards under the “Diagrams” menu at the top of the ReFlasher app. Soldering is suggested, but if you are careful, you can hold the jumper wires on the debug pads.</li><br>
@@ -491,77 +197,7 @@
 								<li>After the process is complete, disconnect the ST-Link and restart your scooter.</li>
 							</ol>
 						</div>
-
-						<!-- AT32 / GD32 -->
-						<div>
-							<h3 class="major">AT32 / GD32</h3>
-							<p>When using ReFlasher, you may encounter the question of whether your scooter uses an AT32 or GD32 chip. The answer depends on the model and firmware version of your scooter. Here are some general guidelines to help you determine which chip your scooter uses:</p>
-							<ul>
-								<li>AT32: Older models, such as the Ninebot MAX G30, typically use the AT32 chip.</li>
-								<li>GD32: Newer models, such as the Ninebot MAX G30LP, often use the GD32 chip.</li>
-							</ul>
-							<p>If you are unsure which chip your scooter has, you can check the firmware version or consult the manufacturer's documentation for more information.</p>						
-						</div>
-
-						<!-- Note -->
-						<div>
-							<h3 class="major">Note</h3>
-							<p>Before using ReFlasher, please ensure that you have read and understood the following requirements:</p>							
-							<p>The WinUSB driver must be installed for your ST-Link to work with this software as it uses OpenOCD. Download the Zadig utility from the official link, then in "Options", select "List all devices", and install WinUSB. You can download Zadig from <a href="https://zadig.akeo.ie/" target="_blank">here</a>.</p>
-							<p>NET Core v3.1 must be installed for ReFlasher to run. You can get the x64 installer from <a href="https://dotnet.microsoft.com/download/dotnet/3.1" target="_blank">here</a> or from Microsoft.</p>
-						</div>	
-
-						<!-- Disclaimer -->
-						<div>
-							<label style="width: auto; padding-left: 1rem;">Disclaimer: The information provided on this website is for educational purposes only. We do not take any responsibility for any damage caused by the use of the information provided.</label>
-						</div>
-
-					</article>
-					<article id="stlink_de">
-
-						<!-- Introduction -->
-						<div>
-							<h3 class="major">Einführung</h3>
-							<p>ScooterHacking ReFlasher ist eine Windows-Software, mit der Sie Ihren Xiaomi/Ninebot ESC/BLE über SWD mit einem ST-Link-Programmierer wiederherstellen oder downgraden können.</p>
-						</div>					
-
-						<!-- Requirements -->
-						<div>
-							<h3 class="major">Voraussetzungen</h3>
-							<ul>
-								<li>Windows Rechner</li>
-								<li>ST-Link Programmierer</li>
-								<li>ReFlasher Software</li>
-								<li>USB-Kabel</li>
-								<li>Zielgerät (z. B. Xiaomi/Ninebot-Roller)</li>
-							</ul>
-						</div>
-
-						<!-- Supported Models -->
-						<div>
-							<h3 class="major">Unterstützte Modelle</h3>
-							<ul>
-								<li>Ninebot EsX - DRV/BLE</li>
-								<li>Ninebot E - DRV/BLE</li>
-								<li>Ninebot F20 / F30 / F40 - DRV/BLE</li>
-								<li>Ninebot D18 / D28 / D38 - DRV</li>
-								<li>Ninebot MAX G30 - DRV/BLE</li>
-								<li>Ninebot MAX G2 - DRV</li>
-							</ul>
-						</div>	
-
-						<!-- Instructions -->
-						<div>
-							<h3 class="major">Hinweise</h3>
-							<ol>
-								<li>Laden Sie die neueste Version der ReFlasher-Software von der <a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t" target="_blank">ScooterHacking Cloud</a>.</li>
-								<li>Entpacken Sie die heruntergeladene ZIP-Datei in einen Ordner auf Ihrem Computer.</li>
-								<li>Öffnen Sie die ReFlasher-Software auf Ihrem Computer.</li>
-							</ol>							
-						</div>
-
-						<!-- How to -->
-						<div>
+						<div id="DE-ST-Link-HowTo" style="display: none">
 							<h3 class="major">Wie man ReFlasher verwendet</h3>
 							<ol>
 								<li>Öffnen Sie ReFlasher und verbinden Sie das Gerät, das Sie flashen möchten, mit dem ST-Link. Sie können die Pinbelegung für verschiedene Boards unter dem Menü „Diagramme“ oben in der ReFlasher-App finden. Es wird empfohlen, zu löten, aber wenn Sie vorsichtig sind, können Sie die Überbrückungsdrähte an die Debug-Pads halten.</li><br>
@@ -572,9 +208,17 @@
 								<li>Nachdem der Vorgang abgeschlossen ist, starten Sie Ihr Elektromobil neu.</li>
 							</ol>
 						</div>
-
 						<!-- AT32 / GD32 -->
-						<div>
+						<div id="EN-ST-Link-AT32-GD32" style="display: block">
+							<h3 class="major">AT32 / GD32</h3>
+							<p>When using ReFlasher, you may encounter the question of whether your scooter uses an AT32 or GD32 chip. The answer depends on the model and firmware version of your scooter. Here are some general guidelines to help you determine which chip your scooter uses:</p>
+							<ul>
+								<li>AT32: Older models, such as the Ninebot MAX G30, typically use the AT32 chip.</li>
+								<li>GD32: Newer models, such as the Ninebot MAX G30LP, often use the GD32 chip.</li>
+							</ul>
+							<p>If you are unsure which chip your scooter has, you can check the firmware version or consult the manufacturer's documentation for more information.</p>						
+						</div>
+						<div id="DE-ST-Link-AT32-GD32" style="display: none">
 							<h3 class="major">AT32 / GD32</h3>
 							<p>Bei der Verwendung von ReFlasher kann die Frage auftauchen, ob Ihr Scooter einen AT32- oder GD32-Chip verwendet. Die Antwort hängt von dem Modell und der Firmware-Version Ihres Rollers ab. Hier sind einige allgemeine Richtlinien, die Ihnen helfen zu bestimmen, welchen Chip Ihr Roller verwendet:</p>
 							<ul>
@@ -583,27 +227,38 @@
 							</ul>
 							<p>Wenn Sie sich nicht sicher sind, welchen Chip Ihr Scooter hat, können Sie die Firmware-Version überprüfen oder die Dokumentation des Herstellers für weitere Informationen konsultieren.</p>						
 						</div>
-
 						<!-- Note -->
-						<div>
+						<div id="EN-ST-Link-Note" style="display: block">
+							<h3 class="major">Note</h3>
+							<p>Before using ReFlasher, please ensure that you have read and understood the following requirements:</p>							
+							<p>The WinUSB driver must be installed for your ST-Link to work with this software as it uses OpenOCD. Download the Zadig utility from the official link, then in "Options", select "List all devices", and install WinUSB. You can download Zadig from <a href="https://zadig.akeo.ie/" target="_blank">here</a>.</p>
+							<p>NET Core v3.1 must be installed for ReFlasher to run. You can get the x64 installer from <a href="https://dotnet.microsoft.com/download/dotnet/3.1" target="_blank">here</a> or from Microsoft.</p>
+						</div>
+						<div id="DE-ST-Link-Note" style="display: none">
 							<h3 class="major">Anmerkung</h3>
 							<p>Bevor Sie ReFlasher verwenden, stellen Sie bitte sicher, dass Sie die folgenden Anforderungen gelesen und verstanden haben:</p>							
 							<p>Der WinUSB-Treiber muss installiert sein, damit Ihr ST-Link mit dieser Software funktioniert, da er OpenOCD verwendet. Sie müssen das Zadig-Dienstprogramm über den offiziellen Link herunterladen, dann unter „Optionen“ „Alle Geräte auflisten“ auswählen und WinUSB installieren. Sie können das Programm Zadig von <a href=„https://zadig.akeo.ie/“ target=„_blank“>hier</a> herunterladen.</p>
 							<p>NET Core v3.1 must be installiert sein, damit ReFlasher läuft. Sie können den x64-Installer von <a href=„https://dotnet.microsoft.com/download/dotnet/3.1“ target=„_blank“>hier</a> oder von Microsoft erhalten.</p>
 						</div>	
-
 						<!-- Disclaimer -->
-						<div>
+						<div id="EN-ST-Link-Disclaimer" style="display: block">
+							<label style="width: auto; padding-left: 1rem;">Disclaimer: The information provided on this website is for educational purposes only. We do not take any responsibility for any damage caused by the use of the information provided.</label>
+						</div>
+						<div id="DE-ST-Link-Disclaimer" style="display: none">
 							<label style="width: auto; padding-left: 1rem;">Haftungsausschluss: Die auf dieser Website bereitgestellten Informationen dienen ausschließlich zu Bildungszwecken. Wir übernehmen keine Verantwortung für Schäden, die durch die Nutzung der bereitgestellten Informationen entstehen.</label>
 						</div>
-
 					</article>
 
-					<!-- FWK Calc -->
+					<!-- FWK Calculator -->
 					<article id="fwk">
-						<h2 class="major">Field Weakening</h2>	
+						<div id="EN-FWK-Head" style="display: block">
+							<h2 class="major">Field Weakening</h2>
+						</div>	
+						<div id="DE-FWK-Head" style="display: none">
+							<h2 class="major">Feldschwächung</h2>
+						</div>					
 						<span class="image fit"><img src="images/fwk/field-weakening.png" alt="" /></span>
-						<div>
+						<div id="EN-FWK" style="display: block">
 							<h3 class="major">What is Field Weakening?</h3>
 							<label style="font-weight: 400;">The picture shows the relationship between the motor speed and the values for torque and power in an electric motor, such as the one used in an e-scooter. Let's explain the picture based on your original question about field weakening.</label>
 							<br>
@@ -642,12 +297,59 @@
 								</li>
 							</ol>							
 						</div>
-
+						<div id="DE-FWK" style="display: none">
+							<h3 class="major">Was bedeutet Feldschwächung?</h3>
+							<label style="font-weight: 400;">Die Abbildung zeigt die Beziehung zwischen der Motordrehzahl und den Werten für Drehmoment und Leistung in einem Elektromotor, wie er in einem E-Scooter verwendet wird. Lassen Sie uns das Bild anhand Ihrer ursprünglichen Frage zur Feldschwächung erklären.</label>
+							<br>
+							<ol>
+								<li>
+									<label>Konstanter Drehmomentbereich:</label>
+									<ul>
+										<li>In diesem Bereich läuft der Motor mit einem konstanten Drehmoment (blaue Linie), das unabhängig von der Drehzahl gleich bleibt.</li>
+										<li>Die grüne Linie zeigt die Leistung, die mit zunehmender Motordrehzahl linear ansteigt. Das bedeutet, dass der Motor bei niedrigen Drehzahlen die maximale Leistung liefert. Das ist der Bereich, in dem Ihr E-Scooter stark beschleunigen kann, weil das Drehmoment hoch bleibt.</li>
+										<li>Die Drehzahl des Motors steigt in diesem Bereich, solange die Spannung des Motors die volle Magnetkraft erzeugt.</li>
+									</ul>									
+								</li>
+								<li>
+									<label>Konstante Leistungsregion:</label>
+									<ul>
+										<li>Sobald die Motordrehzahl das natürliche Maximum erreicht (in diesem Fall aufgrund der Spannungsbegrenzung), befindet sich der Motor im Bereich konstanter Leistung.</li>
+										<li>Hier bleibt die Leistung konstant (grüne Linie), aber das Drehmoment beginnt zu sinken (blaue Linie).</li>
+										<li>In diesem Bereich kann der E-Scooter nicht mehr so schnell beschleunigen, da das verfügbare Drehmoment abnimmt. Die Leistung bleibt jedoch hoch, was Ihnen hilft, die Geschwindigkeit zu halten.</li>
+									</ul>									
+								</li>
+								<li>
+									<label>Feldschwächungszone:</label>
+									<ul>
+										<li>Sobald der Motor diesen Bereich erreicht, wird das Magnetfeld aktiv geschwächt. Das bedeutet, dass der Motor über seine normale Drehzahlgrenze hinaus betrieben wird.</li>
+										<li>In diesem Bereich fällt das Drehmoment stark ab (blaue Linie). Der E-Scooter hat also weniger Kraft zum Beschleunigen oder für Steigungen.</li>
+										<li>Die Leistung (grüne Linie) bleibt zunächst konstant, nimmt dann aber mit zunehmender Geschwindigkeit ebenfalls ab.</li>
+									</ul>
+								</li>
+								<li>
+									<label>Zusammenfassend kann gesagt werden:</label>
+									<ul>
+										<li>Bei niedriger und mittlerer Geschwindigkeit (links im Diagramm) kann der E-Scooter stark beschleunigen, da das Drehmoment konstant ist.</li>
+										<br>
+										<li>Wenn Sie jedoch eine höhere Geschwindigkeit erreichen wollen, gelangt der E-Scooter in die Feldschwächungszone. Hier wird die Motordrehzahl weiter erhöht, aber die Beschleunigung nimmt ab, da das Drehmoment sinkt. Dies ermöglicht höhere Spitzengeschwindigkeiten auf flachen Strecken, aber weniger Leistung, um zum Beispiel Steigungen zu bewältigen.</li>
+									</ul>
+								</li>
+							</ol>							
+						</div>
 						<!-- Field Weakening Calculator -->
-						<blockquote style="color: crimson; font-weight: bold; font-size: larger;">The values calculated here are theoretical estimates based on input parameters. Actual results may differ due to system efficiency, environmental factors, and component tolerances. Use these values for planning purposes and refer to hardware specifications for practical applications.</blockquote>
-
+						<div id="EN-FWK-Calc-Note" style="display: block">
+							<blockquote style="color: crimson; font-weight: bold; font-size: larger;">The values calculated here are theoretical estimates based on input parameters. Actual results may differ due to system efficiency, environmental factors, and component tolerances. Use these values for planning purposes and refer to hardware specifications for practical applications.</blockquote>
+						</div>
+						<div id="DE-FWK-Calc-Note" style="display: none">
+							<blockquote style="color: crimson; font-weight: bold; font-size: larger;">Die hier berechneten Werte sind theoretische Schätzungen auf der Grundlage von Eingabeparametern. Die tatsächlichen Ergebnisse können aufgrund von Systemeffizienz, Umweltfaktoren und Komponententoleranzen abweichen. Verwenden Sie diese Werte für Planungszwecke und beziehen Sie sich für praktische Anwendungen auf die Hardware-Spezifikationen.</blockquote>
+						</div>						
 						<section>
-							<h3 class="major">Field Weakening Calculator</h3>
+							<div id="EN-FWK-Calc-Head" style="display: block">
+								<h3 class="major">Field Weakening Calculator</h3>
+							</div>
+							<div id="DE-FWK-Calc-Head" style="display: none">								
+								<h3 class="major">Feldschwächungsrechner</h3>
+							</div>							
 							<form id="fwk-form" onsubmit="return false;">
 								<div class="fields">
 									<div class="field half">
@@ -700,111 +402,8 @@
 								</div>	
 							</div>
 						</section>
-
 					</article>
-					<article id="fwk_de">
-						<h2 class="major">Feldschwächung</h2>	
-						<span class="image fit"><img src="images/fwk/field-weakening.png" alt="" /></span>
-						<div>
-							<h3 class="major">Was bedeutet Feldschwächung?</h3>
-							<label style="font-weight: 400;">Die Abbildung zeigt die Beziehung zwischen der Motordrehzahl und den Werten für Drehmoment und Leistung in einem Elektromotor, wie er in einem E-Scooter verwendet wird. Lassen Sie uns das Bild anhand Ihrer ursprünglichen Frage zur Feldschwächung erklären.</label>
-							<br>
-							<ol>
-								<li>
-									<label>Konstanter Drehmomentbereich:</label>
-									<ul>
-										<li>In diesem Bereich läuft der Motor mit einem konstanten Drehmoment (blaue Linie), das unabhängig von der Drehzahl gleich bleibt.</li>
-										<li>Die grüne Linie zeigt die Leistung, die mit zunehmender Motordrehzahl linear ansteigt. Das bedeutet, dass der Motor bei niedrigen Drehzahlen die maximale Leistung liefert. Das ist der Bereich, in dem Ihr E-Scooter stark beschleunigen kann, weil das Drehmoment hoch bleibt.</li>
-										<li>Die Drehzahl des Motors steigt in diesem Bereich, solange die Spannung des Motors die volle Magnetkraft erzeugt.</li>
-									</ul>									
-								</li>
-								<li>
-									<label>Konstante Leistungsregion:</label>
-									<ul>
-										<li>Sobald die Motordrehzahl das natürliche Maximum erreicht (in diesem Fall aufgrund der Spannungsbegrenzung), befindet sich der Motor im Bereich konstanter Leistung.</li>
-										<li>Hier bleibt die Leistung konstant (grüne Linie), aber das Drehmoment beginnt zu sinken (blaue Linie).</li>
-										<li>In diesem Bereich kann der E-Scooter nicht mehr so schnell beschleunigen, da das verfügbare Drehmoment abnimmt. Die Leistung bleibt jedoch hoch, was Ihnen hilft, die Geschwindigkeit zu halten.</li>
-									</ul>									
-								</li>
-								<li>
-									<label>Feldschwächungszone:</label>
-									<ul>
-										<li>Sobald der Motor diesen Bereich erreicht, wird das Magnetfeld aktiv geschwächt. Das bedeutet, dass der Motor über seine normale Drehzahlgrenze hinaus betrieben wird.</li>
-										<li>In diesem Bereich fällt das Drehmoment stark ab (blaue Linie). Der E-Scooter hat also weniger Kraft zum Beschleunigen oder für Steigungen.</li>
-										<li>Die Leistung (grüne Linie) bleibt zunächst konstant, nimmt dann aber mit zunehmender Geschwindigkeit ebenfalls ab.</li>
-									</ul>
-								</li>
-								<li>
-									<label>Zusammenfassend kann gesagt werden:</label>
-									<ul>
-										<li>Bei niedriger und mittlerer Geschwindigkeit (links im Diagramm) kann der E-Scooter stark beschleunigen, da das Drehmoment konstant ist.</li>
-										<br>
-										<li>Wenn Sie jedoch eine höhere Geschwindigkeit erreichen wollen, gelangt der E-Scooter in die Feldschwächungszone. Hier wird die Motordrehzahl weiter erhöht, aber die Beschleunigung nimmt ab, da das Drehmoment sinkt. Dies ermöglicht höhere Spitzengeschwindigkeiten auf flachen Strecken, aber weniger Leistung, um zum Beispiel Steigungen zu bewältigen.</li>
-									</ul>
-								</li>
-							</ol>							
-						</div>
-
-						<!-- Field Weakening Calculator -->
-						<blockquote style="color: crimson; font-weight: bold; font-size: larger;">Die hier berechneten Werte sind theoretische Schätzungen auf der Grundlage von Eingabeparametern. Die tatsächlichen Ergebnisse können aufgrund von Systemeffizienz, Umweltfaktoren und Komponententoleranzen abweichen. Verwenden Sie diese Werte für Planungszwecke und beziehen Sie sich für praktische Anwendungen auf die Hardware-Spezifikationen.</blockquote>
-
-						<section>
-							<h3 class="major">Feldschwächungs-Rechner</h3>
-							<form id="fwk-form_de" onsubmit="return false;">
-								<div class="fields">
-									<div class="field half">
-										<label for="dpc-value_de">DPC Value in A</label>
-										<input type="text" name="dpc-value_de" id="dpc-value_de" placeholder="25 A" required />
-									</div>
-									<!-- Iq (Torque component) -->
-									<div class="field half">										        
-        								<label for="torqueAmps_de">Torque amps (I<sub>q</sub>) in A:</label>
-        								<input type="text" id="torqueAmps_de" placeholder="65 A" required>
-									</div>
-									<div class="field half">
-										<label for="speed-value_de">Maximale Geschwindigkeit ohne FWK</label>
-										<input type="text" name="speed-value_de" id="speed-value_de" placeholder="28 km/h" required />
-									</div>
-									<div class="field half">
-										<label for="expected-speed-value">Erwartete maximale Geschwindigkeit</label>
-										<input type="text" name="expected-speed-value_de" id="expected-speed-value_de" placeholder="41 km/h" required />
-									</div>
-									<div class="field half">
-										<label for="initialfieldcurrent-value_de">Initial Field Current</label>
-										<input type="text" name="initialfieldcurrent-value_de" id="initialfieldcurrent-value_de" placeholder="0 A" required />
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="button" value="Calculate" onclick="calculateFWK_de()" /></li>
-									<li><input type="reset" value="Reset" onclick="resetResults_de()" /></li>
-								</ul>
-							</form>
-							<div class="results" id="results-section_de">
-								<div  style="display: inline-block">							
-									<div style="text-align: center;">
-										<label style="width: auto; padding-left: 1rem; color:crimson;"><u>Warnung und Haftungsausschluss</u>  <br> </label>
-									</div>
-									<label style="width: auto; padding-left: 1rem; color:crimson;">DIE FELDSCHWÄCHUNG ÜBERSTEIGT DIE KONSTRUKTION UND DEN BESTIMMUNGSGEMÄSSEN GEBRAUCH DES SCOOTERS. WIR ÜBERNEHMEN KEINE VERANTWORTUNG FÜR EVENTUELLE SCHÄDEN AN IHRER HARDWARE.</label>
-									<label	style="width: auto; padding-left: 1rem; color:crimson;">Seien Sie bitte vorsichtig. Überwachen Sie Ihre Hardware genau und erhöhen Sie die Stromstärke allmählich.</label>
-									<br>
-								</div>
-								<div>
-									<h3 class="major">Berechnete Feldschwächungseinstellungen:</h3>
-									<label id="result-startspeed_de">Start Speed: -</label>
-									<label id="result-initialfieldcurrent_de">Initial Field Current: -</label>
-									<label id="result-varablefieldcurrent_de">Variable Field Current: -</label>
-									<label id="result-Iq_de">Maximum Torque Current (I<sub>q</sub>): -</label>
-									<label id="result-Id_de">Maximum Field Current (I<sub>d</sub>): -</label>
-									<label id="result-It_de">Total Peak Current Draw (I<sub>total</sub>): -</label>									
-								</div>
-								<div class="results-warning" id="warning-section_de">
-									<label style="width: auto; color:crimson;">Warnung: Der maximale Feldstrom überschreitet die standardmäßige Phasengrenze von 30 A.</label>
-								</div>	
-							</div>
-						</section>
-
-					</article>
-
+					
 					<!-- Apps -->
 					<article id="apps">	
 						<!-- ScooterHacking Utility -->
@@ -817,7 +416,12 @@
 									</a>
 								</span>
 								<div class="app-details">
-									<p>The Scooterhacking Utility is a mobile app that allows users to customize and modify e-scooters. It offers features like firmware updates, speed adjustments, and error diagnostics for various scooter models.</p>
+									<div id="EN-APPS-SHU" style="display: block">
+										<p>The Scooterhacking Utility is a mobile app that allows users to customize and modify e-scooters. It offers features like firmware updates, speed adjustments, and error diagnostics for various scooter models.</p>
+									</div>
+									<div id="DE-APPS-SHU" style="display: none">
+										<p>Das Scooterhacking Utility ist eine mobile App, mit der Nutzer E-Scooter anpassen und verändern können. Sie bietet Funktionen wie Firmware-Updates, Geschwindigkeitsanpassungen und Fehlerdiagnosen für verschiedene Scooter-Modelle.</p>
+									</div>
 									<p>OS: <i class="fa-brands fa-android"></i> Android<br>Creator: <a href="https://utility.cfw.sh/" target="_blank">ScooterHacking.org</a></p>
 								</div>
 							</div>
@@ -833,7 +437,12 @@
 									</a>
 								</span>
 								<div class="app-details">
-									<p>ScooterHacking ReFlasher is a Windows software that facilitates the recovery or downgrade of your Xiaomi/Ninebot ESC/BLE through SWD using an ST-Link programmer.</p>
+									<div id="EN-APPS-ReFlasher" style="display: block">
+										<p>ScooterHacking ReFlasher is a Windows software that facilitates the recovery or downgrade of your Xiaomi/Ninebot ESC/BLE through SWD using an ST-Link programmer.</p>
+									</div>
+									<div id="DE-APPS-ReFlasher" style="display: none">
+										<p>ScooterHacking ReFlasher ist eine Windows-Software, die die Wiederherstellung oder das Downgrade Ihres Xiaomi/Ninebot ESC/BLE über SWD mit einem ST-Link-Programmierer ermöglicht.</p>
+									</div>
 									<p>OS: <i class="fa-brands fa-windows"></i> Windows<br>Creator: <a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t" target="_blank">ScooterHacking.org</a></p>
 									<p>Download: <a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t" target="_blank">Version 1.4.2</a></p>	
 								</div>
@@ -850,7 +459,12 @@
 									</a>
 								</span>
 								<div class="app-details">
-									<p>Scootbatt is a handy mobile app designed to keep e-scooter riders informed about their scooter's battery status and remaining range. The app allows users to monitor their scooter's condition in real-time, receive alerts when the battery is low, and plan the best routes based on the available battery life. With Scootbatt, users can optimize their scooter usage and avoid running out of power unexpectedly. It's user-friendly and perfect for anyone who relies on e-scooters for their daily commute or leisure rides.</p>
+									<div id="EN-APPS-Scootbatt" style="display: block">
+										<p>Scootbatt is a handy mobile app designed to keep e-scooter riders informed about their scooter's battery status and remaining range. The app allows users to monitor their scooter's condition in real-time, receive alerts when the battery is low, and plan the best routes based on the available battery life. With Scootbatt, users can optimize their scooter usage and avoid running out of power unexpectedly. It's user-friendly and perfect for anyone who relies on e-scooters for their daily commute or leisure rides.</p>
+									</div>
+									<div id="DE-APPS-Scootbatt" style="display: none">
+										<p>Scootbatt ist eine praktische mobile App, mit der E-Scooter-Fahrer über den Batteriestatus und die verbleibende Reichweite ihres Rollers informiert werden. Die App ermöglicht es den Nutzern, den Zustand ihres Rollers in Echtzeit zu überwachen, Warnungen zu erhalten, wenn die Batterie schwach ist. Mit Scootbatt können Nutzer ihren Roller optimal nutzen und vermeiden, dass ihnen unerwartet der Strom ausgeht. Scootbatt ist benutzerfreundlich und perfekt für alle, die E-Scooter für den täglichen Weg zur Arbeit oder für Freizeitfahrten nutzen.</p>
+									</div>
 									<p>OS: <i class="fa-brands fa-android"></i> Android<br>Creator: <a href="https://play.google.com/store/apps/details?id=com.basse.scootbatt" target="_blank">Ba$$e</a></p>
 								</div>
 							</div>
@@ -866,88 +480,411 @@
 									</a>
 								</span>
 								<div class="app-details">
-									<p>Nine Dash is a mobile app designed to help e-scooter riders track important information about their scooters. Similar to Scootbatt, it offers real-time monitoring of the scooter’s battery life, range, and performance. The app provides detailed stats, allowing users to plan their rides efficiently, avoid running out of power, and ensure their scooter is always in optimal condition. With a user-friendly interface and essential features for e-scooter management, Nine Dash is a valuable tool for anyone who regularly uses an electric scooter for commuting or leisure.</p>
+									<div id="EN-APPS-NineDash" style="display: block">
+										<p>Nine Dash is a mobile app designed to help e-scooter riders track important information about their scooters. Similar to Scootbatt, it offers real-time monitoring of the scooter’s battery life, range, and performance. The app provides detailed stats, allowing users to plan their rides efficiently, avoid running out of power, and ensure their scooter is always in optimal condition. With a user-friendly interface and essential features for e-scooter management, Nine Dash is a valuable tool for anyone who regularly uses an electric scooter for commuting or leisure.</p>
+									</div>
+									<div id="DE-APPS-NineDash" style="display: none">
+										<p>Nine Dash ist eine mobile App, die E-Scooter-Fahrern helfen soll, wichtige Informationen über ihre Roller zu verfolgen. Ähnlich wie Scootbatt bietet sie eine Echtzeitüberwachung der Batterielebensdauer, Reichweite und Leistung des Rollers. Die App liefert detaillierte Statistiken, die es den Nutzern ermöglichen, ihre Fahrten effizient zu planen, zu vermeiden, dass ihnen der Strom ausgeht, und sicherzustellen, dass sich ihr Roller immer in optimalem Zustand befindet.Mit einer benutzerfreundlichen Oberfläche und wichtigen Funktionen für das E-Scooter-Management ist Nine Dash ein wertvolles Werkzeug für jeden, der regelmäßig einen Elektroroller für den Arbeitsweg oder in der Freizeit benutzt.</p>
+									</div>
 									<p>OS: <i class="fa-brands fa-android"></i> Android<br>Creator: <a href="https://play.google.com/store/apps/details?id=adriandp.ninedash" target="_blank">Buhho</a></p>
 								</div>
 							</div>
 						</div>
+					</article>
 
-					</article>										
-					<article id="apps_de">	
-						<!-- ScooterHacking Utility -->
-						<div>
-							<h3 class="major">ScooterHacking Utility</h3>
-							<div class="app-container">
-								<span class="image left">	
-									<a href="https://utility.cfw.sh/" target="_blank">
-										<img src="images/apps/shu.png" alt="SHU APP"/>
-									</a>
-								</span>
-								<div class="app-details">
-									<p>Das Scooterhacking Utility ist eine mobile App, mit der Nutzer E-Scooter anpassen und verändern können. Sie bietet Funktionen wie Firmware-Updates, Geschwindigkeitsanpassungen und Fehlerdiagnosen für verschiedene Scooter-Modelle.</p>
-									<p>OS: <i class="fa-brands fa-android"></i> Android<br>Creator: <a href="https://utility.cfw.sh/" target="_blank">ScooterHacking.org</a></p>
-								</div>
+					<!-- Ninebot MAX G2 -->					
+					<article id="g2">
+						<!-- Logo  -->
+						<div style="display: flex; justify-content: center; margin-top: -2rem;">
+						<img src="images/G2/MAXG2.png" alt="" style="max-width: 100%; height: auto;"/>
+						</div>
+						<!-- Introduction -->
+						 <div>
+							<div id="EN-G2-Introduction" style="display: block">
+								<h3 class="major">Introduction</h3>
+								<p>The Ninebot MAX G2 is a popular electric scooter that can be customized and modified using the ScooterHacking Utility app. The app allows users to adjust the scooter's speed, power, and other settings to enhance its performance.</p>
+							</div>
+							<div id="DE-G2-Introduction" style="display: none">
+								<h3 class="major">Einleitung</h3>
+								<p>Der Ninebot MAX G2 ist ein beliebter e-Scooter, der mit der ScooterHacking Utility-App angepasst und modifiziert werden kann. Die App ermöglicht es den Benutzern, die Geschwindigkeit, Leistung und andere Einstellungen des Rollers anzupassen, um seine Leistung zu verbessern.</p>
 							</div>
 						</div>
-						<!-- ReFlasher -->
+						<!-- Profile Selection -->
 						<div>
-							<h3 class="major">ReFlasher</h3>
-							<div class="app-container">
-								<span class="image left">	
-									<a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t" target="_blank">
-										<img src="images/apps/reflasher.png" alt="ReFlasher" />
-									</a>
-								</span>
-								<div class="app-details">
-									<p>ScooterHacking ReFlasher ist eine Windows-Software, die die Wiederherstellung oder das Downgrade Ihres Xiaomi/Ninebot ESC/BLE über SWD mit einem ST-Link-Programmierer ermöglicht.</p>
-									<p>OS: <i class="fa-brands fa-windows"></i> Windows<br>Creator: <a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t" target="_blank">ScooterHacking.org</a></p>
-									<p>Download: <a href="https://cloud.cfw.sh/index.php/s/fBBtjoHr7kSF27t" target="_blank">Version 1.4.2</a></p>	
+							<h3 class="major">Select Profile</h3>
+							<dropdown>
+								<select name="category-settings" id="category-settings" onchange="showProfile(this.value)">
+									<option value="default">Factory Settings</option>
+									<option value="tuned">30 Km/h Settings</option>
+								</select>
+							</dropdown>
+							<br>
+							<div id="settings-default-disclaimer" style="display: block">
+								<div id="EN-G2-ProfileSelection-Disclaimer" style="display: block">
+									<label style="width: auto; padding-left: 1rem;">Please note that these settings correspond approximately to the factory settings and that there may be deviations from the original settings.</label>
 								</div>
+								<div id="DE-G2-ProfileSelection-Disclaimer" style="display: none">
+									<label style="width: auto; padding-left: 1rem;">Bitte beachten Sie, dass diese Einstellungen in etwa den Werkseinstellungen entsprechen und dass es Abweichungen von den Originaleinstellungen geben kann.</label>
+								</div>
+								<br>
 							</div>
-						</div>										
-						<!-- Scootbatt -->
-						<div>
-							<h3 class="major">Scootbatt</h3>
-							<div class="app-container">
-								<span class="image left">	
-									<a href="https://play.google.com/store/apps/details?id=com.basse.scootbatt" target="_blank">
-										<img src="images/apps/scootbatt.png" alt="Scootbatt"/>
-									</a>
-								</span>
-								<div class="app-details">
-									<p>Scootbatt ist eine praktische mobile App, mit der E-Scooter-Fahrer über den Batteriestatus und die verbleibende Reichweite ihres Rollers informiert werden. Die App ermöglicht es den Nutzern, den Zustand ihres Rollers in Echtzeit zu überwachen, Warnungen zu erhalten, wenn die Batterie schwach ist. Mit Scootbatt können Nutzer ihren Roller optimal nutzen und vermeiden, dass ihnen unerwartet der Strom ausgeht. Scootbatt ist benutzerfreundlich und perfekt für alle, die E-Scooter für den täglichen Weg zur Arbeit oder für Freizeitfahrten nutzen.</p>
-									<p>OS: <i class="fa-brands fa-android"></i> Android<br>Creator: <a href="https://play.google.com/store/apps/details?id=com.basse.scootbatt" target="_blank">Ba$$e</a></p>
-								</div>
+							<div id="settings-tuned-disclaimer" style="display: none">
+								<div id="EN-G2-ProfileSelection-Disclaimer-2" style="display: block">
+									<label style="width: auto; padding-left: 1rem;">Why only 30Km/h?</label>
+									<label style="width: auto; padding-left: 1rem; font-weight: 400;">Because we want to impart basic knowledge and help new users.<br>If you have familiarized yourself with SHFW & SHU and have acquired some knowledge here, you should be able to reach more than 30km/h yourself.</label>
+									<label style="width: auto; padding-left: 1rem; color:crimson;">THESE SETTINGS ARE OPTIMIZED FOR PERFORMANCE AND MAY AFFECT BATTERY LIFE AND OVERALL SCOOTER PERFORMANCE.<br>AND MAY CAUSE POSSIBLE DAMAGE OR HARDWARE FAILURE.</label>
+								</div>	
+								<div id="DE-G2-ProfileSelection-Disclaimer-2" style="display: none">
+									<label style="width: auto; padding-left: 1rem;">Warum nur 30Km/h?</label>
+									<label style="width: auto; padding-left: 1rem; font-weight: 400;">Denn wir wollen Grundwissen vermitteln und neuen Nutzern helfen.<br>Wenn Sie sich mit SHFW & SHU vertraut gemacht haben und sich hier ein wenig Wissen angeeignet haben, sollten Sie selbst in der Lage sein, mehr als 30km/h zu erreichen.</label>
+									<label style="width: auto; padding-left: 1rem; color:crimson;">DIESE EINSTELLUNGEN SIND FÜR DIE LEISTUNGSFÄHIGKEIT OPTIMIERT UND KÖNNEN DIE LEBENSDAUER DER BATTERIE UND DIE LEISTUNGSFÄHIGKEIT DES SCOOTERS INSGESAMT BEEINFLUSSEN.<br>UND KÖNNEN EINE BESCHÄDIGUNG ODER EIN FEHLERHAFTE HARDWARE VERursachen.</label>
+								</div>							
+								<br>
 							</div>
 						</div>
-						<!-- Nine Dash -->
+						<!-- Contents -->
 						<div>
-							<h3 class="major">Nine Dash</h3>
-							<div class="app-container">
-								<span class="image left">	
-									<a href="https://play.google.com/store/apps/details?id=adriandp.ninedash" target="_blank">
-										<img src="images/apps/ninedash.png" alt="Scootbatt"/>
-									</a>
-								</span>
-								<div class="app-details">
-									<p>Nine Dash ist eine mobile App, die E-Scooter-Fahrern helfen soll, wichtige Informationen über ihre Roller zu verfolgen. Ähnlich wie Scootbatt bietet sie eine Echtzeitüberwachung der Batterielebensdauer, Reichweite und Leistung des Rollers. Die App liefert detaillierte Statistiken, die es den Nutzern ermöglichen, ihre Fahrten effizient zu planen, zu vermeiden, dass ihnen der Strom ausgeht, und sicherzustellen, dass sich ihr Roller immer in optimalem Zustand befindet.Mit einer benutzerfreundlichen Oberfläche und wichtigen Funktionen für das E-Scooter-Management ist Nine Dash ein wertvolles Werkzeug für jeden, der regelmäßig einen Elektroroller für den Arbeitsweg oder in der Freizeit benutzt.</p>
-									<p>OS: <i class="fa-brands fa-android"></i> Android<br>Creator: <a href="https://play.google.com/store/apps/details?id=adriandp.ninedash" target="_blank">Buhho</a></p>
+						<h3 class="major">Contents</h3>
+						<ol>
+							<li><a href="#throttle">Throttle</a></li>
+							<li><a href="#brake">Brake</a></li>
+							<li><a href="#motor-start-speed">Motor start speed</a></li>
+							<li><a href="#field-weakening">Field weakening</a></li>
+							<li><a href="#CruiseControl">Cruise Control</a></li>
+							<li><a href="#Modes">Modes</a></li>
+							<li><a href="#Lights">Lights</a></li>
+							<li><a href="#UserInterface">User Interface</a></li>
+							<li><a href="#GlobalSettings">Global Settings</a></li>
+						</ol>
+						</div>
+						<!-- Throttle Settings -->
+						<div>
+							<h3 class="major" id="Throttle">Throttle</h3>
+							<div id="EN-G2-Throttle" style="display: block">
+								<blockquote>Throttle settings are used to adjust the acceleration and speed of the scooter.	You can increase or decrease the throttle to achieve the desired performance level. Please note that changing the throttle settings may affect the scooter's battery life and overall performance.</blockquote>	
+							</div>
+							<div id="DE-G2-Throttle" style="display: none">
+								<blockquote>Die Gashebel-Einstellungen werden verwendet, um die Beschleunigung und Geschwindigkeit des Rollers anzupassen.	Sie können die Gasannahme erhöhen oder verringern, um das gewünschte Leistungsniveau zu erreichen. Bitte beachten Sie, dass eine Änderung der Gashebel-Einstellungen die Lebensdauer der Batterie und die Gesamtleistung des Rollers beeinträchtigen kann.</blockquote>	
+							</div>
+							<!-- Profile Settings Default / Tuned -->
+							<div>
+								<!-- Profile Settings Default -->
+								<div class="table-wrapper" id="settings-default-throttle" style="display:inline-flexbox">
+								<table>
+									<thead>
+										<tr>
+											<th>MODE</th>
+											<th>SPEED LIMIT</th>
+											<th>THROTTLE MODE</th>
+											<th>QUADRATIC</th>
+											<th>PWM OVERMOD.</th>																				
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>ECO</td>
+											<td>15 km/h</td>
+											<td>DPC 10A</td>
+											<td>1</td>
+											<td>OFF</td>
+										</tr>
+										<tr>
+											<td>Drive</td>
+											<td>22 km/h</td>
+											<td>DPC 20A</td>
+											<td>0.8</td>
+											<td>OFF</td>
+										</tr>
+										<tr>
+											<td>Sports</td>
+											<td>22 km/h</td>
+											<td>DPC 28A</td>
+											<td>0.6</td>
+											<td>ON</td>
+										</tr>
+									</tbody>
+								</table>
+								<label style="width: auto; padding-left: 1rem;">Acceleration Boost 0% - 40%</label>
+								<br>
+								</div>																	
+								<!-- Profile Settings Tuned -->						
+								<div class="table-wrapper" id="settings-tuned-throttle" style="display: none" >
+								<table>
+									<thead>
+										<tr>
+											<th>MODE</th>
+											<th>SPEED LIMIT</th>
+											<th>THROTTLE MODE</th>
+											<th>QUADRATIC</th>
+											<th>PWM OVERMOD.</th>										
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>ECO</td>
+											<td>22 km/h</td>
+											<td>DPC 15A</td>
+											<td>1</td>
+											<td>OFF</td>
+										</tr>
+										<tr>
+											<td>Drive</td>
+											<td>25 km/h</td>
+											<td>DPC 25A</td>
+											<td>0.8</td>
+											<td>ON</td>
+										</tr>
+										<tr>
+											<td>Sports</td>
+											<td>30 km/h</td>
+											<td>DPC 27A</td>
+											<td>0.6</td>
+											<td>ON</td>
+										</tr>
+									</tbody>
+								</table>
+								<label style="width: auto; padding-left: 1rem;">Acceleration Boost 40% - 100%</label>
+								<br>
+								</div>	
+							</div>
+						</div>
+						<!-- Brake Settings -->
+						<div>
+							<h3 class="major" id="brake">Brake</h3>
+							<div id="EN-G2-Brake" style="display: block">
+								<blockquote>Brake settings are used to adjust the braking power and sensitivity of the scooter. You can increase or decrease the brake power to achieve the desired stopping distance. Please note that changing the brake settings may affect the scooter's safety and performance.</blockquote>
+							</div>
+							<div id="DE-G2-Brake" style="display: none">
+								<blockquote>Bremseneinstellungen werden verwendet, um die Bremskraft und Empfindlichkeit des Rollers anzupassen. Sie können die Bremskraft erhöhen oder verringern, um den gewünschten Bremsweg zu erreichen. Bitte beachten Sie, dass eine Änderung der Bremseneinstellungen die Sicherheit und Leistung des Rollers beeinträchtigen kann.</blockquote>
+							</div>
+							<label style="width: auto; padding-left: 1rem;">Brake min. speed: 5km/h</label>
+							<label style="width: auto; padding-left: 1rem;">Brake overshoot Current: 55A</label>
+							<label style="width: auto; padding-left: 1rem;">Brake Boost: 0%</label>
+							<label style="width: auto; padding-left: 1rem;">Autobraking: OFF</label>	
+							<br>
+							<div id="EN-G2-Brake-2" style="display: block">
+								<label style="width: auto; padding-left: 1rem;">Set Brake to Advanced an make following inputs:</label>
+							</div>
+							<div id="DE-G2-Brake-2" style="display: none">
+								<label style="width: auto; padding-left: 1rem;">Stellen Sie die Bremse auf "Advanced" und machen Sie folgende Eingaben:</label>
+							</div>							
+							<div class="image-container">
+								<img class="thumbnail" src="images/G2/Brake/G2-Brake1.jpg" alt="Comming Soon" id="myImg1"/>
+								<img class="thumbnail" src="images/G2/Brake/G2-Brake2.jpg" alt="Comming Soon" id="myImg2"/>
+								<img class="thumbnail" src="images/G2/Brake/G2-Brake3.jpg" alt="Comming Soon" id="myImg3"/>
+								<img class="thumbnail" src="images/G2/Brake/G2-Brake4.jpg" alt="Comming Soon" id="myImg4"/>
+							</div>
+							<!-- Das Modal -->
+							<div id="myModal" class="modal" style="display: none;">
+								<img class="modal-content" id="img01" src="">
+								<span class="close">&times;</span>
+								<img class="modal-content" id="img01" src="">
+							</div>
+							<br>
+							<br>
+						</div>
+						<!-- Motor Start Speed Settings -->
+						<div>
+							<h3 class="major" id="motor-start-speed">Motor start speed</h3>
+							<div id="EN-G2-Motor" style="display: block">
+								<blockquote>The motor start speed setting determines the speed at which the Scooter starts to provide power to the Motor. Please note that changing the motor start speed may affect the scooter's battery life and overall performance.</blockquote>	
+							</div>
+							<div id="DE-G2-Motor" style="display: none">
+								<blockquote>Die Einstellung der Motorstartgeschwindigkeit bestimmt die Geschwindigkeit, mit der der Scooter beginnt, den Motor mit Strom zu versorgen. Bitte beachten Sie, dass eine Änderung der Motorstartgeschwindigkeit die Lebensdauer der Batterie und die Gesamtleistung des Scooters beeinträchtigen kann.</blockquote>	
+							</div>
+							<div id="settings-default-mss" style="display: block">
+								<label style="width: auto; padding-left: 1rem;">Motor Start Speed: 3 km/h</label>
+								<label style="width: auto; padding-left: 1rem;">Enable negative MSP: Off</label>
+								<br>
+							</div>
+							<div id="settings-tuned-mss" style="display: none">
+								<label style="width: auto; padding-left: 1rem;">Motor Start Speed: 0 km/h</label>
+								<label style="width: auto; padding-left: 1rem;">Enable negative MSP: OFF</label>
+								<br>
+							</div>
+						</div>
+						<!-- Field weakening Settings -->
+						<div>
+							<h3 class="major" id="field-weakening">Field weakening</h3>
+							<div id="EN-G2-FWK" style="display: block">
+								<blockquote>You will need to specify a starting speed, an initial current and a variable current.
+									The process begins by settings the starting speed approximately 7-10 km/h below the scoter's maximum speed, along whit a very low inital current.
+									Subsequently, you can adjust the variable current to a value of your choice.
+									Please note that the field should gradually build up as the speed increases, rather than instantly from the starting speed.</blockquote>
+							</div>
+							<div id="DE-G2-FWK" style="display: none">
+								<blockquote>Sie müssen eine Startgeschwindigkeit, einen Anfangsstrom und einen variablen Strom angeben.
+									Der Prozess beginnt, indem Sie die Startgeschwindigkeit etwa 7-10 km/h unter der maximalen Geschwindigkeit des Rollers einstellen, zusammen mit einem sehr niedrigen Anfangsstrom.
+									Anschließend können Sie den variablen Strom auf einen Wert Ihrer Wahl einstellen.
+									Bitte beachten Sie, dass das Feld sich allmählich aufbauen sollte, wenn die Geschwindigkeit zunimmt, anstatt sofort von der Startgeschwindigkeit an.</blockquote>
+							</div>
+							<div id="settings-default-fwk" style="display: block">
+								<label style="width: auto; padding-left: 1rem;">Enable in ECO Mode: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Enable in Drive Mode: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Enable in Sports Mode: OFF</label>
+								<br>
+							</div>
+							<div  id="settings-tuned-fwk" style="display: none">
+								<label style="width: auto; padding-left: 1rem;">Enable in ECO Mode: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Enable in Drive Mode: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Enable in Sports Mode: ON</label>
+								<br>
+								<label style="width: auto; padding-left: 1rem;">Starting Speed: 23 km/h</label>
+								<label style="width: auto; padding-left: 1rem;">Initial Current: 3A</label>
+								<label style="width: auto; padding-left: 1rem;">Variable Current: 800 ma/km/h</label>
+								<label style="width: auto; padding-left: 1rem;">Maximum Torque current (Iq): 65A</label>
+								<label style="width: auto; padding-left: 1rem;">Maximum Field Current (Id): 30A</label>
+								<br>
+							</div>
+						</div>
+						<!-- Cruise Control -->
+						<div>
+							<h3 class="major" id="CruiseControl">Cruise Control</h3>
+							<div id="EN-G2-CC" style="display: block">
+								<blockquote>Cruise control settings are used to adjust the scooter's cruise control feature. You can enable or disable the cruise control and set the desired Activation type via time, Single Tap or Double Tap for the feature.</blockquote>
+							</div>
+							<div id="DE-G2-CC" style="display: none">
+								<blockquote>Die Einstellungen für den Tempomat dienen dazu, die Tempomatfunktion des Rollers anzupassen. Sie können den Tempomat ein- oder ausschalten und die gewünschte Aktivierungstyp über Zeit, Einzel- oder Doppelklick für die Funktion festlegen.</blockquote>
+							</div>
+							<div id="settings-default-cc" style="display: block">
+								<label style="width: auto; padding-left: 1rem;">Cruise Control Mode: OFF</label>
+								<br>
+							</div>
+							<div id="settings-tuned-cc" style="display: none">
+								<label style="width: auto; padding-left: 1rem;">Cruise Control: ON</label>
+								<label style="width: auto; padding-left: 1rem;">Activation Type: Time</label>
+								<label style="width: auto; padding-left: 1rem;">Activation Delay: 5 seconds</label>
+								<label style="width: auto; padding-left: 1rem;">Inc/Dec CC speed with trottle : OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Use throttle pos. in speed: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Speed-based CC in DPS Mode: OFF</label>
+								<br>
+								<label style="width: auto; padding-left: 1rem;">Beep type when engaging: Long</label>
+								<label style="width: auto; padding-left: 1rem;">Beep type when disengaging: None</label>	
+								<br>
+							</div>
+						</div>
+						<!-- Modes-->
+						<div>
+							<h3 class="major" id="Modes">Modes</h3>
+							<div id="EN-G2-Mode" style="display: block">
+								<blockquote>Select the mode in which the Scooter will be when entering the Profile</blockquote>
+							</div>
+							<div id="DE-G2-Mode" style="display: none">
+								<blockquote>Wählen Sie den Modus, in dem der Roller beim Laden des Profils sein wird</blockquote>
+							</div>
+							<div id="settings-default-modes" style="display: flex; align-items: center; flex-wrap: wrap;">
+								<label style="width: auto; padding-left: 1rem;">Set mode when enter Prof.: Last</label>
+								<label style="width: auto; padding-left: 1rem;">Disable Modes (S mode Only): OFF</label>
+								<br>								
+							</div>
+							<br>
+						</div>
+						<!-- Lights-->
+						<div>
+							<h3 class="major" id="Lights">Lights</h3>
+							<div id="EN-G2-Lights" style="display: block">
+								<blockquote>Light settings are used to adjust the Mode of the scooter's lights.</blockquote>
+							</div>
+							<div id="DE-G2-Lights" style="display: none">
+								<blockquote>Lichteinstellungen werden verwendet, um den Modus der Lichter des Rollers anzupassen.</blockquote>
+							</div>
+
+							<label style="width: auto; padding-left: 1rem;">Brake light mode: CAR</label>
+							<label style="width: auto; padding-left: 1rem;">Brake light flash speed: 255</label>
+							<br>
+						</div>
+						<!-- User Interface-->
+						<div>
+							<h3 class="major" id="UserInterface">User Interface</h3>
+							<div id="EN-G2-UI" style="display: block">
+								<blockquote>Customize the User Interface of your Scooter too fit your needs</blockquote>
+							</div>
+							<div id="DE-G2-UI" style="display: none">
+								<blockquote>Passen Sie die Benutzeroberfläche Ihres Rollers an Ihre Bedürfnisse an</blockquote>
+							</div>
+							<div id="settings-default-UI" style="display: flex; align-items: center; flex-wrap: wrap;">
+								<div>
+									<label style="width: auto; padding-left: 1rem;">Main dash data: Speed (km/h)</label>
+									<label style="width: auto; padding-left: 1rem;">Idle dash data: Off</label>
+									<label style="width: auto; padding-left: 1rem;">Alternating dash data: Off</label>
+									<label style="width: auto; padding-left: 1rem;">Battery Bar Data: Off</label>
+									<label style="width: auto; padding-left: 1rem;">Beep Type when entering Prof.: None</label>
+									<label style="width: auto; padding-left: 1rem;">No Reboot/SHutdown beep: OFF</label>
+									<label style="width: auto; padding-left: 1rem;">Swap button functions: OFF</label>
 								</div>
 							</div>
-						</div>					
+							<br>
+						</div>
+						<!-- Global Settings-->
+						<div>
+							<h3 class="major" id="GlobalSettings">Global Settings</h3>
+							<div id="EN-G2-GS" style="display: block">
+								<blockquote>Global settings are profile-independent and only need to be set once. Unnamed settings remain as default, only the named settings need to be adjusted...</blockquote>
+							</div>
+							<div id="DE-G2-GS" style="display: none">
+								<blockquote>Globale Einstellungen sind profilunabhängig und müssen nur einmal gesetzt werden. Unbenannte Einstellungen bleiben als Standard erhalten, nur die benannten Einstellungen müssen angepasst werden...</blockquote>
+							</div>														
+							<div style="display: block">
+								<label style="width: auto; padding-left: 1rem;"><u>System Settings</u></label>
+								<label style="width: auto; padding-left: 1rem;">Taillight Brightness : 15%</label>
+								<br>
+								<label style="width: auto; padding-left: 1rem;"><u>Motor Settings</u></label>
+								<label style="width: auto; padding-left: 1rem;">Wheel Size: 9.7 INCH</label>
+								<br>
+							</div>
+						</div>
+						<!-- Disclaimer -->
+						<div>
+							<div id="EN-G2-Disclaimer" style="display: block">
+								<p class="copyright"> Disclaimer: The information provided on this website is for educational purposes only. <br>We do not take any responsibility for any damage caused by the use of the information provided.</p>
+							</div>
+							<div id="DE-G2-Disclaimer" style="display: none">
+								<p class="copyright"> Haftungsausschluss: Die auf dieser Website bereitgestellten Informationen dienen nur zu Bildungszwecken. <br>Wir übernehmen keine Verantwortung für Schäden, die durch die Verwendung der bereitgestellten Informationen verursacht werden.</p>	
+							</div>								
+						</div>
+					</article>	
+
+					<!-- Ninebot MAX G30 -->
+					<article id="g30">
+
+					<!-- Logo  -->
+					<div style="display: flex; justify-content: center; margin-top: -2rem;">
+						<img src="images/G30/MAXG30.png" alt="" style="max-width: 100%; height: auto;"/>
+					</div>
+				
+					<!-- Introduction -->
+					<div>
+						<h3 class="major">Introduction</h3>
+
+						
+						<label style="width: auto; padding-left: 1rem; justify-content: center;">the guide will be published shortly - check it out again later</label>
+					</div>
 					</article>
 
 					<!-- Error Codes -->
 					<article id="error-codes">	
 						<!-- Error Codes List Segway Max -->
 						 <div>
-							<h3 class="major">Error Codes List Segway Max</h3>		
-							<br>					
-							<label class="error-title">For each error code we will list:</label>
-							<label class="error-description">- What the Error code means<br>- A summary of the issue and what to try to fix the error</label>
+							<div id="EN-ERROR-DESC" style="display: block">
+								<h3 class="major">Error Codes List Segway Max</h3>		
+								<br>					
+								<label class="error-title">For each error code we will list:</label>
+								<label class="error-description">- What the Error code means<br>- A summary of the issue and what to try to fix the error</label>
+							</div>
+							<div id="DE-ERROR-DESC" style="display: none">
+								<h3 class="major">Fehlercodes Liste Segway Max</h3>		
+								<br>					
+								<label class="error-title">Für jeden Fehlercode werden wir auflisten:</label>
+								<label class="error-description">- Was der Fehlercode bedeutet<br>- Eine Zusammenfassung des Problems und was zu versuchen ist, um den Fehler zu beheben</label>
+							</div>
 							<br>
 							<!-- Contents -->
-							<h3 class="major">Contents</h3>
+							<div id="EN-ERROR-Contents" style="display: block">								
+								<h3 class="major">Contents</h3>
+							</div>
+							<div id="DE-ERROR-Contents" style="display: none">								
+								<h3 class="major">Inhaltsverzeichnis</h3>
+							</div>
 							<div style="display: flex;">
 							    <!-- Left column (List) -->
 							    <div style="flex: 1;">
@@ -1008,595 +945,525 @@
 							    </div>
 							</div>
 
-							<!-- Error 10 -->
-							<div id="error10">
-								<label class="error-title">Error Code 10:</label>
-								<label class="error-description">Communication abnormality between the display and the main control board.</label>
-								<label class="error-details">When error 10 is shown if the LCD can not communicate with the controller. First try resetting the scooter. If that does not work, try unplugging the dashboard and then plugging it back in. This may cause it to begin working again but it may resume flashing 10 one it is powered on. If that doesn't work flashing or updating the firmware should be attempted. If the issue still persists, replace the LCD or controller, in that order.</label>
-								<br>
-						 	</div>
-							<!-- Error 11 -->
-							<div id="error11">
-								<label class="error-title">Error Code 11:</label>
-								<label class="error-description">Motor A-phase current sampling abnormality.</label>
-								<label class="error-details">When error 11 is shown if the motor is not reading properly. First check the phase line of the motor for any fraying, clips, kinks, or cuts. If there is no issue with the phase line then replace the controller and if the issue persists, replace the motor.</label>
-								<br>
-							</div>
-							<!-- Error 12 -->
-							<div id="error12">
-								<label class="error-title">Error Code 12:</label>
-								<label class="error-description">Motor B-phase current sampling abnormality.</label>
-								<label class="error-details">When error 12 is shown if the motor is not reading properly. First check the phase line of the motor for any fraying, clips, kinks, or cuts. If there is no issue with the phase line then replace the controller and if the issue persists, replace the motor.</label>
-								<br>
-							</div>
-							<!-- Error 13 -->
-							<div id="error13">
-								<label class="error-title">Error Code 13:</label>
-								<label class="error-description">Motor C-phase current sampling abnormality.</label>
-								<label class="error-details">When error 13 is shown if the motor is not reading properly. First check the phase line of the motor for any fraying, clips, kinks, or cuts. If there is no issue with the phase line then replace the controller and if the issue persists, replace the motor.</label>
-								<br>
-							</div>
-							<!-- Error 14 -->
-							<div id="error14">
-								<label class="error-title">Error Code 14:</label>
-								<label class="error-description">Throttle Hall sensor abnormality.</label>
-								<label class="error-details">When error 14 is probably the most common error code. We have a whole article dedicated to this error code here.</label>
-								<br>
-							</div>
-							<!-- Error 15 -->
-							<div id="error15">
-								<label class="error-title">Error Code 15:</label>
-								<label class="error-description">Left Brake Hall sensor abnormality.</label>
-								<label class="error-details">When error 15 is shown when the brake hall sensor on the left side is not reading properly. You can usually replicate the issue by holding down the brake handle while the scooter is booting up. This error can also be caused by the magnets coming dislodged from inside the brake. There are many steps to try fixing this issue. Please see the image below.</label>
-								<br>
-							</div>
-							<!-- Error 16 -->
-							<div id="error16">
-								<label class="error-title">Error Code 16:</label>
-								<label class="error-description">Brake Hall sensor abnormality on the right side.</label>
-								<label class="error-details">When error 16 is shown when the brake hall sensor on the right brake handle is not reading properly. You can usually replicate the issue by holding down the brake handle while the scooter is booting up. This error can also be caused by the magnets coming dislodged from inside the brake. There are many steps to try fixing this issue. Please see the image below.</label>
-								<br>
-							</div>
-							<!-- Error 18 -->
-							<div id="error18">
-								<label class="error-title">Error Code 18:</label>
-								<label class="error-description">Motor Hall sensor abnormality.</label>
-								<label class="error-details">When error 18 is shown when the scooter detects an abnormal reading from the hall sensors in the motor. This can be due to an unplugged cable, or a blown sensor/resistor. Check the 5-pin hall connector of the motor and visually inspect that it is still connected and is not damaged in anyway. Any fraying, clips, kinks, or cuts means it will need to be replaced. If everything is normal replace the controller and motor in that order.</label>
-								<br>
-							</div>
-							<!-- Error 19 -->
-							<div id="error19">
-								<label class="error-title">Error Code 19:</label>
-								<label class="error-description">Abnormal battery voltage detected.</label>
-								<label class="error-details">Error 19 is shown when the battery is under the correct voltage reading. When this happens the battery usually needs to be charged. The battery LED should do one of 3 things, turn solid red, flash between red and green, or turn solid green. If the LED is solid red, let the battery charge. If the LED flashes between red and green, Let it charge for about an hour and it should start to charge normally. If the LED stays green then replace the battery. If this does not work follow the outline below. Reset the scooter and if that does not work, replace the controller first and testing the scooter, followed by the battery.</label>
-								<br>
-							</div>
-							<!-- Error 20 -->
-							<div id="error20">
-								<label class="error-title">Error Code 20:</label>
-								<label class="error-description">Abnormal External battery voltage detected.</label>
-								<label class="error-details">Error 20 is shown when the External battery is under the correct voltage reading. When this happens the battery usually needs to be charged. The battery LED should do one of 3 things, turn solid red, flash between red and green, or turn solid green. If the LED is solid red, let the battery charge. If the LED flashes between red and green, Let it charge for about an hour and it should start to charge normally. If the LED stays green then replace the battery. If this does not work follow the outline below. Reset the scooter and if that does not work, replace the controller first and testing the scooter, followed by the battery.</label>
-								<br>
-							</div>
-							<!-- Error 21 -->
-							<div id="error21">
-								<label class="error-title">Error Code 21:</label>
-								<label class="error-description">BMS communication error. </label>
-								<label class="error-details">Error 21 is shown when the controller can not receive data from the BMS/Battery. Start by checking the battery communication connection. This is a 4-pin data wire that may need be plugged back in. It should click into place. Plug the scooter in for a few hours to see if the battery charges properly. Otherwise test the scooter with a working controller followed by a working battery.  </label>
-								<br>
-							</div>
-							<!-- Error 22 -->
-							<div id="error22">
-								<label class="error-title">Error Code 22:</label>
-								<label class="error-description">Wrong BMS password.</label>
-								<label class="error-details">Error 22 is shown when a rental vehicles is not properly STLinked or has the wrong firmware version uploaded. A temporary fix would be to hold the throttle and brake briefly at startup to ignore this error. For a more permeant solution refresh the serial number is the Segway portal. If the scooter still does not work replace the controller followed by the battery.</label>
-								<br>
-							</div>
-							<!-- Error 23 -->
-							<div id="error23">
-								<label class="error-title">Error Code 23:</label>
-								<label class="error-description">BMS default serial number.</label>
-								<label class="error-details">Error 23 is shown when the battery's serial number has the default number. This is similar to error 35. The serial number can not be 3GA0016A1A0001. Fix this my changing the BMS serial number using the ninebot launcher app. Otherwise replace the battery followed by the controller.</label>
-								<br>
-							</div>
-							<!-- Error 24 -->
-							<div id="error24">
-								<label class="error-title">Error Code 24:</label>
-								<label class="error-description">System voltage detection abnormality. </label>
-								<label class="error-details">Error 24 is shown when the controller detects an abnormal battery voltage. This is most commonly happens when someone upgrades the battery. In some cases the battery may have become overcharged. If the battery upgrade caused the issue, upgrade the firmware on the controller to match the current battery setup. If the error happened without any pervious catalyst, the battery needs to be run down,  recharged, or replaced. To tun the battery down leave the scooter on for a while and  turn the headlight on to help run down the battery. If the voltage runs down and the error goes away, keep using the scooter until it is near 25% and then charge it fully again. If this or charging the battery does not fix the issue, follow the outline below and replace the battery followed by the controller.</label>
-								<br>
-							</div>
-							<!-- Error 25 -->
-							<div id="error25">
-								<label class="error-title">Error Code 25:</label>
-								<label class="error-description">Communication failure during ESC fimware update</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 26 -->
-							<div id="error26">
-								<label class="error-title">Error Code 26:</label>
-								<label class="error-description">Flash saves error</label>
-								<label class="error-details">Error 26 is shown there is an error with the controller. Start by resetting the scooter. If that does not fix your issue, update the firmware on the scooter and see if the issue is fix. If none of the above work, replace the controller.</label>
-								<br>
-							</div>
-							<!-- Error 27 -->
-							<div id="error27">
-								<label class="error-title">Error Code 27:</label>
-								<label class="error-description">Controller password error</label>
-								<label class="error-details">Error 27 is shown when a rental scooter is not properly STLinked or has the wrong firmware version. It can also be caused by someone going through the serial change method. A temporary fix would be to hold the throttle and brake briefly at startup to ignore this error. For a more permeant solution refresh the serial number is the Segway portal. If the scooter still does not work replace the controller.</label>
-								<br>
-							</div>
-							<!-- Error 28 -->
-							<div id="error28">
-								<label class="error-title">Error Code 28:</label>
-								<label class="error-description">Motor driver mos up-bridge short circuit</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 29 -->
-							<div id="error29">
-								<label class="error-title">Error Code 29:</label>
-								<label class="error-description">Motor driver mos down-bridge short circuit</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 31 -->
-							<div id="error31">
-								<label class="error-title">Error Code 31:</label>
-								<label class="error-description">Program jump error</label>
-								<label class="error-details">Error 31 is shown there is an issues with the controller. There isn't much to do other than reseting the scooter, then replacing the controller.</label>
-								<br>
-							</div>
-							<!-- Error 32 -->
-							<div id="error32">
-								<label class="error-title">Error Code 32:</label>
-								<label class="error-description">IOT heartbeat timeout</label>
-								<label class="error-details">Error 32 is shown on a rental scooter that can no longer detect the IoT device. you will first want to inspect the IoT device and be sure that the connection is free from fraying, clips, kinks, or cuts. If the connection wire is good, unplug and plug it back in and reset the scooter. If the issue still persists, replace the IoT followed by the controller.</label>
-								<br>
-							</div>
-							<!-- Error 35 -->
-							<div id="error35">
-								<label class="error-title">Error Code 35:</label>
-								<label class="error-description">Scooter with default serial number</label>
-								<label class="error-details">Error 35 is shown when the controller's serial number has the default number. This is usually casued by a firmware. update. This is similar to error 23. The serial number can not be N4GEA1601C0001. To fix this change the controller's serial number using the ninebot launcher app. Otherwise replace the controller followed by the battery.</label>
-								<br>
-							</div>
-							<!-- Error 36 -->
-							<div id="error36">
-								<label class="error-title">Error Code 36:</label>
-								<label class="error-description">2+4 connector failure or external battery charging wire failure.</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 37 -->
-							<div id="error37">
-								<label class="error-title">Error Code 37:</label>
-								<label class="error-description">Charging base or charging cable failure</label>
-								<label class="error-details">Error 37 is shown when the charging cable is failing. First try reseting the scooter to see if it fixes the problem. Next check the wiring from the controller to the battery. If any wire are frayed, clipped, has kinks, or cuts Replace the component it belongs to. If all the wiring is good start by replacing the controller, followed by the battery.</label>
-								<br>
-							</div>
-							<!-- Error 38 -->
-							<div id="error38">
-								<label class="error-title">Error Code 38:</label>
-								<label class="error-description">Charging overcurrent</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 39 -->
-							<div id="error39">
-								<label class="error-title">Error Code 39:</label>
-								<label class="error-description">Battery Temperature sensor abnormality</label>
-								<label class="error-details">Error 39 is shown when the battery temperature sensor is reading outside of the normal levels. This could happen from the outside conditions too hot or too cold, or for no reason at all. First check the temperature of the battery with the Segway launcher app. If the battery is too hot let it cool down and if it is too cold move the scooter to a warmer temperature. If the temperature appears to be normal, restart the scooter. If the issue still persist change the battery.</label>
-								<br>
-							</div>
-							<!-- Error 40 -->
-							<div id="error40">
-								<label class="error-title">Error Code 40:</label>
-								<label class="error-description">Abnormal temperature sensor of controller</label>
-								<label class="error-details">Error 40 is shown the controller has gotten too hot and needs to cool down, but it may also be caused by the sensor coming disconnected or failing. Check the controller wiring for any fraying, clips, kinks, or cuts. Otherwise replace the controller.</label>
-								<br>
-							</div>
-							<!-- Error 41 -->
-							<div id="error41">
-								<label class="error-title">Error Code 41:</label>
-								<label class="error-description">Temperature of the motor is abnormal</label>
-								<label class="error-details">Error 41 is shown because the motor has gotten too hot and needs to cool down, but it may also be caused by the sensor coming disconnected or failing. Check the motor wiring for any fraying, clips, kinks, or cuts. Otherwise replace the motor.</label>
-								<br>
-							</div>
-							<!-- Error 42 -->
-							<div id="error42">
-								<label class="error-title">Error Code 42:</label>
-								<label class="error-description">No communication with external BMS</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 43 -->
-							<div id="error43">
-								<label class="error-title">Error Code 43:</label>
-								<label class="error-description">External BMS config invalid</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 44 -->
-							<div id="error44">
-								<label class="error-title">Error Code 44:</label>
-								<label class="error-description">External BMS not activated</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 45 -->
-							<div id="error45">
-								<label class="error-title">Error Code 45:</label>
-								<label class="error-description">Scooter flashed with retail firmware</label>
-								<label class="error-details">Error 45 is shown when a consumer scooter is updated with rental firmware. Some have reported success with moving the wheel slightly on startup. Otherwise you will want to try flashing the firmware to non-retail firmware.</label>
-								<br>
-							</div>
-							<!-- Error 50 -->
-							<div id="error50">
-								<label class="error-title">Error Code 50:</label>
-								<label class="error-description">Either temperature sensor is outside normal parameters or the rental firmware has not ben setup properly.</label>
-								<label class="error-details">Error 50 is shown for one of two reasons. Either the temperature sensor is not reporting a proper value or the rental firmware that is being used has not been set up properly. Rest the scooter to see if that temporarily fixes the issue. For the rental firmware issue you will want to update the firmware to the IoT, the battery, and the controller.</label>
-								<br>
-							</div>
-							<!-- Error 51 -->
-							<div id="error51">
-								<label class="error-title">Error Code 51:</label>
-								<label class="error-description">LCD and controller match failure.</label>
-								<label class="error-details">Error 51 is shown when the firmware on the LCD does not match the. firmware on the controller. Start by updating the firmware of the LCD by using the connection in the stem. If the issue still persist, update the controller with the matching firmware. Should the issue still persist, replace the LCD followed by the controller.</label>
-								<br>
-							</div>
-							<!-- Error 52 -->
-							<div id="error52">
-								<label class="error-title">Error Code 52:</label>
-								<label class="error-description">e-lock and controller firmware match failure</label>
-								<label class="error-details">Error 52 is shown when the firmware between the e-lock and the controller do not match. Start by confirming that the two components have matching firmware versions. If this is true, then one of the components is bad and needs to be replaced. Replace the controller first, followed by the e-lock.</label>
-								<br>
-							</div>
-							<!-- Error 54 -->
-							<div id="error54">
-								<label class="error-title">Error Code 54:</label>
-								<label class="error-description">Communication Failure between e-lock and controller</label>
-								<label class="error-details">Error 54 is shown when the controller and e-lock are not properly communicating with each other. Start by checking the controller and e-lock wiring. It should be free from any fraying, clips, kinks, or cuts. If any issues are found with the wiring, replace the affected component(s). If nothing can be found start by trying a new controller followed by a new e-lock.</label>
-								<br>
-							</div>						
-							<!-- Error 55 -->
-							<div id="error55">								
-								<label class="error-title">Error Code 55:</label>
+							<div id="EN-ERROR-List" style="display: block">									
+								<!-- Error 10 -->
+								<div id="error10">
+									<label class="error-title">Error Code 10:</label>
+									<label class="error-description">Communication abnormality between the display and the main control board.</label>
+									<label class="error-details">When error 10 is shown if the LCD can not communicate with the controller. First try resetting the scooter. If that does not work, try unplugging the dashboard and then plugging it back in. This may cause it to begin working again but it may resume flashing 10 one it is powered on. If that doesn't work flashing or updating the firmware should be attempted. If the issue still persists, replace the LCD or controller, in that order.</label>
+									<br>
+						 		</div>
+								<!-- Error 11 -->
+								<div id="error11">
+									<label class="error-title">Error Code 11:</label>
+									<label class="error-description">Motor A-phase current sampling abnormality.</label>
+									<label class="error-details">When error 11 is shown if the motor is not reading properly. First check the phase line of the motor for any fraying, clips, kinks, or cuts. If there is no issue with the phase line then replace the controller and if the issue persists, replace the motor.</label>
+									<br>
+								</div>
+								<!-- Error 12 -->
+								<div id="error12">
+									<label class="error-title">Error Code 12:</label>
+									<label class="error-description">Motor B-phase current sampling abnormality.</label>
+									<label class="error-details">When error 12 is shown if the motor is not reading properly. First check the phase line of the motor for any fraying, clips, kinks, or cuts. If there is no issue with the phase line then replace the controller and if the issue persists, replace the motor.</label>
+									<br>
+								</div>
+								<!-- Error 13 -->
+								<div id="error13">
+									<label class="error-title">Error Code 13:</label>
+									<label class="error-description">Motor C-phase current sampling abnormality.</label>
+									<label class="error-details">When error 13 is shown if the motor is not reading properly. First check the phase line of the motor for any fraying, clips, kinks, or cuts. If there is no issue with the phase line then replace the controller and if the issue persists, replace the motor.</label>
+									<br>
+								</div>
+								<!-- Error 14 -->
+								<div id="error14">
+									<label class="error-title">Error Code 14:</label>
+									<label class="error-description">Throttle Hall sensor abnormality.</label>
+									<label class="error-details">When error 14 is probably the most common error code. We have a whole article dedicated to this error code here.</label>
+									<br>
+								</div>
+								<!-- Error 15 -->
+								<div id="error15">
+									<label class="error-title">Error Code 15:</label>
+									<label class="error-description">Left Brake Hall sensor abnormality.</label>
+									<label class="error-details">When error 15 is shown when the brake hall sensor on the left side is not reading properly. You can usually replicate the issue by holding down the brake handle while the scooter is booting up. This error can also be caused by the magnets coming dislodged from inside the brake. There are many steps to try fixing this issue. Please see the image below.</label>
+									<br>
+								</div>
+								<!-- Error 16 -->
+								<div id="error16">
+									<label class="error-title">Error Code 16:</label>
+									<label class="error-description">Brake Hall sensor abnormality on the right side.</label>
+									<label class="error-details">When error 16 is shown when the brake hall sensor on the right brake handle is not reading properly. You can usually replicate the issue by holding down the brake handle while the scooter is booting up. This error can also be caused by the magnets coming dislodged from inside the brake. There are many steps to try fixing this issue. Please see the image below.</label>
+									<br>
+								</div>
+								<!-- Error 18 -->
+								<div id="error18">
+									<label class="error-title">Error Code 18:</label>
+									<label class="error-description">Motor Hall sensor abnormality.</label>
+									<label class="error-details">When error 18 is shown when the scooter detects an abnormal reading from the hall sensors in the motor. This can be due to an unplugged cable, or a blown sensor/resistor. Check the 5-pin hall connector of the motor and visually inspect that it is still connected and is not damaged in anyway. Any fraying, clips, kinks, or cuts means it will need to be replaced. If everything is normal replace the controller and motor in that order.</label>
+									<br>
+								</div>
+								<!-- Error 19 -->
+								<div id="error19">
+									<label class="error-title">Error Code 19:</label>
+									<label class="error-description">Abnormal battery voltage detected.</label>
+									<label class="error-details">Error 19 is shown when the battery is under the correct voltage reading. When this happens the battery usually needs to be charged. The battery LED should do one of 3 things, turn solid red, flash between red and green, or turn solid green. If the LED is solid red, let the battery charge. If the LED flashes between red and green, Let it charge for about an hour and it should start to charge normally. If the LED stays green then replace the battery. If this does not work follow the outline below. Reset the scooter and if that does not work, replace the controller first and testing the scooter, followed by the battery.</label>
+									<br>
+								</div>
+								<!-- Error 20 -->
+								<div id="error20">
+									<label class="error-title">Error Code 20:</label>
+									<label class="error-description">Abnormal External battery voltage detected.</label>
+									<label class="error-details">Error 20 is shown when the External battery is under the correct voltage reading. When this happens the battery usually needs to be charged. The battery LED should do one of 3 things, turn solid red, flash between red and green, or turn solid green. If the LED is solid red, let the battery charge. If the LED flashes between red and green, Let it charge for about an hour and it should start to charge normally. If the LED stays green then replace the battery. If this does not work follow the outline below. Reset the scooter and if that does not work, replace the controller first and testing the scooter, followed by the battery.</label>
+									<br>
+								</div>
+								<!-- Error 21 -->
+								<div id="error21">
+									<label class="error-title">Error Code 21:</label>
+									<label class="error-description">BMS communication error. </label>
+									<label class="error-details">Error 21 is shown when the controller can not receive data from the BMS/Battery. Start by checking the battery communication connection. This is a 4-pin data wire that may need be plugged back in. It should click into place. Plug the scooter in for a few hours to see if the battery charges properly. Otherwise test the scooter with a working controller followed by a working battery.  </label>
+									<br>
+								</div>
+								<!-- Error 22 -->
+								<div id="error22">
+									<label class="error-title">Error Code 22:</label>
+									<label class="error-description">Wrong BMS password.</label>
+									<label class="error-details">Error 22 is shown when a rental vehicles is not properly STLinked or has the wrong firmware version uploaded. A temporary fix would be to hold the throttle and brake briefly at startup to ignore this error. For a more permeant solution refresh the serial number is the Segway portal. If the scooter still does not work replace the controller followed by the battery.</label>
+									<br>
+								</div>
+								<!-- Error 23 -->
+								<div id="error23">
+									<label class="error-title">Error Code 23:</label>
+									<label class="error-description">BMS default serial number.</label>
+									<label class="error-details">Error 23 is shown when the battery's serial number has the default number. This is similar to error 35. The serial number can not be 3GA0016A1A0001. Fix this my changing the BMS serial number using the ninebot launcher app. Otherwise replace the battery followed by the controller.</label>
+									<br>
+								</div>
+								<!-- Error 24 -->
+								<div id="error24">
+									<label class="error-title">Error Code 24:</label>
+									<label class="error-description">System voltage detection abnormality. </label>
+									<label class="error-details">Error 24 is shown when the controller detects an abnormal battery voltage. This is most commonly happens when someone upgrades the battery. In some cases the battery may have become overcharged. If the battery upgrade caused the issue, upgrade the firmware on the controller to match the current battery setup. If the error happened without any pervious catalyst, the battery needs to be run down,  recharged, or replaced. To tun the battery down leave the scooter on for a while and  turn the headlight on to help run down the battery. If the voltage runs down and the error goes away, keep using the scooter until it is near 25% and then charge it fully again. If this or charging the battery does not fix the issue, follow the outline below and replace the battery followed by the controller.</label>
+									<br>
+								</div>
+								<!-- Error 25 -->
+								<div id="error25">
+									<label class="error-title">Error Code 25:</label>
+									<label class="error-description">Communication failure during ESC fimware update</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 26 -->
+								<div id="error26">
+									<label class="error-title">Error Code 26:</label>
+									<label class="error-description">Flash saves error</label>
+									<label class="error-details">Error 26 is shown there is an error with the controller. Start by resetting the scooter. If that does not fix your issue, update the firmware on the scooter and see if the issue is fix. If none of the above work, replace the controller.</label>
+									<br>
+								</div>
+								<!-- Error 27 -->
+								<div id="error27">
+									<label class="error-title">Error Code 27:</label>
+									<label class="error-description">Controller password error</label>
+									<label class="error-details">Error 27 is shown when a rental scooter is not properly STLinked or has the wrong firmware version. It can also be caused by someone going through the serial change method. A temporary fix would be to hold the throttle and brake briefly at startup to ignore this error. For a more permeant solution refresh the serial number is the Segway portal. If the scooter still does not work replace the controller.</label>
+									<br>
+								</div>
+								<!-- Error 28 -->
+								<div id="error28">
+									<label class="error-title">Error Code 28:</label>
+									<label class="error-description">Motor driver mos up-bridge short circuit</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 29 -->
+								<div id="error29">
+									<label class="error-title">Error Code 29:</label>
+									<label class="error-description">Motor driver mos down-bridge short circuit</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 31 -->
+								<div id="error31">
+									<label class="error-title">Error Code 31:</label>
+									<label class="error-description">Program jump error</label>
+									<label class="error-details">Error 31 is shown there is an issues with the controller. There isn't much to do other than reseting the scooter, then replacing the controller.</label>
+									<br>
+								</div>
+								<!-- Error 32 -->
+								<div id="error32">
+									<label class="error-title">Error Code 32:</label>
+									<label class="error-description">IOT heartbeat timeout</label>
+									<label class="error-details">Error 32 is shown on a rental scooter that can no longer detect the IoT device. you will first want to inspect the IoT device and be sure that the connection is free from fraying, clips, kinks, or cuts. If the connection wire is good, unplug and plug it back in and reset the scooter. If the issue still persists, replace the IoT followed by the controller.</label>
+									<br>
+								</div>
+								<!-- Error 35 -->
+								<div id="error35">
+									<label class="error-title">Error Code 35:</label>
+									<label class="error-description">Scooter with default serial number</label>
+									<label class="error-details">Error 35 is shown when the controller's serial number has the default number. This is usually casued by a firmware. update. This is similar to error 23. The serial number can not be N4GEA1601C0001. To fix this change the controller's serial number using the ninebot launcher app. Otherwise replace the controller followed by the battery.</label>
+									<br>
+								</div>
+								<!-- Error 36 -->
+								<div id="error36">
+									<label class="error-title">Error Code 36:</label>
+									<label class="error-description">2+4 connector failure or external battery charging wire failure.</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 37 -->
+								<div id="error37">
+									<label class="error-title">Error Code 37:</label>
+									<label class="error-description">Charging base or charging cable failure</label>
+									<label class="error-details">Error 37 is shown when the charging cable is failing. First try reseting the scooter to see if it fixes the problem. Next check the wiring from the controller to the battery. If any wire are frayed, clipped, has kinks, or cuts Replace the component it belongs to. If all the wiring is good start by replacing the controller, followed by the battery.</label>
+									<br>
+								</div>
+								<!-- Error 38 -->
+								<div id="error38">
+									<label class="error-title">Error Code 38:</label>
+									<label class="error-description">Charging overcurrent</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 39 -->
+								<div id="error39">
+									<label class="error-title">Error Code 39:</label>
+									<label class="error-description">Battery Temperature sensor abnormality</label>
+									<label class="error-details">Error 39 is shown when the battery temperature sensor is reading outside of the normal levels. This could happen from the outside conditions too hot or too cold, or for no reason at all. First check the temperature of the battery with the Segway launcher app. If the battery is too hot let it cool down and if it is too cold move the scooter to a warmer temperature. If the temperature appears to be normal, restart the scooter. If the issue still persist change the battery.</label>
+									<br>
+								</div>
+								<!-- Error 40 -->
+								<div id="error40">
+									<label class="error-title">Error Code 40:</label>
+									<label class="error-description">Abnormal temperature sensor of controller</label>
+									<label class="error-details">Error 40 is shown the controller has gotten too hot and needs to cool down, but it may also be caused by the sensor coming disconnected or failing. Check the controller wiring for any fraying, clips, kinks, or cuts. Otherwise replace the controller.</label>
+									<br>
+								</div>
+								<!-- Error 41 -->
+								<div id="error41">
+									<label class="error-title">Error Code 41:</label>
+									<label class="error-description">Temperature of the motor is abnormal</label>
+									<label class="error-details">Error 41 is shown because the motor has gotten too hot and needs to cool down, but it may also be caused by the sensor coming disconnected or failing. Check the motor wiring for any fraying, clips, kinks, or cuts. Otherwise replace the motor.</label>
+									<br>
+								</div>
+								<!-- Error 42 -->
+								<div id="error42">
+									<label class="error-title">Error Code 42:</label>
+									<label class="error-description">No communication with external BMS</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 43 -->
+								<div id="error43">
+									<label class="error-title">Error Code 43:</label>
+									<label class="error-description">External BMS config invalid</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 44 -->
+								<div id="error44">
+									<label class="error-title">Error Code 44:</label>
+									<label class="error-description">External BMS not activated</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 45 -->
+								<div id="error45">
+									<label class="error-title">Error Code 45:</label>
+									<label class="error-description">Scooter flashed with retail firmware</label>
+									<label class="error-details">Error 45 is shown when a consumer scooter is updated with rental firmware. Some have reported success with moving the wheel slightly on startup. Otherwise you will want to try flashing the firmware to non-retail firmware.</label>
+									<br>
+								</div>
+								<!-- Error 50 -->
+								<div id="error50">
+									<label class="error-title">Error Code 50:</label>
+									<label class="error-description">Either temperature sensor is outside normal parameters or the rental firmware has not ben setup properly.</label>
+									<label class="error-details">Error 50 is shown for one of two reasons. Either the temperature sensor is not reporting a proper value or the rental firmware that is being used has not been set up properly. Rest the scooter to see if that temporarily fixes the issue. For the rental firmware issue you will want to update the firmware to the IoT, the battery, and the controller.</label>
+									<br>
+								</div>
+								<!-- Error 51 -->
+								<div id="error51">
+									<label class="error-title">Error Code 51:</label>
+									<label class="error-description">LCD and controller match failure.</label>
+									<label class="error-details">Error 51 is shown when the firmware on the LCD does not match the. firmware on the controller. Start by updating the firmware of the LCD by using the connection in the stem. If the issue still persist, update the controller with the matching firmware. Should the issue still persist, replace the LCD followed by the controller.</label>
+									<br>
+								</div>
+								<!-- Error 52 -->
+								<div id="error52">
+									<label class="error-title">Error Code 52:</label>
+									<label class="error-description">e-lock and controller firmware match failure</label>
+									<label class="error-details">Error 52 is shown when the firmware between the e-lock and the controller do not match. Start by confirming that the two components have matching firmware versions. If this is true, then one of the components is bad and needs to be replaced. Replace the controller first, followed by the e-lock.</label>
+									<br>
+								</div>
+								<!-- Error 54 -->
+								<div id="error54">
+									<label class="error-title">Error Code 54:</label>
+									<label class="error-description">Communication Failure between e-lock and controller</label>
+									<label class="error-details">Error 54 is shown when the controller and e-lock are not properly communicating with each other. Start by checking the controller and e-lock wiring. It should be free from any fraying, clips, kinks, or cuts. If any issues are found with the wiring, replace the affected component(s). If nothing can be found start by trying a new controller followed by a new e-lock.</label>
+									<br>
+								</div>						
+								<!-- Error 55 -->
+								<div id="error55">								
+									<label class="error-title">Error Code 55:</label>
 								<label class="error-description">Battery cover sensor failure</label>
 								<label class="error-details">Error 55 is shown when the battery cover is not fully closed. Think of this error like a car door open signal, but with the battery cover. Start by reopening and closing the battery cover. Ensure the battery cover is sealed properly. Should the issue still persist, replace the battery lock.</label>
+								</div>
 							</div>
-							<br>							
-							<label style="font-size: smaller; font-weight: 100;">As of October 16, 2024</label>
-						</div>
-					</article>
-					<article id="error-codes_de">	
-						<!-- Error Codes List Segway Max -->
-						 <div>
-							<h3 class="major">Fehlercodeliste Segway Max</h3>		
-							<br>					
-							<label class="error-title">Für jeden Fehlercode gibt es eine Übersicht:</label>
-							<label class="error-description">- Was der Fehlercode bedeutet<br>- Eine Zusammenfassung des Problems und was zu tun ist, um den Fehler zu beheben</label>
-							<br>
-							<!-- Contents -->
-							<h3 class="major">Inhaltsverzeichnis</h3>
-							<div style="display: flex;">
-							    <!-- Left column (List) -->
-							    <div style="flex: 1;">
-							        <ul style="padding-left: 1rem; list-style-type: none;">
-							            <li><a href="#error10_de">Error: 10</a></li>
-							            <li><a href="#error11_de">Error: 11</a></li>
-							            <li><a href="#error12_de">Error: 12</a></li>
-							            <li><a href="#error13_de">Error: 13</a></li>
-							            <li><a href="#error14_de">Error: 14</a></li>
-							            <li><a href="#error15_de">Error: 15</a></li>
-							            <li><a href="#error16_de">Error: 16</a></li>
-							            <li><a href="#error18_de">Error: 18</a></li>
-							            <li><a href="#error19_de">Error: 19</a></li>
-										<li><a href="#error20_de">Error: 20</a></li>										
-							        </ul>
-							    </div>							
-							    <!-- Right column (Additional content) -->
-							    <div style="flex: 1; padding-left: 0rem;">
-							        <ul style="padding-left: 1rem; list-style-type: none;">
-										<li><a href="#error21_de">Error: 21</a></li>
-										<li><a href="#error22_de">Error: 22</a></li>
-										<li><a href="#error23_de">Error: 23</a></li>
-										<li><a href="#error24_de">Error: 24</a></li>
-										<li><a href="#error25_de">Error: 25</a></li>
-										<li><a href="#error26_de">Error: 26</a></li>
-										<li><a href="#error27_de">Error: 27</a></li>
-										<li><a href="#error28_de">Error: 28</a></li>
-										<li><a href="#error29_de">Error: 29</a></li>
-										<li><a href="#error31_de">Error: 31</a></li>
-							        </ul>
-							    </div>
-								<!-- Right column (Additional content) -->
-							    <div style="flex: 1; padding-left: 0rem;">
-							        <ul style="padding-left: 1rem; list-style-type: none;">
-										<li><a href="#error32_de">Error: 32</a></li>
-										<li><a href="#error35_de">Error: 35</a></li>
-										<li><a href="#error36_de">Error: 36</a></li>
-										<li><a href="#error37_de">Error: 37</a></li>
-										<li><a href="#error38_de">Error: 38</a></li>
-										<li><a href="#error39_de">Error: 39</a></li>
-										<li><a href="#error40_de">Error: 40</a></li>
-										<li><a href="#error41_de">Error: 41</a></li>
-										<li><a href="#error42_de">Error: 42</a></li>
-										<li><a href="#error43_de">Error: 43</a></li>	
-							        </ul>
-							    </div>
-								<!-- Right column (Additional content) -->
-							    <div style="flex: 1; padding-left: 0rem;">
-							        <ul style="padding-left: 1rem; list-style-type: none;">
-										<li><a href="#error44_de">Error: 44</a></li>
-										<li><a href="#error45_de">Error: 45</a></li>
-										<li><a href="#error50_de">Error: 50</a></li>
-										<li><a href="#error51_de">Error: 51</a></li>
-										<li><a href="#error52_de">Error: 52</a></li>
-										<li><a href="#error54_de">Error: 54</a></li>
-										<li><a href="#error55_de">Error: 55</a></li>	
-							        </ul>
-							    </div>
-							</div>
-
-							<!-- Error 10 -->
-							<div id="error10_de">
-								<label class="error-title">Fehlercode 10:</label>
-								<label class="error-description">Kommunikationsstörung zwischen dem Display und der Hauptsteuerplatine.</label>
-								<label class="error-details">WENN DER FEHLER 10 ANGEZEIGT WIRD, KANN DIE LCD-ANZEIGE NICHT MIT DEM STEUERGERÄT KOMMUNIZIEREN. VERSUCHEN SIE ZUNÄCHST, DEN ROLLER ZURÜCKZUSETZEN. WENN DAS NICHT FUNKTIONIERT, VERSUCHEN SIE, DAS ARMATURENBRETT AUSZUSTECKEN UND DANN WIEDER EINZUSTECKEN. DIES KANN DAZU FÜHREN, DASS ES WIEDER FUNKTIONIERT, ABER ES KANN WIEDER 10 BLINKEN, WENN ES EINGESCHALTET IST. WENN DAS NICHT FUNKTIONIERT, SOLLTEN SIE VERSUCHEN, DIE FIRMWARE ZU FLASHEN ODER ZU AKTUALISIEREN. WENN DAS PROBLEM WEITERHIN BESTEHT, TAUSCHEN SIE DIE LCD-ANZEIGE ODER DAS STEUERGERÄT AUS, UND ZWAR IN DIESER REIHENFOLGE.</label>
-								<br>
-						 	</div>
-							<!-- Error 11 -->
-							<div id="error11_de">
-								<label class="error-title">Fehlercode 11:</label>
-								<label class="error-description">Fehler bei der Messung des A-Phasenstroms des Motors.</label>
-								<label class="error-details">WENN DER FEHLER 11 ANGEZEIGT WIRD, WENN DER MOTOR NICHT RICHTIG GEMESSEN WIRD. ÜBERPRÜFEN SIE ZUNÄCHST DIE PHASENLEITUNG DES MOTORS AUF AUSFRANSUNGEN, CLIPS, KNICKE ODER SCHNITTE. WENN KEIN PROBLEM MIT DER PHASENLEITUNG VORLIEGT, TAUSCHEN SIE DAS STEUERGERÄT AUS, UND WENN DAS PROBLEM WEITERHIN BESTEHT, TAUSCHEN SIE DEN MOTOR AUS.</label>
-								<br>
-							</div>
-							<!-- Error 12 -->
-							<div id="error12_de">
-								<label class="error-title">Fehlercode 12:</label>
-								<label class="error-description">Fehler bei der Messung des B-Phasenstroms des Motors.</label>
-								<label class="error-details">WENN DER FEHLER 12 ANGEZEIGT WIRD, WENN DER MOTOR NICHT RICHTIG GEMESSEN WIRD. ÜBERPRÜFEN SIE ZUNÄCHST DIE PHASENLEITUNG DES MOTORS AUF AUSFRANSUNGEN, CLIPS, KNICKE ODER SCHNITTE. WENN KEIN PROBLEM MIT DER PHASENLEITUNG VORLIEGT, TAUSCHEN SIE DAS STEUERGERÄT AUS, UND WENN DAS PROBLEM WEITERHIN BESTEHT, TAUSCHEN SIE DEN MOTOR AUS.</label>
-								<br>
-							</div>
-							<!-- Error 13 -->
-							<div id="error13_de">
-								<label class="error-title">Fehlercode 13:</label>
-								<label class="error-description">Fehler bei der Messung des C-Phasenstroms des Motors.</label>
-								<label class="error-details">WENN DER FEHLER 13 ANGEZEIGT WIRD, WENN DER MOTOR NICHT RICHTIG GEMESSEN WIRD. ÜBERPRÜFEN SIE ZUNÄCHST DIE PHASENLEITUNG DES MOTORS AUF AUSFRANSUNGEN, CLIPS, KNICKE ODER SCHNITTE. WENN KEIN PROBLEM MIT DER PHASENLEITUNG VORLIEGT, TAUSCHEN SIE DAS STEUERGERÄT AUS, UND WENN DAS PROBLEM WEITERHIN BESTEHT, TAUSCHEN SIE DEN MOTOR AUS.</label>
-								<br>
-							</div>
-							<!-- Error 14 -->
-							<div id="error14_de">
-								<label class="error-title">Fehlercode 14:</label>
-								<label class="error-description">Fehler am Hall-Sensor des Gashebels.</label>
-								<label class="error-details">Fehler 14 ist wahrscheinlich der häufigste Fehlercode. Diesem Fehlercode haben wir hier einen ganzen Artikel gewidmet.</label>
-								<br>
-							</div>
-							<!-- Error 15 -->
-							<div id="error15_de">
-								<label class="error-title">Fehlercode 15:</label>
-								<label class="error-description">Hall-Sensor der linken Bremse defekt.</label>
-								<label class="error-details">Die Fehlermeldung 15 wird angezeigt, wenn der Hall-Sensor der Bremse auf der linken Seite nicht richtig gelesen wird. Sie können das Problem in der Regel reproduzieren, indem Sie den Bremsgriff gedrückt halten, während der Roller hochfährt. Dieser Fehler kann auch dadurch verursacht werden, dass sich die Magnete aus dem Inneren der Bremse gelöst haben. Es gibt viele Schritte, um dieses Problem zu beheben. </label>
-								<br>
-							</div>
-							<!-- Error 16 -->
-							<div id="error16_de">
-								<label class="error-title">Fehlercode 16:</label>
-								<label class="error-description">Hall-Sensor der rechten Bremse defekt.</label>
-								<label class="error-details">Der Fehler 16 wird angezeigt, wenn der Hall-Sensor der Bremse am rechten Bremsgriff nicht richtig liest. Sie können das Problem in der Regel reproduzieren, indem Sie den Bremsgriff gedrückt halten, während der Roller hochfährt. Dieser Fehler kann auch dadurch verursacht werden, dass sich die Magnete aus dem Inneren der Bremse gelöst haben. Es gibt viele Schritte, um dieses Problem zu beheben. </label>
-								<br>
-							</div>
-							<!-- Error 18 -->
-							<div id="error18_de">
-								<label class="error-title">Fehlercode 18:</label>
-								<label class="error-description">Anomalie des Motor-Hall-Sensors.</label>
-								<label class="error-details">Die Fehlermeldung 18 wird angezeigt, wenn der Elektromotor einen abnormalen Messwert von den Hallsensoren im Motor feststellt. Dies kann auf ein nicht eingestecktes Kabel oder einen durchgebrannten Sensor/Widerstand zurückzuführen sein. Prüfen Sie den 5-poligen Hall-Stecker des Motors und kontrollieren Sie visuell, dass er noch angeschlossen und nicht beschädigt ist. Jedes Ausfransen, jede Klammer, jeder Knick oder Schnitt bedeutet, dass es ersetzt werden muss. Wenn alles in Ordnung ist, ersetzen Sie das Steuergerät und den Motor in dieser Reihenfolge.</label>
-								<br>
-							</div>
-							<!-- Error 19 -->
-							<div id="error19_de">
-								<label class="error-title">Fehlercode 19:</label>
-								<label class="error-description">Abnormale Batteriespannung erkannt.</label>
-								<label class="error-details">Error 19 is shown when the battery is under the correct voltage reading. When this happens the battery usually needs to be charged. The battery LED should do one of 3 things, turn solid red, flash between red and green, or turn solid green. If the LED is solid red, let the battery charge. If the LED flashes between red and green, Let it charge for about an hour and it should start to charge normally. If the LED stays green then replace the battery. If this does not work follow the outline below. Reset the scooter and if that does not work, replace the controller first and testing the scooter, followed by the battery.</label>
-								<br>
-							</div>
-							<!-- Error 20 -->
-							<div id="error20_de">
-								<label class="error-title">Fehlercode 20:</label>
-								<label class="error-description">Abnormale externe Batteriespannung erkannt.</label>
-								<label class="error-details">Fehler 20 wird angezeigt, wenn die Spannung der externen Batterie unter dem korrekten Wert liegt. In diesem Fall muss die Batterie normalerweise aufgeladen werden. Die Batterie-LED sollte eines von 3 Dingen tun: durchgehend rot leuchten, zwischen rot und grün blinken oder durchgehend grün leuchten. Wenn die LED durchgehend rot leuchtet, lassen Sie die Batterie aufladen. Wenn die LED zwischen rot und grün blinkt, lassen Sie den Akku etwa eine Stunde lang aufladen, dann sollte er sich normal aufladen. Wenn die LED grün bleibt, tauschen Sie die Batterie aus. Wenn dies nicht funktioniert, gehen Sie wie unten beschrieben vor. Setzen Sie das Elektromobil zurück, und wenn das nicht funktioniert, ersetzen Sie zuerst das Steuergerät und testen Sie das Elektromobil, gefolgt von der Batterie.</label>
-								<br>
-							</div>
-							<!-- Error 21 -->
-							<div id="error21_de">
-								<label class="error-title">Fehlercode 21:</label>
-								<label class="error-description">BMS-Kommunikationsfehler.</label>
-								<label class="error-details">Fehler 21 wird angezeigt, wenn das Steuergerät keine Daten vom BMS/Batterie empfangen kann. Überprüfen Sie zunächst die Kommunikationsverbindung zur Batterie. Dies ist ein 4-poliges Datenkabel, das möglicherweise wieder eingesteckt werden muss. Es sollte einrasten. Schließen Sie das Elektromobil ein paar Stunden lang an, um zu sehen, ob die Batterie ordnungsgemäß geladen wird. Andernfalls testen Sie das Elektromobil mit einem funktionierenden Steuergerät und anschließend mit einer funktionierenden Batterie.</label>
-								<br>
-							</div>
-							<!-- Error 22 -->
-							<div id="error22_de">
-								<label class="error-title">Fehlercode 22:</label>
-								<label class="error-description">Falsches BMS-Passwort.</label>
-								<label class="error-details">Fehler 22 wird angezeigt, wenn ein Mietfahrzeug nicht richtig mit STLink verbunden ist oder die falsche Firmware-Version hochgeladen wurde. Eine vorübergehende Lösung wäre, Gas und Bremse beim Starten kurz zu halten, um diesen Fehler zu ignorieren. Für eine dauerhaftere Lösung aktualisieren Sie die Seriennummer im Segway-Portal. Wenn der Scooter immer noch nicht funktioniert, tauschen Sie das Steuergerät und anschließend die Batterie aus.</label>
-								<br>
-							</div>
-							<!-- Error 23 -->
-							<div id="error23_de">
-								<label class="error-title">Fehlercode 23:</label>
-								<label class="error-description">BMS-Standard-Seriennummer.</label>
-								<label class="error-details">Der Fehler 23 wird angezeigt, wenn die Seriennummer des Akkus die Standardnummer ist. Dies ist vergleichbar mit Fehler 35. Die Seriennummer kann nicht 3GA0016A1A0001 sein. Beheben Sie dies, indem Sie die BMS-Seriennummer mit der ninebot Launcher-App ändern. Andernfalls ersetzen Sie den Akku und anschließend das Steuergerät.</label>
-								<br>
-							</div>
-							<!-- Error 24 -->
-							<div id="error24_de">
-								<label class="error-title">Fehlercode 24:</label>
-								<label class="error-description">Anomalie in der Systemspannungserkennung.</label>
-								<label class="error-details">Fehler 24 wird angezeigt, wenn das Steuergerät eine abnormale Batteriespannung feststellt. Dies ist meistens der Fall, wenn jemand die Batterie aufrüstet. In einigen Fällen kann die Batterie überladen sein. Wenn das Problem durch das Aufrüsten der Batterie verursacht wurde, aktualisieren Sie die Firmware des Steuergeräts, um sie an die aktuelle Batteriekonfiguration anzupassen. Wenn der Fehler ohne vorherigen Auslöser aufgetreten ist, muss der Akku entladen, aufgeladen oder ausgetauscht werden. Um die Batterie zu entladen, lassen Sie den Roller für eine Weile an und schalten Sie das Scheinwerferlicht ein, um die Batterie zu entladen. Wenn die Spannung sinkt und der Fehler verschwindet, benutzen Sie den Roller weiter, bis die Spannung bei 25% liegt, und laden Sie ihn dann wieder voll auf. Wenn dies oder das Aufladen der Batterie das Problem nicht behebt, folgen Sie der nachstehenden Beschreibung und tauschen Sie die Batterie und anschließend das Steuergerät aus.</label>
-								<br>
-							</div>
-							<!-- Error 25 -->
-							<div id="error25_de">
-								<label class="error-title">Fehlercode 25:</label>
-								<label class="error-description">Kommunikationsfehler während der ESC-Fimware-Aktualisierung</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 26 -->
-							<div id="error26_de">
-								<label class="error-title">Fehlercode 26:</label>
-								<label class="error-description">Flash-Speicherfehler</label>
-								<label class="error-details">Wenn Fehler 26 angezeigt wird, liegt ein Fehler in der Steuerung vor. Setzen Sie zunächst das Elektromobil zurück. Wenn das Problem dadurch nicht behoben wird, aktualisieren Sie die Firmware des Rollers und sehen Sie, ob das Problem behoben ist. Wenn nichts davon funktioniert, tauschen Sie das Steuergerät aus.</label>
-								<br>
-							</div>
-							<!-- Error 27 -->
-							<div id="error27_de">
-								<label class="error-title">Fehlercode 27:</label>
-								<label class="error-description">Controller-Passwortfehler</label>
-								<label class="error-details">Der Fehler 27 wird angezeigt, wenn ein Mietroller nicht richtig mit STLink verbunden ist oder die falsche Firmware-Version hat. Er kann auch dadurch verursacht werden, dass jemand die Serienwechselmethode durchführt. Eine vorübergehende Lösung wäre, den Gashebel und die Bremse beim Start kurz zu halten, um diesen Fehler zu ignorieren. Für eine dauerhaftere Lösung aktualisieren Sie die Seriennummer im Segway-Portal. Wenn der Roller immer noch nicht funktioniert, tauschen Sie das Steuergerät aus.</label>
-								<br>
-							</div>
-							<!-- Error 28 -->
-							<div id="error28_de">
-								<label class="error-title">Fehlercode 28:</label>
-								<label class="error-description">Kurzschluss in der Motorsteuereinheit Mos Up-Bridge</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 29 -->
-							<div id="error29_de">
-								<label class="error-title">Fehlercode 29:</label>
-								<label class="error-description">Kurzschluss in der Motorsteuerung mos down-bridge</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 31 -->
-							<div id="error31_de">
-								<label class="error-title">Fehlercode 31:</label>
-								<label class="error-description">Fehler beim Programmsprung</label>
-								<label class="error-details">Die Fehlermeldung 31 zeigt an, dass es ein Problem mit dem Steuergerät gibt. Es gibt nicht viel zu tun, außer den Roller zurückzusetzen und dann das Steuergerät auszutauschen.</label>
-								<br>
-							</div>
-							<!-- Error 32 -->
-							<div id="error32_de">
-								<label class="error-title">Fehlercode 32:</label>
-								<label class="error-description">IOT Heartbeat-Zeitüberschreitung</label>
-								<label class="error-details">Der Fehler 32 wird bei einem Leihroller angezeigt, der das IoT-Gerät nicht mehr erkennen kann. Sie sollten zunächst das IoT-Gerät untersuchen und sicherstellen, dass die Verbindung frei von Ausfransungen, Clips, Knicken oder Schnitten ist. Wenn das Verbindungskabel in Ordnung ist, ziehen Sie es ab, stecken Sie es wieder ein und setzen Sie den Scooter zurück. Wenn das Problem weiterhin besteht, tauschen Sie das IoT-Gerät und anschließend das Steuergerät aus.</label>
-								<br>
-							</div>
-							<!-- Error 35 -->
-							<div id="error35_de">
-								<label class="error-title">Fehlercode 35:</label>
-								<label class="error-description">Scooter mit Standard-Seriennummer</label>
-								<label class="error-details">Der Fehler 35 wird angezeigt, wenn die Seriennummer des Controllers die Standardnummer ist. Dies wird normalerweise durch ein Firmware-Update verursacht. Dieser Fehler ist ähnlich wie der Fehler 23. Die Seriennummer kann nicht N4GEA1601C0001 sein. Um dies zu beheben, ändern Sie die Seriennummer des Controllers mit der ninebot Launcher-App. Andernfalls ersetzen Sie das Steuergerät und anschließend die Batterie.</label>
-								<br>
-							</div>
-							<!-- Error 36 -->
-							<div id="error36_de">
-								<label class="error-title">Fehlercode 36:</label>
-								<label class="error-description">Ausfall des 2+4-Steckers oder Ausfall des externen Batterieladekabels.</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 37 -->
-							<div id="error37_de">
-								<label class="error-title">Fehlercode 37:</label>
-								<label class="error-description">Ausfall des Ladegeräts oder des Ladekabels</label>
-								<label class="error-details">Fehler 37 wird angezeigt, wenn das Ladekabel defekt ist. Versuchen Sie zunächst, das Elektromobil zurückzusetzen, um zu sehen, ob das Problem dadurch behoben wird. Überprüfen Sie als nächstes die Verkabelung vom Steuergerät zur Batterie. Wenn ein Kabel ausgefranst, abgeschnitten, geknickt oder durchgeschnitten ist, tauschen Sie das Bauteil aus, zu dem es gehört. Wenn die gesamte Verkabelung in Ordnung ist, tauschen Sie zuerst das Steuergerät und dann die Batterie aus.</label>
-								<br>
-							</div>
-							<!-- Error 38 -->
-							<div id="error38_de">
-								<label class="error-title">Fehlercode 38:</label>
-								<label class="error-description">Überstrom beim Aufladen</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 39 -->
-							<div id="error39_de">
-								<label class="error-title">Fehlercode 39:</label>
-								<label class="error-description">Anomalie des Temperatursensors der Batterie</label>
-								<label class="error-details">Der Fehler 39 wird angezeigt, wenn der Temperatursensor der Batterie außerhalb der normalen Werte liegt. Dies kann durch zu heiße oder zu kalte Außenbedingungen oder auch ohne Grund geschehen. Prüfen Sie zunächst die Temperatur des Akkus mit der Segway Launcher App. Wenn die Batterie zu heiß ist, lassen Sie sie abkühlen, und wenn sie zu kalt ist, bringen Sie den Roller in einen wärmeren Bereich. Wenn die Temperatur normal zu sein scheint, starten Sie den Roller neu. Wenn das Problem weiterhin besteht, tauschen Sie die Batterie aus.</label>
-								<br>
-							</div>
-							<!-- Error 40 -->
-							<div id="error40_de">
-								<label class="error-title">Fehlercode 40:</label>
-								<label class="error-description">Abnormaler Temperaturmesswert des Controllers</label>
-								<label class="error-details">Die Fehlermeldung 40 zeigt an, dass das Steuergerät zu heiß geworden ist und abkühlen muss, sie kann aber auch dadurch verursacht werden, dass sich der Sensor löst oder ausfällt. Überprüfen Sie die Verkabelung des Steuergeräts auf Ausfransungen, Clips, Knicke oder Schnitte. Andernfalls tauschen Sie das Steuergerät aus.</label>
-								<br>
-							</div>
-							<!-- Error 41 -->
-							<div id="error41_de">
-								<label class="error-title">Fehlercode 41:</label>
-								<label class="error-description">Die Temperatur des Motors ist abnormal</label>
-								<label class="error-details">Der Fehler 41 wird angezeigt, weil der Motor zu heiß geworden ist und abkühlen muss, er kann aber auch durch einen nicht angeschlossenen oder defekten Sensor verursacht werden. Überprüfen Sie die Motorverkabelung auf Ausfransungen, Clips, Knicke oder Schnitte. Andernfalls tauschen Sie den Motor aus.</label>
-								<br>
-							</div>
-							<!-- Error 42 -->
-							<div id="error42_de">
-								<label class="error-title">Fehlercode 42:</label>
-								<label class="error-description">Keine Kommunikation mit externem BMS</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 43 -->
-							<div id="error43_de">
-								<label class="error-title">Fehlercode 43:</label>
-								<label class="error-description">Externe BMS-Konfiguration ungültig</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 44 -->
-							<div id="error44_de">
-								<label class="error-title">Fehlercode 44:</label>
-								<label class="error-description">Externes BMS nicht aktiviert</label>
-								<label class="error-details"></label>
-								<br>
-							</div>
-							<!-- Error 45 -->
-							<div id="error45_de">
-								<label class="error-title">Fehlercode 45:</label>
-								<label class="error-description">Scooter mit Retail-Firmware geflasht</label>
-								<label class="error-details">Der Fehler 45 wird angezeigt, wenn ein Verbraucher-Roller mit der Miet-Firmware aktualisiert wird. Einige haben berichtet, dass es erfolgreich ist, das Rad beim Starten leicht zu bewegen. Andernfalls sollten Sie versuchen, die Firmware auf eine Nicht-Verkaufs-Firmware zu flashen.</label>
-								<br>
-							</div>
-							<!-- Error 50 -->
-							<div id="error50_de">
-								<label class="error-title">Fehlercode 50:</label>
-								<label class="error-description">Entweder liegt der Temperatursensor außerhalb der normalen Parameter oder die Verleih-Firmware ist nicht richtig eingestellt.</label>
-								<label class="error-details">Der Fehler 50 wird aus einem von zwei Gründen angezeigt. Entweder meldet der Temperatursensor keinen korrekten Wert oder die verwendete Verleih-Firmware wurde nicht richtig eingerichtet. Schalten Sie das Fahrzeug aus, um zu sehen, ob das Problem dadurch vorübergehend behoben wird. Für das Problem mit der Miet-Firmware müssen Sie die Firmware für das IoT, die Batterie und die Steuerung aktualisieren.</label>
-								<br>
-							</div>
-							<!-- Error 51 -->
-							<div id="error51_de">
-								<label class="error-title">Fehlercode 51:</label>
-								<label class="error-description">LCD und Controller stimmen nicht überein.</label>
-								<label class="error-details">Der Fehler 51 wird angezeigt, wenn die Firmware auf dem LCD nicht mit der Firmware auf dem Steuergerät übereinstimmt. Aktualisieren Sie zunächst die Firmware der LCD-Anzeige, indem Sie den Anschluss im Steuergerät verwenden. Wenn das Problem weiterhin besteht, aktualisieren Sie das Steuergerät mit der passenden Firmware. Sollte das Problem weiterhin bestehen, tauschen Sie zuerst das LCD und dann das Steuergerät aus.</label>
-								<br>
-							</div>
-							<!-- Error 52 -->
-							<div id="error52_de">
-								<label class="error-title">Fehlercode 52:</label>
-								<label class="error-description">e-lock und Controller-Firmware stimmen nicht überein</label>
-								<label class="error-details">Der Fehler 52 wird angezeigt, wenn die Firmware von E-Lock und Controller nicht übereinstimmt. Stellen Sie zunächst sicher, dass die Firmware-Versionen der beiden Komponenten übereinstimmen. Wenn dies der Fall ist, ist eine der Komponenten defekt und muss ausgetauscht werden. Tauschen Sie zuerst den Controller und dann das E-Lock aus.</label>
-								<br>
-							</div>
-							<!-- Error 54 -->
-							<div id="error54_de">
-								<label class="error-title">Fehlercode 54:</label>
-								<label class="error-description">Kommunikationsstörung zwischen E-Lock und Controller</label>
-								<label class="error-details">Der Fehler 54 wird angezeigt, wenn Controller und E-Lock nicht richtig miteinander kommunizieren. Überprüfen Sie zunächst die Verkabelung von Controller und E-Lock. Sie sollte frei von Ausfransungen, Clips, Knicken oder Schnitten sein. Wenn Sie ein Problem mit der Verkabelung feststellen, ersetzen Sie die betroffene(n) Komponente(n). Wenn nichts gefunden werden kann, versuchen Sie es zunächst mit einem neuen Steuergerät und dann mit einem neuen E-Lock.</label>
-								<br>
-							</div>						
-							<!-- Error 55 -->
-							<div id="error55_de">								
-								<label class="error-title">Fehlercode 55:</label>
-								<label class="error-description">Ausfall des Batteriefachdeckelsensors</label>
-								<label class="error-details">Der Fehler 55 wird angezeigt, wenn die Batterieabdeckung nicht vollständig geschlossen ist. Stellen Sie sich diesen Fehler wie ein Signal zum Öffnen der Autotür vor, allerdings mit dem Batteriefachdeckel. Öffnen und schließen Sie zunächst die Batterieabdeckung erneut. Vergewissern Sie sich, dass der Batteriefachdeckel richtig verschlossen ist. Sollte das Problem weiterhin bestehen, tauschen Sie das Batterieschloss aus.</label>
+							<div id="DE-ERROR-List" style="display: none">									
+								<!-- Error 10 -->
+								<div id="error10_de">
+									<label class="error-title">Fehlercode 10:</label>
+									<label class="error-description">Kommunikationsstörung zwischen dem Display und der Hauptsteuerplatine.</label>
+									<label class="error-details">WENN DER FEHLER 10 ANGEZEIGT WIRD, KANN DIE LCD-ANZEIGE NICHT MIT DEM STEUERGERÄT KOMMUNIZIEREN. VERSUCHEN SIE ZUNÄCHST, DEN ROLLER ZURÜCKZUSETZEN. WENN DAS NICHT FUNKTIONIERT, VERSUCHEN SIE, DAS ARMATURENBRETT AUSZUSTECKEN UND DANN WIEDER EINZUSTECKEN. DIES KANN DAZU FÜHREN, DASS ES WIEDER FUNKTIONIERT, ABER ES KANN WIEDER 10 BLINKEN, WENN ES EINGESCHALTET IST. WENN DAS NICHT FUNKTIONIERT, SOLLTEN SIE VERSUCHEN, DIE FIRMWARE ZU FLASHEN ODER ZU AKTUALISIEREN. WENN DAS PROBLEM WEITERHIN BESTEHT, TAUSCHEN SIE DIE LCD-ANZEIGE ODER DAS STEUERGERÄT AUS, UND ZWAR IN DIESER REIHENFOLGE.</label>
+									<br>
+								 </div>
+								<!-- Error 11 -->
+								<div id="error11_de">
+									<label class="error-title">Fehlercode 11:</label>
+									<label class="error-description">Fehler bei der Messung des A-Phasenstroms des Motors.</label>
+									<label class="error-details">WENN DER FEHLER 11 ANGEZEIGT WIRD, WENN DER MOTOR NICHT RICHTIG GEMESSEN WIRD. ÜBERPRÜFEN SIE ZUNÄCHST DIE PHASENLEITUNG DES MOTORS AUF AUSFRANSUNGEN, CLIPS, KNICKE ODER SCHNITTE. WENN KEIN PROBLEM MIT DER PHASENLEITUNG VORLIEGT, TAUSCHEN SIE DAS STEUERGERÄT AUS, UND WENN DAS PROBLEM WEITERHIN BESTEHT, TAUSCHEN SIE DEN MOTOR AUS.</label>
+									<br>
+								</div>
+								<!-- Error 12 -->
+								<div id="error12_de">
+									<label class="error-title">Fehlercode 12:</label>
+									<label class="error-description">Fehler bei der Messung des B-Phasenstroms des Motors.</label>
+									<label class="error-details">WENN DER FEHLER 12 ANGEZEIGT WIRD, WENN DER MOTOR NICHT RICHTIG GEMESSEN WIRD. ÜBERPRÜFEN SIE ZUNÄCHST DIE PHASENLEITUNG DES MOTORS AUF AUSFRANSUNGEN, CLIPS, KNICKE ODER SCHNITTE. WENN KEIN PROBLEM MIT DER PHASENLEITUNG VORLIEGT, TAUSCHEN SIE DAS STEUERGERÄT AUS, UND WENN DAS PROBLEM WEITERHIN BESTEHT, TAUSCHEN SIE DEN MOTOR AUS.</label>
+									<br>
+								</div>
+								<!-- Error 13 -->
+								<div id="error13_de">
+									<label class="error-title">Fehlercode 13:</label>
+									<label class="error-description">Fehler bei der Messung des C-Phasenstroms des Motors.</label>
+									<label class="error-details">WENN DER FEHLER 13 ANGEZEIGT WIRD, WENN DER MOTOR NICHT RICHTIG GEMESSEN WIRD. ÜBERPRÜFEN SIE ZUNÄCHST DIE PHASENLEITUNG DES MOTORS AUF AUSFRANSUNGEN, CLIPS, KNICKE ODER SCHNITTE. WENN KEIN PROBLEM MIT DER PHASENLEITUNG VORLIEGT, TAUSCHEN SIE DAS STEUERGERÄT AUS, UND WENN DAS PROBLEM WEITERHIN BESTEHT, TAUSCHEN SIE DEN MOTOR AUS.</label>
+									<br>
+								</div>
+								<!-- Error 14 -->
+								<div id="error14_de">
+									<label class="error-title">Fehlercode 14:</label>
+									<label class="error-description">Fehler am Hall-Sensor des Gashebels.</label>
+									<label class="error-details">Fehler 14 ist wahrscheinlich der häufigste Fehlercode. Diesem Fehlercode haben wir hier einen ganzen Artikel gewidmet.</label>
+									<br>
+								</div>
+								<!-- Error 15 -->
+								<div id="error15_de">
+									<label class="error-title">Fehlercode 15:</label>
+									<label class="error-description">Hall-Sensor der linken Bremse defekt.</label>
+									<label class="error-details">Die Fehlermeldung 15 wird angezeigt, wenn der Hall-Sensor der Bremse auf der linken Seite nicht richtig gelesen wird. Sie können das Problem in der Regel reproduzieren, indem Sie den Bremsgriff gedrückt halten, während der Roller hochfährt. Dieser Fehler kann auch dadurch verursacht werden, dass sich die Magnete aus dem Inneren der Bremse gelöst haben. Es gibt viele Schritte, um dieses Problem zu beheben. </label>
+									<br>
+								</div>
+								<!-- Error 16 -->
+								<div id="error16_de">
+									<label class="error-title">Fehlercode 16:</label>
+									<label class="error-description">Hall-Sensor der rechten Bremse defekt.</label>
+									<label class="error-details">Der Fehler 16 wird angezeigt, wenn der Hall-Sensor der Bremse am rechten Bremsgriff nicht richtig liest. Sie können das Problem in der Regel reproduzieren, indem Sie den Bremsgriff gedrückt halten, während der Roller hochfährt. Dieser Fehler kann auch dadurch verursacht werden, dass sich die Magnete aus dem Inneren der Bremse gelöst haben. Es gibt viele Schritte, um dieses Problem zu beheben. </label>
+									<br>
+								</div>
+								<!-- Error 18 -->
+								<div id="error18_de">
+									<label class="error-title">Fehlercode 18:</label>
+									<label class="error-description">Anomalie des Motor-Hall-Sensors.</label>
+									<label class="error-details">Die Fehlermeldung 18 wird angezeigt, wenn der Elektromotor einen abnormalen Messwert von den Hallsensoren im Motor feststellt. Dies kann auf ein nicht eingestecktes Kabel oder einen durchgebrannten Sensor/Widerstand zurückzuführen sein. Prüfen Sie den 5-poligen Hall-Stecker des Motors und kontrollieren Sie visuell, dass er noch angeschlossen und nicht beschädigt ist. Jedes Ausfransen, jede Klammer, jeder Knick oder Schnitt bedeutet, dass es ersetzt werden muss. Wenn alles in Ordnung ist, ersetzen Sie das Steuergerät und den Motor in dieser Reihenfolge.</label>
+									<br>
+								</div>
+								<!-- Error 19 -->
+								<div id="error19_de">
+									<label class="error-title">Fehlercode 19:</label>
+									<label class="error-description">Abnormale Batteriespannung erkannt.</label>
+									<label class="error-details">Error 19 is shown when the battery is under the correct voltage reading. When this happens the battery usually needs to be charged. The battery LED should do one of 3 things, turn solid red, flash between red and green, or turn solid green. If the LED is solid red, let the battery charge. If the LED flashes between red and green, Let it charge for about an hour and it should start to charge normally. If the LED stays green then replace the battery. If this does not work follow the outline below. Reset the scooter and if that does not work, replace the controller first and testing the scooter, followed by the battery.</label>
+									<br>
+								</div>
+								<!-- Error 20 -->
+								<div id="error20_de">
+									<label class="error-title">Fehlercode 20:</label>
+									<label class="error-description">Abnormale externe Batteriespannung erkannt.</label>
+									<label class="error-details">Fehler 20 wird angezeigt, wenn die Spannung der externen Batterie unter dem korrekten Wert liegt. In diesem Fall muss die Batterie normalerweise aufgeladen werden. Die Batterie-LED sollte eines von 3 Dingen tun: durchgehend rot leuchten, zwischen rot und grün blinken oder durchgehend grün leuchten. Wenn die LED durchgehend rot leuchtet, lassen Sie die Batterie aufladen. Wenn die LED zwischen rot und grün blinkt, lassen Sie den Akku etwa eine Stunde lang aufladen, dann sollte er sich normal aufladen. Wenn die LED grün bleibt, tauschen Sie die Batterie aus. Wenn dies nicht funktioniert, gehen Sie wie unten beschrieben vor. Setzen Sie das Elektromobil zurück, und wenn das nicht funktioniert, ersetzen Sie zuerst das Steuergerät und testen Sie das Elektromobil, gefolgt von der Batterie.</label>
+									<br>
+								</div>
+								<!-- Error 21 -->
+								<div id="error21_de">
+									<label class="error-title">Fehlercode 21:</label>
+									<label class="error-description">BMS-Kommunikationsfehler.</label>
+									<label class="error-details">Fehler 21 wird angezeigt, wenn das Steuergerät keine Daten vom BMS/Batterie empfangen kann. Überprüfen Sie zunächst die Kommunikationsverbindung zur Batterie. Dies ist ein 4-poliges Datenkabel, das möglicherweise wieder eingesteckt werden muss. Es sollte einrasten. Schließen Sie das Elektromobil ein paar Stunden lang an, um zu sehen, ob die Batterie ordnungsgemäß geladen wird. Andernfalls testen Sie das Elektromobil mit einem funktionierenden Steuergerät und anschließend mit einer funktionierenden Batterie.</label>
+									<br>
+								</div>
+								<!-- Error 22 -->
+								<div id="error22_de">
+									<label class="error-title">Fehlercode 22:</label>
+									<label class="error-description">Falsches BMS-Passwort.</label>
+									<label class="error-details">Fehler 22 wird angezeigt, wenn ein Mietfahrzeug nicht richtig mit STLink verbunden ist oder die falsche Firmware-Version hochgeladen wurde. Eine vorübergehende Lösung wäre, Gas und Bremse beim Starten kurz zu halten, um diesen Fehler zu ignorieren. Für eine dauerhaftere Lösung aktualisieren Sie die Seriennummer im Segway-Portal. Wenn der Scooter immer noch nicht funktioniert, tauschen Sie das Steuergerät und anschließend die Batterie aus.</label>
+									<br>
+								</div>
+								<!-- Error 23 -->
+								<div id="error23_de">
+									<label class="error-title">Fehlercode 23:</label>
+									<label class="error-description">BMS-Standard-Seriennummer.</label>
+									<label class="error-details">Der Fehler 23 wird angezeigt, wenn die Seriennummer des Akkus die Standardnummer ist. Dies ist vergleichbar mit Fehler 35. Die Seriennummer kann nicht 3GA0016A1A0001 sein. Beheben Sie dies, indem Sie die BMS-Seriennummer mit der ninebot Launcher-App ändern. Andernfalls ersetzen Sie den Akku und anschließend das Steuergerät.</label>
+									<br>
+								</div>
+								<!-- Error 24 -->
+								<div id="error24_de">
+									<label class="error-title">Fehlercode 24:</label>
+									<label class="error-description">Anomalie in der Systemspannungserkennung.</label>
+									<label class="error-details">Fehler 24 wird angezeigt, wenn das Steuergerät eine abnormale Batteriespannung feststellt. Dies ist meistens der Fall, wenn jemand die Batterie aufrüstet. In einigen Fällen kann die Batterie überladen sein. Wenn das Problem durch das Aufrüsten der Batterie verursacht wurde, aktualisieren Sie die Firmware des Steuergeräts, um sie an die aktuelle Batteriekonfiguration anzupassen. Wenn der Fehler ohne vorherigen Auslöser aufgetreten ist, muss der Akku entladen, aufgeladen oder ausgetauscht werden. Um die Batterie zu entladen, lassen Sie den Roller für eine Weile an und schalten Sie das Scheinwerferlicht ein, um die Batterie zu entladen. Wenn die Spannung sinkt und der Fehler verschwindet, benutzen Sie den Roller weiter, bis die Spannung bei 25% liegt, und laden Sie ihn dann wieder voll auf. Wenn dies oder das Aufladen der Batterie das Problem nicht behebt, folgen Sie der nachstehenden Beschreibung und tauschen Sie die Batterie und anschließend das Steuergerät aus.</label>
+									<br>
+								</div>
+								<!-- Error 25 -->
+								<div id="error25_de">
+									<label class="error-title">Fehlercode 25:</label>
+									<label class="error-description">Kommunikationsfehler während der ESC-Fimware-Aktualisierung</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 26 -->
+								<div id="error26_de">
+									<label class="error-title">Fehlercode 26:</label>
+									<label class="error-description">Flash-Speicherfehler</label>
+									<label class="error-details">Wenn Fehler 26 angezeigt wird, liegt ein Fehler in der Steuerung vor. Setzen Sie zunächst das Elektromobil zurück. Wenn das Problem dadurch nicht behoben wird, aktualisieren Sie die Firmware des Rollers und sehen Sie, ob das Problem behoben ist. Wenn nichts davon funktioniert, tauschen Sie das Steuergerät aus.</label>
+									<br>
+								</div>
+								<!-- Error 27 -->
+								<div id="error27_de">
+									<label class="error-title">Fehlercode 27:</label>
+									<label class="error-description">Controller-Passwortfehler</label>
+									<label class="error-details">Der Fehler 27 wird angezeigt, wenn ein Mietroller nicht richtig mit STLink verbunden ist oder die falsche Firmware-Version hat. Er kann auch dadurch verursacht werden, dass jemand die Serienwechselmethode durchführt. Eine vorübergehende Lösung wäre, den Gashebel und die Bremse beim Start kurz zu halten, um diesen Fehler zu ignorieren. Für eine dauerhaftere Lösung aktualisieren Sie die Seriennummer im Segway-Portal. Wenn der Roller immer noch nicht funktioniert, tauschen Sie das Steuergerät aus.</label>
+									<br>
+								</div>
+								<!-- Error 28 -->
+								<div id="error28_de">
+									<label class="error-title">Fehlercode 28:</label>
+									<label class="error-description">Kurzschluss in der Motorsteuereinheit Mos Up-Bridge</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 29 -->
+								<div id="error29_de">
+									<label class="error-title">Fehlercode 29:</label>
+									<label class="error-description">Kurzschluss in der Motorsteuerung mos down-bridge</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 31 -->
+								<div id="error31_de">
+									<label class="error-title">Fehlercode 31:</label>
+									<label class="error-description">Fehler beim Programmsprung</label>
+									<label class="error-details">Die Fehlermeldung 31 zeigt an, dass es ein Problem mit dem Steuergerät gibt. Es gibt nicht viel zu tun, außer den Roller zurückzusetzen und dann das Steuergerät auszutauschen.</label>
+									<br>
+								</div>
+								<!-- Error 32 -->
+								<div id="error32_de">
+									<label class="error-title">Fehlercode 32:</label>
+									<label class="error-description">IOT Heartbeat-Zeitüberschreitung</label>
+									<label class="error-details">Der Fehler 32 wird bei einem Leihroller angezeigt, der das IoT-Gerät nicht mehr erkennen kann. Sie sollten zunächst das IoT-Gerät untersuchen und sicherstellen, dass die Verbindung frei von Ausfransungen, Clips, Knicken oder Schnitten ist. Wenn das Verbindungskabel in Ordnung ist, ziehen Sie es ab, stecken Sie es wieder ein und setzen Sie den Scooter zurück. Wenn das Problem weiterhin besteht, tauschen Sie das IoT-Gerät und anschließend das Steuergerät aus.</label>
+									<br>
+								</div>
+								<!-- Error 35 -->
+								<div id="error35_de">
+									<label class="error-title">Fehlercode 35:</label>
+									<label class="error-description">Scooter mit Standard-Seriennummer</label>
+									<label class="error-details">Der Fehler 35 wird angezeigt, wenn die Seriennummer des Controllers die Standardnummer ist. Dies wird normalerweise durch ein Firmware-Update verursacht. Dieser Fehler ist ähnlich wie der Fehler 23. Die Seriennummer kann nicht N4GEA1601C0001 sein. Um dies zu beheben, ändern Sie die Seriennummer des Controllers mit der ninebot Launcher-App. Andernfalls ersetzen Sie das Steuergerät und anschließend die Batterie.</label>
+									<br>
+								</div>
+								<!-- Error 36 -->
+								<div id="error36_de">
+									<label class="error-title">Fehlercode 36:</label>
+									<label class="error-description">Ausfall des 2+4-Steckers oder Ausfall des externen Batterieladekabels.</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 37 -->
+								<div id="error37_de">
+									<label class="error-title">Fehlercode 37:</label>
+									<label class="error-description">Ausfall des Ladegeräts oder des Ladekabels</label>
+									<label class="error-details">Fehler 37 wird angezeigt, wenn das Ladekabel defekt ist. Versuchen Sie zunächst, das Elektromobil zurückzusetzen, um zu sehen, ob das Problem dadurch behoben wird. Überprüfen Sie als nächstes die Verkabelung vom Steuergerät zur Batterie. Wenn ein Kabel ausgefranst, abgeschnitten, geknickt oder durchgeschnitten ist, tauschen Sie das Bauteil aus, zu dem es gehört. Wenn die gesamte Verkabelung in Ordnung ist, tauschen Sie zuerst das Steuergerät und dann die Batterie aus.</label>
+									<br>
+								</div>
+								<!-- Error 38 -->
+								<div id="error38_de">
+									<label class="error-title">Fehlercode 38:</label>
+									<label class="error-description">Überstrom beim Aufladen</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 39 -->
+								<div id="error39_de">
+									<label class="error-title">Fehlercode 39:</label>
+									<label class="error-description">Anomalie des Temperatursensors der Batterie</label>
+									<label class="error-details">Der Fehler 39 wird angezeigt, wenn der Temperatursensor der Batterie außerhalb der normalen Werte liegt. Dies kann durch zu heiße oder zu kalte Außenbedingungen oder auch ohne Grund geschehen. Prüfen Sie zunächst die Temperatur des Akkus mit der Segway Launcher App. Wenn die Batterie zu heiß ist, lassen Sie sie abkühlen, und wenn sie zu kalt ist, bringen Sie den Roller in einen wärmeren Bereich. Wenn die Temperatur normal zu sein scheint, starten Sie den Roller neu. Wenn das Problem weiterhin besteht, tauschen Sie die Batterie aus.</label>
+									<br>
+								</div>
+								<!-- Error 40 -->
+								<div id="error40_de">
+									<label class="error-title">Fehlercode 40:</label>
+									<label class="error-description">Abnormaler Temperaturmesswert des Controllers</label>
+									<label class="error-details">Die Fehlermeldung 40 zeigt an, dass das Steuergerät zu heiß geworden ist und abkühlen muss, sie kann aber auch dadurch verursacht werden, dass sich der Sensor löst oder ausfällt. Überprüfen Sie die Verkabelung des Steuergeräts auf Ausfransungen, Clips, Knicke oder Schnitte. Andernfalls tauschen Sie das Steuergerät aus.</label>
+									<br>
+								</div>
+								<!-- Error 41 -->
+								<div id="error41_de">
+									<label class="error-title">Fehlercode 41:</label>
+									<label class="error-description">Die Temperatur des Motors ist abnormal</label>
+									<label class="error-details">Der Fehler 41 wird angezeigt, weil der Motor zu heiß geworden ist und abkühlen muss, er kann aber auch durch einen nicht angeschlossenen oder defekten Sensor verursacht werden. Überprüfen Sie die Motorverkabelung auf Ausfransungen, Clips, Knicke oder Schnitte. Andernfalls tauschen Sie den Motor aus.</label>
+									<br>
+								</div>
+								<!-- Error 42 -->
+								<div id="error42_de">
+									<label class="error-title">Fehlercode 42:</label>
+									<label class="error-description">Keine Kommunikation mit externem BMS</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 43 -->
+								<div id="error43_de">
+									<label class="error-title">Fehlercode 43:</label>
+									<label class="error-description">Externe BMS-Konfiguration ungültig</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 44 -->
+								<div id="error44_de">
+									<label class="error-title">Fehlercode 44:</label>
+									<label class="error-description">Externes BMS nicht aktiviert</label>
+									<label class="error-details"></label>
+									<br>
+								</div>
+								<!-- Error 45 -->
+								<div id="error45_de">
+									<label class="error-title">Fehlercode 45:</label>
+									<label class="error-description">Scooter mit Retail-Firmware geflasht</label>
+									<label class="error-details">Der Fehler 45 wird angezeigt, wenn ein Verbraucher-Roller mit der Miet-Firmware aktualisiert wird. Einige haben berichtet, dass es erfolgreich ist, das Rad beim Starten leicht zu bewegen. Andernfalls sollten Sie versuchen, die Firmware auf eine Nicht-Verkaufs-Firmware zu flashen.</label>
+									<br>
+								</div>
+								<!-- Error 50 -->
+								<div id="error50_de">
+									<label class="error-title">Fehlercode 50:</label>
+									<label class="error-description">Entweder liegt der Temperatursensor außerhalb der normalen Parameter oder die Verleih-Firmware ist nicht richtig eingestellt.</label>
+									<label class="error-details">Der Fehler 50 wird aus einem von zwei Gründen angezeigt. Entweder meldet der Temperatursensor keinen korrekten Wert oder die verwendete Verleih-Firmware wurde nicht richtig eingerichtet. Schalten Sie das Fahrzeug aus, um zu sehen, ob das Problem dadurch vorübergehend behoben wird. Für das Problem mit der Miet-Firmware müssen Sie die Firmware für das IoT, die Batterie und die Steuerung aktualisieren.</label>
+									<br>
+								</div>
+								<!-- Error 51 -->
+								<div id="error51_de">
+									<label class="error-title">Fehlercode 51:</label>
+									<label class="error-description">LCD und Controller stimmen nicht überein.</label>
+									<label class="error-details">Der Fehler 51 wird angezeigt, wenn die Firmware auf dem LCD nicht mit der Firmware auf dem Steuergerät übereinstimmt. Aktualisieren Sie zunächst die Firmware der LCD-Anzeige, indem Sie den Anschluss im Steuergerät verwenden. Wenn das Problem weiterhin besteht, aktualisieren Sie das Steuergerät mit der passenden Firmware. Sollte das Problem weiterhin bestehen, tauschen Sie zuerst das LCD und dann das Steuergerät aus.</label>
+									<br>
+								</div>
+								<!-- Error 52 -->
+								<div id="error52_de">
+									<label class="error-title">Fehlercode 52:</label>
+									<label class="error-description">e-lock und Controller-Firmware stimmen nicht überein</label>
+									<label class="error-details">Der Fehler 52 wird angezeigt, wenn die Firmware von E-Lock und Controller nicht übereinstimmt. Stellen Sie zunächst sicher, dass die Firmware-Versionen der beiden Komponenten übereinstimmen. Wenn dies der Fall ist, ist eine der Komponenten defekt und muss ausgetauscht werden. Tauschen Sie zuerst den Controller und dann das E-Lock aus.</label>
+									<br>
+								</div>
+								<!-- Error 54 -->
+								<div id="error54_de">
+									<label class="error-title">Fehlercode 54:</label>
+									<label class="error-description">Kommunikationsstörung zwischen E-Lock und Controller</label>
+									<label class="error-details">Der Fehler 54 wird angezeigt, wenn Controller und E-Lock nicht richtig miteinander kommunizieren. Überprüfen Sie zunächst die Verkabelung von Controller und E-Lock. Sie sollte frei von Ausfransungen, Clips, Knicken oder Schnitten sein. Wenn Sie ein Problem mit der Verkabelung feststellen, ersetzen Sie die betroffene(n) Komponente(n). Wenn nichts gefunden werden kann, versuchen Sie es zunächst mit einem neuen Steuergerät und dann mit einem neuen E-Lock.</label>
+									<br>
+								</div>						
+								<!-- Error 55 -->
+								<div id="error55_de">								
+									<label class="error-title">Fehlercode 55:</label>
+									<label class="error-description">Ausfall des Batteriefachdeckelsensors</label>
+									<label class="error-details">Der Fehler 55 wird angezeigt, wenn die Batterieabdeckung nicht vollständig geschlossen ist. Stellen Sie sich diesen Fehler wie ein Signal zum Öffnen der Autotür vor, allerdings mit dem Batteriefachdeckel. Öffnen und schließen Sie zunächst die Batterieabdeckung erneut. Vergewissern Sie sich, dass der Batteriefachdeckel richtig verschlossen ist. Sollte das Problem weiterhin bestehen, tauschen Sie das Batterieschloss aus.</label>
+								</div>
 							</div>
 							<br>							
 							<label style="font-size: smaller; font-weight: 100;">As of October 16, 2024</label>
