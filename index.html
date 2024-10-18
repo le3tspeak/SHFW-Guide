@@ -626,6 +626,358 @@
 										<tr>
 											<td>ECO</td>
 											<td>22 km/h</td>
+											<td>DPC 10A</td>
+											<td>1</td>
+											<td>OFF</td>
+										</tr>
+										<tr>
+											<td>Drive</td>
+											<td>25 km/h</td>
+											<td>DPC 20A</td>
+											<td>0.8</td>
+											<td>ON</td>
+										</tr>
+										<tr>
+											<td>Sports</td>
+											<td>30 km/h</td>
+											<td>DPC 25A</td>
+											<td>0.6</td>
+											<td>ON</td>
+										</tr>
+									</tbody>
+								</table>
+								<label style="width: auto; padding-left: 1rem;">Acceleration Boost 40% - 100%</label>
+								<br>
+								</div>	
+							</div>
+						</div>
+						<!-- Brake Settings -->
+						<div>
+							<h3 class="major" id="brake">Brake</h3>
+							<div id="EN-G2-Brake" style="display: block">
+								<blockquote>Brake settings are used to adjust the braking power and sensitivity of the scooter. You can increase or decrease the brake power to achieve the desired stopping distance. Please note that changing the brake settings may affect the scooter's safety and performance.</blockquote>
+							</div>
+							<div id="DE-G2-Brake" style="display: none">
+								<blockquote>Bremseneinstellungen werden verwendet, um die Bremskraft und Empfindlichkeit des Rollers anzupassen. Sie können die Bremskraft erhöhen oder verringern, um den gewünschten Bremsweg zu erreichen. Bitte beachten Sie, dass eine Änderung der Bremseneinstellungen die Sicherheit und Leistung des Rollers beeinträchtigen kann.</blockquote>
+							</div>
+							<label style="width: auto; padding-left: 1rem;">Brake min. speed: 5km/h</label>
+							<label style="width: auto; padding-left: 1rem;">Brake overshoot Current: 55A</label>
+							<label style="width: auto; padding-left: 1rem;">Brake Boost: 0%</label>
+							<label style="width: auto; padding-left: 1rem;">Autobraking: OFF</label>	
+							<br>
+							<div id="EN-G2-Brake-2" style="display: block">
+								<label style="width: auto; padding-left: 1rem;">Set Brake to Advanced an make following inputs:</label>
+							</div>
+							<div id="DE-G2-Brake-2" style="display: none">
+								<label style="width: auto; padding-left: 1rem;">Stellen Sie die Bremse auf "Advanced" und machen Sie folgende Eingaben:</label>
+							</div>							
+							<div class="image-container">
+								<img class="thumbnail" src="images/G2/Brake/G2-Brake1.jpg" alt="Comming Soon" id="myImg1"/>
+								<img class="thumbnail" src="images/G2/Brake/G2-Brake2.jpg" alt="Comming Soon" id="myImg2"/>
+								<img class="thumbnail" src="images/G2/Brake/G2-Brake3.jpg" alt="Comming Soon" id="myImg3"/>
+								<img class="thumbnail" src="images/G2/Brake/G2-Brake4.jpg" alt="Comming Soon" id="myImg4"/>
+							</div>
+							<!-- Das Modal -->
+							<div id="myModal" class="modal" style="display: none;">
+								<img class="modal-content" id="img01" src="">
+								<span class="close">&times;</span>
+								<img class="modal-content" id="img01" src="">
+							</div>
+							<br>
+							<br>
+						</div>
+						<!-- Motor Start Speed Settings -->
+						<div>
+							<h3 class="major" id="motor-start-speed">Motor start speed</h3>
+							<div id="EN-G2-Motor" style="display: block">
+								<blockquote>The motor start speed setting determines the speed at which the Scooter starts to provide power to the Motor. Please note that changing the motor start speed may affect the scooter's battery life and overall performance.</blockquote>	
+							</div>
+							<div id="DE-G2-Motor" style="display: none">
+								<blockquote>Die Einstellung der Motorstartgeschwindigkeit bestimmt die Geschwindigkeit, mit der der Scooter beginnt, den Motor mit Strom zu versorgen. Bitte beachten Sie, dass eine Änderung der Motorstartgeschwindigkeit die Lebensdauer der Batterie und die Gesamtleistung des Scooters beeinträchtigen kann.</blockquote>	
+							</div>
+							<div id="settings-default-mss" style="display: block">
+								<label style="width: auto; padding-left: 1rem;">Motor Start Speed: 3 km/h</label>
+								<label style="width: auto; padding-left: 1rem;">Enable negative MSP: Off</label>
+								<br>
+							</div>
+							<div id="settings-tuned-mss" style="display: none">
+								<label style="width: auto; padding-left: 1rem;">Motor Start Speed: 0 km/h</label>
+								<label style="width: auto; padding-left: 1rem;">Enable negative MSP: OFF</label>
+								<br>
+							</div>
+						</div>
+						<!-- Field weakening Settings -->
+						<div>
+							<h3 class="major" id="field-weakening">Field weakening</h3>
+							<div id="EN-G2-FWK" style="display: block">
+								<blockquote>You will need to specify a starting speed, an initial current and a variable current.
+									The process begins by settings the starting speed approximately 7-10 km/h below the scoter's maximum speed, along whit a very low inital current.
+									Subsequently, you can adjust the variable current to a value of your choice.
+									Please note that the field should gradually build up as the speed increases, rather than instantly from the starting speed.</blockquote>
+							</div>
+							<div id="DE-G2-FWK" style="display: none">
+								<blockquote>Sie müssen eine Startgeschwindigkeit, einen Anfangsstrom und einen variablen Strom angeben.
+									Der Prozess beginnt, indem Sie die Startgeschwindigkeit etwa 7-10 km/h unter der maximalen Geschwindigkeit des Rollers einstellen, zusammen mit einem sehr niedrigen Anfangsstrom.
+									Anschließend können Sie den variablen Strom auf einen Wert Ihrer Wahl einstellen.
+									Bitte beachten Sie, dass das Feld sich allmählich aufbauen sollte, wenn die Geschwindigkeit zunimmt, anstatt sofort von der Startgeschwindigkeit an.</blockquote>
+							</div>
+							<div id="settings-default-fwk" style="display: block">
+								<label style="width: auto; padding-left: 1rem;">Enable in ECO Mode: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Enable in Drive Mode: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Enable in Sports Mode: OFF</label>
+								<br>
+							</div>
+							<div  id="settings-tuned-fwk" style="display: none">
+								<label style="width: auto; padding-left: 1rem;">Enable in ECO Mode: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Enable in Drive Mode: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Enable in Sports Mode: ON</label>
+								<br>
+								<label style="width: auto; padding-left: 1rem;">Starting Speed: 23 km/h</label>
+								<label style="width: auto; padding-left: 1rem;">Initial Current: 3A</label>
+								<label style="width: auto; padding-left: 1rem;">Variable Current: 800 ma/km/h</label>
+								<label style="width: auto; padding-left: 1rem;">Maximum Torque current (Iq): 65A</label>
+								<label style="width: auto; padding-left: 1rem;">Maximum Field Current (Id): 30A</label>
+								<br>
+							</div>
+						</div>
+						<!-- Cruise Control -->
+						<div>
+							<h3 class="major" id="CruiseControl">Cruise Control</h3>
+							<div id="EN-G2-CC" style="display: block">
+								<blockquote>Cruise control settings are used to adjust the scooter's cruise control feature. You can enable or disable the cruise control and set the desired Activation type via time, Single Tap or Double Tap for the feature.</blockquote>
+							</div>
+							<div id="DE-G2-CC" style="display: none">
+								<blockquote>Die Einstellungen für den Tempomat dienen dazu, die Tempomatfunktion des Rollers anzupassen. Sie können den Tempomat ein- oder ausschalten und die gewünschte Aktivierungstyp über Zeit, Einzel- oder Doppelklick für die Funktion festlegen.</blockquote>
+							</div>
+							<div id="settings-default-cc" style="display: block">
+								<label style="width: auto; padding-left: 1rem;">Cruise Control Mode: OFF</label>
+								<br>
+							</div>
+							<div id="settings-tuned-cc" style="display: none">
+								<label style="width: auto; padding-left: 1rem;">Cruise Control: ON</label>
+								<label style="width: auto; padding-left: 1rem;">Activation Type: Time</label>
+								<label style="width: auto; padding-left: 1rem;">Activation Delay: 5 seconds</label>
+								<label style="width: auto; padding-left: 1rem;">Inc/Dec CC speed with trottle : OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Use throttle pos. in speed: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Speed-based CC in DPS Mode: OFF</label>
+								<br>
+								<label style="width: auto; padding-left: 1rem;">Beep type when engaging: Long</label>
+								<label style="width: auto; padding-left: 1rem;">Beep type when disengaging: None</label>	
+								<br>
+							</div>
+						</div>
+						<!-- Modes-->
+						<div>
+							<h3 class="major" id="Modes">Modes</h3>
+							<div id="EN-G2-Mode" style="display: block">
+								<blockquote>Select the mode in which the Scooter will be when entering the Profile</blockquote>
+							</div>
+							<div id="DE-G2-Mode" style="display: none">
+								<blockquote>Wählen Sie den Modus, in dem der Roller beim Laden des Profils sein wird</blockquote>
+							</div>
+							<div id="settings-default-modes" style="display: flex; align-items: center; flex-wrap: wrap;">
+								<label style="width: auto; padding-left: 1rem;">Set mode when enter Prof.: Last</label>
+								<label style="width: auto; padding-left: 1rem;">Disable Modes (S mode Only): OFF</label>
+								<br>								
+							</div>
+							<br>
+						</div>
+						<!-- Lights-->
+						<div>
+							<h3 class="major" id="Lights">Lights</h3>
+							<div id="EN-G2-Lights" style="display: block">
+								<blockquote>Light settings are used to adjust the Mode of the scooter's lights.</blockquote>
+							</div>
+							<div id="DE-G2-Lights" style="display: none">
+								<blockquote>Lichteinstellungen werden verwendet, um den Modus der Lichter des Rollers anzupassen.</blockquote>
+							</div>
+
+							<label style="width: auto; padding-left: 1rem;">Brake light mode: CAR</label>
+							<label style="width: auto; padding-left: 1rem;">Brake light flash speed: 255</label>
+							<br>
+						</div>
+						<!-- User Interface-->
+						<div>
+							<h3 class="major" id="UserInterface">User Interface</h3>
+							<div id="EN-G2-UI" style="display: block">
+								<blockquote>Customize the User Interface of your Scooter too fit your needs</blockquote>
+							</div>
+							<div id="DE-G2-UI" style="display: none">
+								<blockquote>Passen Sie die Benutzeroberfläche Ihres Rollers an Ihre Bedürfnisse an</blockquote>
+							</div>
+							<div id="settings-default-UI" style="display: flex; align-items: center; flex-wrap: wrap;">
+								<div>
+									<label style="width: auto; padding-left: 1rem;">Main dash data: Speed (km/h)</label>
+									<label style="width: auto; padding-left: 1rem;">Idle dash data: Off</label>
+									<label style="width: auto; padding-left: 1rem;">Alternating dash data: Off</label>
+									<label style="width: auto; padding-left: 1rem;">Battery Bar Data: Off</label>
+									<label style="width: auto; padding-left: 1rem;">Beep Type when entering Prof.: None</label>
+									<label style="width: auto; padding-left: 1rem;">No Reboot/SHutdown beep: OFF</label>
+									<label style="width: auto; padding-left: 1rem;">Swap button functions: OFF</label>
+								</div>
+							</div>
+							<br>
+						</div>
+						<!-- Global Settings-->
+						<div>
+							<h3 class="major" id="GlobalSettings">Global Settings</h3>
+							<div id="EN-G2-GS" style="display: block">
+								<blockquote>Global settings are profile-independent and only need to be set once. Unnamed settings remain as default, only the named settings need to be adjusted...</blockquote>
+							</div>
+							<div id="DE-G2-GS" style="display: none">
+								<blockquote>Globale Einstellungen sind profilunabhängig und müssen nur einmal gesetzt werden. Unbenannte Einstellungen bleiben als Standard erhalten, nur die benannten Einstellungen müssen angepasst werden...</blockquote>
+							</div>														
+							<div style="display: block">
+								<label style="width: auto; padding-left: 1rem;"><u>System Settings</u></label>
+								<label style="width: auto; padding-left: 1rem;">Taillight Brightness : 15%</label>
+								<br>
+								<label style="width: auto; padding-left: 1rem;"><u>Motor Settings</u></label>
+								<label style="width: auto; padding-left: 1rem;">Wheel Size: 9.7 INCH</label>
+								<br>
+							</div>
+						</div>
+						<!-- Disclaimer -->
+						<div>
+							<div id="EN-G2-Disclaimer" style="display: block">
+								<p class="copyright"> Disclaimer: The information provided on this website is for educational purposes only. <br>We do not take any responsibility for any damage caused by the use of the information provided.</p>
+							</div>
+							<div id="DE-G2-Disclaimer" style="display: none">
+								<p class="copyright"> Haftungsausschluss: Die auf dieser Website bereitgestellten Informationen dienen nur zu Bildungszwecken. <br>Wir übernehmen keine Verantwortung für Schäden, die durch die Verwendung der bereitgestellten Informationen verursacht werden.</p>	
+							</div>								
+						</div>
+					</article>	
+
+					<!-- Ninebot MAX G30 -->
+					<article id="g30">
+						<!-- Logo  -->
+						<div style="display: flex; justify-content: center; margin-top: -2rem;">
+						<img src="images/G30/MAXG30.png" alt="" style="max-width: 100%; height: auto;"/>
+						</div>
+						<!-- Introduction -->
+						 <div>
+							<div id="EN-G2-Introduction" style="display: block">
+								<h3 class="major">Introduction</h3>
+								<p>The Ninebot MAX G30 is a popular electric scooter that can be customized and modified using the ScooterHacking Utility app. The app allows users to adjust the scooter's speed, power, and other settings to enhance its performance.</p>
+							</div>
+							<div id="DE-G2-Introduction" style="display: none">
+								<h3 class="major">Einleitung</h3>
+								<p>Der Ninebot MAX G30 ist ein beliebter e-Scooter, der mit der ScooterHacking Utility-App angepasst und modifiziert werden kann. Die App ermöglicht es den Benutzern, die Geschwindigkeit, Leistung und andere Einstellungen des Rollers anzupassen, um seine Leistung zu verbessern.</p>
+							</div>
+						</div>
+						<!-- Profile Selection -->
+						<div>
+							<h3 class="major">Select Profile</h3>
+							<dropdown>
+								<select name="category-settings" id="category-settings" onchange="showProfile(this.value)">
+									<option value="default">Factory Settings</option>
+									<option value="tuned">30 Km/h Settings</option>
+								</select>
+							</dropdown>
+							<br>
+							<div id="settings-default-disclaimer" style="display: block">
+								<div id="EN-G2-ProfileSelection-Disclaimer" style="display: block">
+									<label style="width: auto; padding-left: 1rem;">Please note that these settings correspond approximately to the factory settings and that there may be deviations from the original settings.</label>
+								</div>
+								<div id="DE-G2-ProfileSelection-Disclaimer" style="display: none">
+									<label style="width: auto; padding-left: 1rem;">Bitte beachten Sie, dass diese Einstellungen in etwa den Werkseinstellungen entsprechen und dass es Abweichungen von den Originaleinstellungen geben kann.</label>
+								</div>
+								<br>
+							</div>
+							<div id="settings-tuned-disclaimer" style="display: none">
+								<div id="EN-G2-ProfileSelection-Disclaimer-2" style="display: block">
+									<label style="width: auto; padding-left: 1rem;">Why only 30Km/h?</label>
+									<label style="width: auto; padding-left: 1rem; font-weight: 400;">Because we want to impart basic knowledge and help new users.<br>If you have familiarized yourself with SHFW & SHU and have acquired some knowledge here, you should be able to reach more than 30km/h yourself.</label>
+									<label style="width: auto; padding-left: 1rem; color:crimson;">THESE SETTINGS ARE OPTIMIZED FOR PERFORMANCE AND MAY AFFECT BATTERY LIFE AND OVERALL SCOOTER PERFORMANCE.<br>AND MAY CAUSE POSSIBLE DAMAGE OR HARDWARE FAILURE.</label>
+								</div>	
+								<div id="DE-G2-ProfileSelection-Disclaimer-2" style="display: none">
+									<label style="width: auto; padding-left: 1rem;">Warum nur 30Km/h?</label>
+									<label style="width: auto; padding-left: 1rem; font-weight: 400;">Denn wir wollen Grundwissen vermitteln und neuen Nutzern helfen.<br>Wenn Sie sich mit SHFW & SHU vertraut gemacht haben und sich hier ein wenig Wissen angeeignet haben, sollten Sie selbst in der Lage sein, mehr als 30km/h zu erreichen.</label>
+									<label style="width: auto; padding-left: 1rem; color:crimson;">DIESE EINSTELLUNGEN SIND FÜR DIE LEISTUNGSFÄHIGKEIT OPTIMIERT UND KÖNNEN DIE LEBENSDAUER DER BATTERIE UND DIE LEISTUNGSFÄHIGKEIT DES SCOOTERS INSGESAMT BEEINFLUSSEN.<br>UND KÖNNEN EINE BESCHÄDIGUNG ODER EIN FEHLERHAFTE HARDWARE VERursachen.</label>
+								</div>							
+								<br>
+							</div>
+						</div>
+						<!-- Contents -->
+						<div>
+						<h3 class="major">Contents</h3>
+						<ol>
+							<li><a href="#throttle">Throttle</a></li>
+							<li><a href="#brake">Brake</a></li>
+							<li><a href="#motor-start-speed">Motor start speed</a></li>
+							<li><a href="#field-weakening">Field weakening</a></li>
+							<li><a href="#CruiseControl">Cruise Control</a></li>
+							<li><a href="#Modes">Modes</a></li>
+							<li><a href="#Lights">Lights</a></li>
+							<li><a href="#UserInterface">User Interface</a></li>
+							<li><a href="#GlobalSettings">Global Settings</a></li>
+						</ol>
+						</div>
+						<!-- Throttle Settings -->
+						<div>
+							<h3 class="major" id="Throttle">Throttle</h3>
+							<div id="EN-G2-Throttle" style="display: block">
+								<blockquote>Throttle settings are used to adjust the acceleration and speed of the scooter.	You can increase or decrease the throttle to achieve the desired performance level. Please note that changing the throttle settings may affect the scooter's battery life and overall performance.</blockquote>	
+							</div>
+							<div id="DE-G2-Throttle" style="display: none">
+								<blockquote>Die Gashebel-Einstellungen werden verwendet, um die Beschleunigung und Geschwindigkeit des Rollers anzupassen.	Sie können die Gasannahme erhöhen oder verringern, um das gewünschte Leistungsniveau zu erreichen. Bitte beachten Sie, dass eine Änderung der Gashebel-Einstellungen die Lebensdauer der Batterie und die Gesamtleistung des Rollers beeinträchtigen kann.</blockquote>	
+							</div>
+							<!-- Profile Settings Default / Tuned -->
+							<div>
+								<!-- Profile Settings Default -->
+								<div class="table-wrapper" id="settings-default-throttle" style="display:inline-flexbox">
+								<table>
+									<thead>
+										<tr>
+											<th>MODE</th>
+											<th>SPEED LIMIT</th>
+											<th>THROTTLE MODE</th>
+											<th>QUADRATIC</th>
+											<th>PWM OVERMOD.</th>																				
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>ECO</td>
+											<td>15 km/h</td>
+											<td>DPC 10A</td>
+											<td>1</td>
+											<td>OFF</td>
+										</tr>
+										<tr>
+											<td>Drive</td>
+											<td>22 km/h</td>
+											<td>DPC 20A</td>
+											<td>0.8</td>
+											<td>OFF</td>
+										</tr>
+										<tr>
+											<td>Sports</td>
+											<td>22 km/h</td>
+											<td>DPC 28A</td>
+											<td>0.6</td>
+											<td>ON</td>
+										</tr>
+									</tbody>
+								</table>
+								<label style="width: auto; padding-left: 1rem;">Acceleration Boost 0% - 40%</label>
+								<br>
+								</div>																	
+								<!-- Profile Settings Tuned -->						
+								<div class="table-wrapper" id="settings-tuned-throttle" style="display: none" >
+								<table>
+									<thead>
+										<tr>
+											<th>MODE</th>
+											<th>SPEED LIMIT</th>
+											<th>THROTTLE MODE</th>
+											<th>QUADRATIC</th>
+											<th>PWM OVERMOD.</th>										
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>ECO</td>
+											<td>22 km/h</td>
 											<td>DPC 15A</td>
 											<td>1</td>
 											<td>OFF</td>
@@ -846,23 +1198,6 @@
 							</div>								
 						</div>
 					</article>	
-
-					<!-- Ninebot MAX G30 -->
-					<article id="g30">
-
-					<!-- Logo  -->
-					<div style="display: flex; justify-content: center; margin-top: -2rem;">
-						<img src="images/G30/MAXG30.png" alt="" style="max-width: 100%; height: auto;"/>
-					</div>
-				
-					<!-- Introduction -->
-					<div>
-						<h3 class="major">Introduction</h3>
-
-						
-						<label style="width: auto; padding-left: 1rem; justify-content: center;">the guide will be published shortly - check it out again later</label>
-					</div>
-					</article>
 
 					<!-- Error Codes -->
 					<article id="error-codes">	
