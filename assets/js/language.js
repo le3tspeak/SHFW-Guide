@@ -46,6 +46,8 @@ function switchLanguage(language) {
     document.getElementById('DE-FWK-Calc-Note').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-FWK-Calc-Head').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-FWK-Calc-Head').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-FWK-Calc-Result').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-FWK-Calc-Result').style.display = (language === 'DE') ? 'block' : 'none';
 
     // APPS
     document.getElementById('EN-APPS-SHU').style.display = (language === 'EN') ? 'block' : 'none';
