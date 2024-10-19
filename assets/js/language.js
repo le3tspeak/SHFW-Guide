@@ -136,6 +136,8 @@ function switchLanguage(language) {
     document.getElementById('DE-ERROR-DESC').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-ERROR-Contents').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-ERROR-Contents').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-ERROR-Contents-2').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-ERROR-Contents-2').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-ERROR-List').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-ERROR-List').style.display = (language === 'DE') ? 'block' : 'none';
 
