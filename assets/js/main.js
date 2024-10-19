@@ -410,11 +410,3 @@ function disableRightClick(event) {
     document.addEventListener('contextmenu', disableRightClick);
  });
  
- var fcr = Math.floor(Math.random()*99999999999);
- var _fcc = _fcc || []; _fcc.push(["43708"]); _fcc.push(["trans"]);(function(){
- var fc = document.createElement("script");fc.async = true;
- fc.src = "https://www.imcounter.com/fcount.php?rnd=" + fcr;
- var sc = document.getElementById("fc-43708");
- sc.appendChild(fc);
- })();
- 
