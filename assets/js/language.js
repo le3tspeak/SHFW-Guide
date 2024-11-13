@@ -70,6 +70,8 @@ function switchLanguage(language) {
     document.getElementById('DE-G2-ProfileSelection-Disclaimer').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-G2-ProfileSelection-Disclaimer-2').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-G2-ProfileSelection-Disclaimer-2').style.display = (language === 'DE') ? 'block' : 'none';
+    document.getElementById('EN-G2-ProfileSelection-Disclaimer-3').style.display = (language === 'EN') ? 'block' : 'none';
+    document.getElementById('DE-G2-ProfileSelection-Disclaimer-3').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-G2-Contents').style.display = (language === 'EN') ? 'block' : 'none';
     document.getElementById('DE-G2-Contents').style.display = (language === 'DE') ? 'block' : 'none';
     document.getElementById('EN-G2-Throttle').style.display = (language === 'EN') ? 'block' : 'none';

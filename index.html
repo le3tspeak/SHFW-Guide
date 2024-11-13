@@ -589,6 +589,7 @@
 								<select name="category-settings" id="category-settings" onchange="showProfile_G2(this.value)">
 									<option value="default">Factory Settings</option>
 									<option value="tuned">30 Km/h Settings</option>
+									<option value="wma">WMA 40+km/h Settings</option>
 								</select>
 							</dropdown>
 							<br>
@@ -611,6 +612,18 @@
 									<label style="width: auto; padding-left: 1rem;">Warum nur 30Km/h?</label>
 									<label style="width: auto; padding-left: 1rem; font-weight: 400;">Denn wir wollen Grundwissen vermitteln und neuen Nutzern helfen.<br>Wenn Sie sich mit SHFW & SHU vertraut gemacht haben und sich hier ein wenig Wissen angeeignet haben, sollten Sie selbst in der Lage sein, mehr als 30km/h zu erreichen.</label>
 									<label style="width: auto; padding-left: 1rem; color:crimson;">DIESE EINSTELLUNGEN SIND FÜR DIE LEISTUNGSFÄHIGKEIT OPTIMIERT UND KÖNNEN DIE LEBENSDAUER DER BATTERIE UND DIE LEISTUNGSFÄHIGKEIT DES SCOOTERS INSGESAMT BEEINFLUSSEN.<br>UND KÖNNEN EINE BESCHÄDIGUNG ODER EIN FEHLERHAFTE HARDWARE VERursachen.</label>
+								</div>							
+								<br>
+							</div>
+							<!-- WMA Disclaimer -->
+							<div id="settings-wma-disclaimer_G2" style="display: none">
+								<div id="EN-G2-ProfileSelection-Disclaimer-3" style="display: block">
+									
+									<label style="width: auto; padding-left: 1rem; color:crimson;">The following settings are designed to maximize the performance of the scooter and reach the limits of what is technically feasible. <br><br>They can significantly affect the service life of the battery and the overall performance of the scooter and may lead to damage or malfunctions of the hardware.<br><br>Use at your own risk!</label>
+								</div>	
+								<div id="DE-G2-ProfileSelection-Disclaimer-3" style="display: none">
+									
+									<label style="width: auto; padding-left: 1rem; color:crimson;">Die folgenden Einstellungen sind auf maximale Leistungsfähigkeit des Scooters ausgelegt und erreichen die Grenzen des technisch Machbaren. <br><br> Sie können die Lebensdauer der Batterie und die Gesamtleistung des Scooters erheblich beeinflussen und führen möglicherweise zu Beschädigungen oder Fehlfunktionen der Hardware.<br><br>Benutzung auf eigene Gefahr!</label>
 								</div>							
 								<br>
 							</div>
@@ -724,6 +737,45 @@
 								<label style="width: auto; padding-left: 1rem;">Acceleration Boost 40% - 100%</label>
 								<br>
 								</div>	
+								<!-- Profile Settings WMA40 -->						
+								<div class="table-wrapper" id="settings-wma-throttle_G2" style="display: none" >
+									<table>
+										<thead>
+											<tr>
+												<th>MODE</th>
+												<th>SPEED LIMIT</th>
+												<th>THROTTLE MODE</th>
+												<th>QUADRATIC</th>
+												<th>PWM OVERMOD.</th>										
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>ECO</td>
+												<td>22 km/h</td>
+												<td>DPC 20A</td>
+												<td>1</td>
+												<td>OFF</td>
+											</tr>
+											<tr>
+												<td>Drive</td>
+												<td>30 km/h</td>
+												<td>DPC 25A</td>
+												<td>0.7</td>
+												<td>ON</td>
+											</tr>
+											<tr>
+												<td>Sports</td>
+												<td>40 km/h or OFF</td>
+												<td>DPC 28A</td>
+												<td>0.5</td>
+												<td>ON</td>
+											</tr>
+										</tbody>
+									</table>
+									<label style="width: auto; padding-left: 1rem;">Acceleration Boost 40% - 100%</label>
+									<br>
+									</div>	
 							</div>
 						</div>
 						<!-- Brake Settings -->
@@ -780,6 +832,12 @@
 								<label style="width: auto; padding-left: 1rem;">Enable negative MSP: OFF</label>
 								<br>
 							</div>
+							<!-- WMA MSP -->
+							<div id="settings-wma-mss_G2" style="display: none">
+								<label style="width: auto; padding-left: 1rem;">Motor Start Speed: 0 km/h</label>
+								<label style="width: auto; padding-left: 1rem;">Enable negative MSP: ON</label>
+								<br>
+							</div>
 						</div>
 						<!-- Field weakening Settings -->
 						<div>
@@ -814,6 +872,19 @@
 								<label style="width: auto; padding-left: 1rem;">Maximum Field Current (Id): 30A</label>
 								<br>
 							</div>
+							<!-- WMA FWK -->
+							<div  id="settings-wma-fwk_G2" style="display: none">
+								<label style="width: auto; padding-left: 1rem;">Enable in ECO Mode: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Enable in Drive Mode: ON</label>
+								<label style="width: auto; padding-left: 1rem;">Enable in Sports Mode: ON</label>
+								<br>
+								<label style="width: auto; padding-left: 1rem;">Starting Speed: 24 km/h</label>
+								<label style="width: auto; padding-left: 1rem;">Initial Current: 5A</label>
+								<label style="width: auto; padding-left: 1rem;">Variable Current: 1500 ma/km/h</label>
+								<label style="width: auto; padding-left: 1rem;">Maximum Torque current (Iq): 75A</label>
+								<label style="width: auto; padding-left: 1rem;">Maximum Field Current (Id): 40A</label>
+								<br>
+							</div>
 						</div>
 						<!-- Cruise Control -->
 						<div>
@@ -829,6 +900,18 @@
 								<br>
 							</div>
 							<div id="settings-tuned-cc_G2" style="display: none">
+								<label style="width: auto; padding-left: 1rem;">Cruise Control: ON</label>
+								<label style="width: auto; padding-left: 1rem;">Activation Type: Time</label>
+								<label style="width: auto; padding-left: 1rem;">Activation Delay: 5 seconds</label>
+								<label style="width: auto; padding-left: 1rem;">Inc/Dec CC speed with trottle : OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Use throttle pos. in speed: OFF</label>
+								<label style="width: auto; padding-left: 1rem;">Speed-based CC in DPS Mode: OFF</label>
+								<br>
+								<label style="width: auto; padding-left: 1rem;">Beep type when engaging: Long</label>
+								<label style="width: auto; padding-left: 1rem;">Beep type when disengaging: None</label>	
+								<br>
+							</div>
+							<div id="settings-wma-cc_G2" style="display: none">
 								<label style="width: auto; padding-left: 1rem;">Cruise Control: ON</label>
 								<label style="width: auto; padding-left: 1rem;">Activation Type: Time</label>
 								<label style="width: auto; padding-left: 1rem;">Activation Delay: 5 seconds</label>
